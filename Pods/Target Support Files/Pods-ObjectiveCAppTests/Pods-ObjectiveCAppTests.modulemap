@@ -1,0 +1,6 @@
+framework module Pods_ObjectiveCAppTests {
+  umbrella header "Pods-ObjectiveCAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
