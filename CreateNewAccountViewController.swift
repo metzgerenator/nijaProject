@@ -16,15 +16,19 @@ class CreateNewAccountViewController: UIViewController {
     
     @IBOutlet var passWord: UITextField!
     
+    var ref: FIRDatabaseReference!
+
+    
     
     
     @IBAction func createAccountButton(_ sender: AnyObject) {
-        
+        ref = FIRDatabase.database().reference()
+
         
         FIRAuth.auth()?.createUser(withEmail: userName.text!, password: passWord.text!) { (user, error) in
             
            print("error \(error)")
-            
+            self.ref.child("users").child(user!.uid).setValue(["username": self.userName.text!])
 
             
             
@@ -38,6 +42,8 @@ class CreateNewAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        FIRApp.configure()
+//        ref = FIRDatabase.database().reference()
 
         // Do any additional setup after loading the view.
     }
