@@ -27,13 +27,18 @@ class CreateNewAccountViewController: UIViewController {
         
         FIRAuth.auth()?.createUser(withEmail: userName.text!, password: passWord.text!) { (user, error) in
             
-           print("error \(error)")
-            self.ref.child("users").child(user!.uid).setValue(["username": self.userName.text!])
+            
+            if error == nil {
+                
+                self.ref.child("users").child(user!.uid).setValue(["username": self.userName.text!])
+            }
+            
+            
 
             
             
         }
-//
+
         
         
         
@@ -54,14 +59,37 @@ class CreateNewAccountViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+  
     }
-    */
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

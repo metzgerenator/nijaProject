@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0EF8EEFC97357C0043289E75 /* Pods_ObjectiveCApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634C315DBD45B55980785A43 /* Pods_ObjectiveCApp.framework */; };
+		2711E3801DBC17A600D5BC0A /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711E37F1DBC17A600D5BC0A /* CreateProfileViewController.swift */; };
 		27280E251DA46E4000D00E2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27280E241DA46E4000D00E2E /* AppDelegate.swift */; };
 		27280E2A1DA46E4000D00E2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27280E281DA46E4000D00E2E /* Main.storyboard */; };
 		27280E2C1DA46E4000D00E2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27280E2B1DA46E4000D00E2E /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2711E37F1DBC17A600D5BC0A /* CreateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
 		27280E211DA46E4000D00E2E /* ObjectiveCApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27280E241DA46E4000D00E2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27280E291DA46E4000D00E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2711E37E1DBC177300D5BC0A /* CreateProfile */ = {
+			isa = PBXGroup;
+			children = (
+				2711E37F1DBC17A600D5BC0A /* CreateProfileViewController.swift */,
+			);
+			name = CreateProfile;
+			sourceTree = "<group>";
+		};
 		27280E181DA46E4000D00E2E = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +128,7 @@
 		27280E231DA46E4000D00E2E /* ObjectiveCApp */ = {
 			isa = PBXGroup;
 			children = (
+				2711E37E1DBC177300D5BC0A /* CreateProfile */,
 				57607DC51DAFA4B2008FD070 /* Authentication */,
 				27280E241DA46E4000D00E2E /* AppDelegate.swift */,
 				27280E281DA46E4000D00E2E /* Main.storyboard */,
@@ -461,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2711E3801DBC17A600D5BC0A /* CreateProfileViewController.swift in Sources */,
 				57607DC71DAFA5E2008FD070 /* LoginViewController.swift in Sources */,
 				27280E551DA4715C00D00E2E /* CreateNewAccountViewController.swift in Sources */,
 				27280E251DA46E4000D00E2E /* AppDelegate.swift in Sources */,
