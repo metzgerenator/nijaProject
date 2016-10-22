@@ -41,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		2711E37F1DBC17A600D5BC0A /* CreateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
+		2711E3811DBC1C7400D5BC0A /* ObjectiveCApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ObjectiveCApp.entitlements; sourceTree = "<group>"; };
 		27280E211DA46E4000D00E2E /* ObjectiveCApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27280E241DA46E4000D00E2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27280E291DA46E4000D00E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 		27280E231DA46E4000D00E2E /* ObjectiveCApp */ = {
 			isa = PBXGroup;
 			children = (
+				2711E3811DBC1C7400D5BC0A /* ObjectiveCApp.entitlements */,
 				2711E37E1DBC177300D5BC0A /* CreateProfile */,
 				57607DC51DAFA4B2008FD070 /* Authentication */,
 				27280E241DA46E4000D00E2E /* AppDelegate.swift */,
@@ -267,7 +269,13 @@
 				TargetAttributes = {
 					27280E201DA46E4000D00E2E = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = BP8BUJFQU2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					27280E341DA46E4000D00E2E = {
 						CreatedOnToolsVersion = 8.0;
@@ -626,7 +634,9 @@
 			baseConfigurationReference = 807D40314A61DE26B17C0356 /* Pods-ObjectiveCApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ObjectiveCApp/ObjectiveCApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = BP8BUJFQU2;
 				INFOPLIST_FILE = ObjectiveCApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.metzger.ObjectiveCApp;
@@ -640,7 +650,9 @@
 			baseConfigurationReference = F5EEF1BECA089DFD16EED6FD /* Pods-ObjectiveCApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ObjectiveCApp/ObjectiveCApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = BP8BUJFQU2;
 				INFOPLIST_FILE = ObjectiveCApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.metzger.ObjectiveCApp;

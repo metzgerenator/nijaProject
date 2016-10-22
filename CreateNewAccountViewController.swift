@@ -29,8 +29,13 @@ class CreateNewAccountViewController: UIViewController {
             
             
             if error == nil {
+                //set user info to data base
+                self.ref.child("users").child(user!.uid).setValue(["email": self.userName.text!])
                 
-                self.ref.child("users").child(user!.uid).setValue(["username": self.userName.text!])
+                
+                
+                self.performSegue(withIdentifier: "success", sender: nil)
+                
             }
             
             
@@ -58,14 +63,6 @@ class CreateNewAccountViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-  
-    }
 
 
 }

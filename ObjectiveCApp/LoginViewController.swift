@@ -27,8 +27,6 @@ class LoginViewController: UIViewController {
                 // User is signed in.
                 
                 self.performSegue(withIdentifier: "success", sender: nil)
-            } else {
-                // No user is signed in.
             }
         }
         
