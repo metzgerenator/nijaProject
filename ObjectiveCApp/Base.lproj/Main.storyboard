@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Create New Account View Controller-->
+        <!--Create Account -->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CreateNewAccountViewController" customModule="ObjectiveCApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Create Account " id="BYZ-38-t0r" customClass="CreateNewAccountViewController" customModule="ObjectiveCApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -33,7 +33,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="50X-f3-3Cn">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="50X-f3-3Cn">
                                 <frame key="frameInset" minX="31" minY="150" width="312" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -87,7 +87,7 @@
             </objects>
             <point key="canvasLocation" x="1776.8" y="447.52623688155927"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Login-->
         <scene sceneID="xTI-SP-q3G">
             <objects>
                 <viewController id="YcE-6W-UHW" customClass="LoginViewController" customModule="ObjectiveCApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -104,7 +104,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Account "/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="LqJ-RT-82i"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="wKw-f1-hTO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVU-sB-l5a">
@@ -115,7 +115,7 @@
                                     <action selector="loginButton:" destination="YcE-6W-UHW" eventType="touchUpInside" id="kxO-V6-EzF"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3kn-st-7Az">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3kn-st-7Az">
                                 <frame key="frameInset" minX="40" minY="222" width="294" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -132,7 +132,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gGQ-a0-vqY"/>
+                    <navigationItem key="navigationItem" title="Login" id="gGQ-a0-vqY"/>
                     <connections>
                         <outlet property="passWord" destination="TnD-2p-AJz" id="gnH-d2-6ZN"/>
                         <outlet property="userName" destination="3kn-st-7Az" id="s2h-yS-4r1"/>
@@ -181,6 +181,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cAc-du-jEf"/>
+        <segue reference="lUw-5x-Oto"/>
     </inferredMetricsTieBreakers>
 </document>

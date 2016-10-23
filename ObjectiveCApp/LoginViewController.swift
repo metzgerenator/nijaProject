@@ -23,11 +23,18 @@ class LoginViewController: UIViewController {
         
         
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
-            if let user = user {
-                // User is signed in.
+            
+            if user != nil {
                 
                 self.performSegue(withIdentifier: "success", sender: nil)
+                
+            } else {
+                
+                
+                
             }
+            
+    
         }
         
        
@@ -61,18 +68,5 @@ class LoginViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }
