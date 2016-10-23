@@ -11,15 +11,43 @@ import Firebase
 
 
 class CreateNewAccountViewController: UIViewController {
+    
+    //MARK: properties
+    @IBOutlet var customerSwitchLael: UISwitch!
+    
+    @IBOutlet var developerSwitchLabel: UISwitch!
+    
 
     @IBOutlet var userName: UITextField!
     
     @IBOutlet var passWord: UITextField!
-    
-    var ref: FIRDatabaseReference!
 
     
+    var ref: FIRDatabaseReference!
     
+    
+    
+    
+    @IBAction func customerSwitchAction(_ sender: UISwitch) {
+        
+        if (sender.isOn) {
+            
+            developerSwitchLabel.isOn = false
+        }
+        
+    }
+    
+    
+
+    @IBAction func developerSwitchAction(_ sender: UISwitch) {
+        
+        if (sender.isOn) {
+            
+            customerSwitchLael.isOn = false
+        }
+        
+        
+    }
     
     @IBAction func createAccountButton(_ sender: AnyObject) {
         ref = FIRDatabase.database().reference()

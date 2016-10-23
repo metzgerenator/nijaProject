@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0EF8EEFC97357C0043289E75 /* Pods_ObjectiveCApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634C315DBD45B55980785A43 /* Pods_ObjectiveCApp.framework */; };
+		2702CAD91DBD37150020D6A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2702CAD81DBD37150020D6A8 /* Constants.swift */; };
 		2711E3801DBC17A600D5BC0A /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711E37F1DBC17A600D5BC0A /* CreateProfileViewController.swift */; };
 		27280E251DA46E4000D00E2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27280E241DA46E4000D00E2E /* AppDelegate.swift */; };
 		27280E2A1DA46E4000D00E2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27280E281DA46E4000D00E2E /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2702CAD81DBD37150020D6A8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2711E37F1DBC17A600D5BC0A /* CreateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
 		2711E3811DBC1C7400D5BC0A /* ObjectiveCApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ObjectiveCApp.entitlements; sourceTree = "<group>"; };
 		27280E211DA46E4000D00E2E /* ObjectiveCApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 		27280E231DA46E4000D00E2E /* ObjectiveCApp */ = {
 			isa = PBXGroup;
 			children = (
+				2702CAD81DBD37150020D6A8 /* Constants.swift */,
 				2711E3811DBC1C7400D5BC0A /* ObjectiveCApp.entitlements */,
 				2711E37E1DBC177300D5BC0A /* CreateProfile */,
 				57607DC51DAFA4B2008FD070 /* Authentication */,
@@ -480,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2702CAD91DBD37150020D6A8 /* Constants.swift in Sources */,
 				2711E3801DBC17A600D5BC0A /* CreateProfileViewController.swift in Sources */,
 				57607DC71DAFA5E2008FD070 /* LoginViewController.swift in Sources */,
 				27280E551DA4715C00D00E2E /* CreateNewAccountViewController.swift in Sources */,
