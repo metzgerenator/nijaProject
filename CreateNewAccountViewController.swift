@@ -51,39 +51,36 @@ class CreateNewAccountViewController: UIViewController {
     
     @IBAction func createAccountButton(_ sender: AnyObject) {
         ref = FIRDatabase.database().reference()
-
         
-        FIRAuth.auth()?.createUser(withEmail: userName.text!, password: passWord.text!) { (user, error) in
+        if customerSwitchLael.isOn != true && developerSwitchLabel.isOn != true {
+            
+            alertControllerView(title: "choose profile", message: "Please choose if you are creating a developer or customer account")
             
             
-            if error == nil {
-                //set user info to data base
-                self.ref.child("users").child(user!.uid).setValue(["email": self.userName.text!])
+        } else {
+            
+            FIRAuth.auth()?.createUser(withEmail: userName.text!, password: passWord.text!) { (user, error) in
                 
                 
-                
-                self.performSegue(withIdentifier: "success", sender: nil)
+                if error == nil {
+                    //set user info to data base
+                    self.ref.child("users").child(user!.uid).setValue(["email": self.userName.text!])
+                    
+                    self.performSegue(withIdentifier: "success", sender: nil)
+                    
+                } else {
+                    
+                    
+                }
                 
             }
             
-            
-
-            
-            
         }
-
-        
-        
-        
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        FIRApp.configure()
-//        ref = FIRDatabase.database().reference()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,9 +88,24 @@ class CreateNewAccountViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-
+    //MARK: alertview
+    
+    
+    func alertControllerView(title: String, message: String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        
+        alertController.addAction(okAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
 }
+
+
 
 
 
