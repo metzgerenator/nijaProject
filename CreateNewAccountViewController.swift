@@ -59,12 +59,26 @@ class CreateNewAccountViewController: UIViewController {
             
         } else {
             
+            
+            
             FIRAuth.auth()?.createUser(withEmail: userName.text!, password: passWord.text!) { (user, error) in
                 
                 
                 if error == nil {
-                    //set user info to data base
-                    self.ref.child("users").child(user!.uid).setValue(["email": self.userName.text!])
+                    
+                    //if user is customer
+                    if (self.customerSwitchLael.isOn) {
+                        
+                        let values  = ["user_type" : "customer",
+                                       "email" : self.userName.text!]
+                        
+                        self.ref.child("users").child(user!.uid).setValue(values)
+                        
+                    } else if (self.customerSwitchLael.isOn) {
+                        
+                    }
+                    
+                 
                     
                     self.performSegue(withIdentifier: "success", sender: nil)
                     
