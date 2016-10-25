@@ -15,5 +15,7 @@ let developer = "developers"
 
 let customers = "customers"
 
+let userIDType = "user_type"
+
 
 

@@ -15,6 +15,8 @@ class CreateProfileViewController: UIViewController {
         
         try! FIRAuth.auth()!.signOut()
         
+        
+        
         self.dismiss(animated: true, completion: nil)
     }
     

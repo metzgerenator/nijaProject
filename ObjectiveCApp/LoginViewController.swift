@@ -25,13 +25,44 @@ class LoginViewController: UIViewController {
         
         ref = FIRDatabase.database().reference()
         
-        try! FIRAuth.auth()!.signOut()
+       // try! FIRAuth.auth()!.signOut()
         
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
             
             if user != nil {
                 
-                //self.performSegue(withIdentifier: "success", sender: nil)
+                
+                self.ref.child(users).child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
+                    // Get user value
+                    
+                    let value = snapshot.value as? NSDictionary
+                    print("here is the value \(value)")
+                    
+                    let userType = value?[userIDType] as! String
+                    print("here is the user type \(userType)")
+                    
+                    
+                    if userType == "developer" {
+                        
+                        self.performSegue(withIdentifier: developer, sender: nil)
+                        
+                    } else if userType == customers {
+                        
+                        self.performSegue(withIdentifier: developer, sender: nil)
+                        
+                    }
+                 
+                
+                    
+                    
+                    // ...
+                }) { (error) in
+                    print(error.localizedDescription)
+                }
+                
+                
+                
+                
                 
             } else {
                 
@@ -69,6 +100,7 @@ class LoginViewController: UIViewController {
                 
                 print("user \(user) error \(error)")
                 
+                // add error handeling here for loging errors
                 
             })
             
