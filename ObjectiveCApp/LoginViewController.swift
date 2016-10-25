@@ -18,15 +18,20 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passWord: UITextField!
     
     
+    var ref: FIRDatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ref = FIRDatabase.database().reference()
+        
+        try! FIRAuth.auth()!.signOut()
         
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
             
             if user != nil {
                 
-                self.performSegue(withIdentifier: "success", sender: nil)
+                //self.performSegue(withIdentifier: "success", sender: nil)
                 
             } else {
                 
@@ -38,6 +43,13 @@ class LoginViewController: UIViewController {
         }
         
        
+    }
+    
+    
+    func userQuery() {
+        
+        
+        
     }
     
     

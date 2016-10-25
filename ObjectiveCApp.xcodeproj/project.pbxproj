@@ -20,6 +20,7 @@
 		27280E551DA4715C00D00E2E /* CreateNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27280E541DA4715C00D00E2E /* CreateNewAccountViewController.swift */; };
 		320C8670D9B35AAFEB31521F /* Pods_ObjectiveCAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CEEBCD56949C0F85AA3117 /* Pods_ObjectiveCAppTests.framework */; };
 		4C865D9D281F3929BB754DE9 /* Pods_ObjectiveCAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A46BAAB172D2E77BCFB649 /* Pods_ObjectiveCAppUITests.framework */; };
+		5755BE391DBEE8DB006F26C8 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755BE381DBEE8DB006F26C8 /* Users.swift */; };
 		57607DC71DAFA5E2008FD070 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57607DC61DAFA5E2008FD070 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		27280E521DA46F7A00D00E2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		27280E541DA4715C00D00E2E /* CreateNewAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewAccountViewController.swift; path = ../CreateNewAccountViewController.swift; sourceTree = "<group>"; };
 		360D3187661738CD6309599F /* Pods-ObjectiveCAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectiveCAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectiveCAppTests/Pods-ObjectiveCAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5755BE381DBEE8DB006F26C8 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		57607DC61DAFA5E2008FD070 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		634C315DBD45B55980785A43 /* Pods_ObjectiveCApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjectiveCApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7F927120D9D0173A27A036 /* Pods-ObjectiveCAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectiveCAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectiveCAppTests/Pods-ObjectiveCAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			children = (
 				27280E541DA4715C00D00E2E /* CreateNewAccountViewController.swift */,
 				57607DC61DAFA5E2008FD070 /* LoginViewController.swift */,
+				5755BE381DBEE8DB006F26C8 /* Users.swift */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				2711E3801DBC17A600D5BC0A /* CreateProfileViewController.swift in Sources */,
 				57607DC71DAFA5E2008FD070 /* LoginViewController.swift in Sources */,
 				27280E551DA4715C00D00E2E /* CreateNewAccountViewController.swift in Sources */,
+				5755BE391DBEE8DB006F26C8 /* Users.swift in Sources */,
 				27280E251DA46E4000D00E2E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

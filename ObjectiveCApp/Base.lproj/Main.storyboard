@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q5k-A1-yPm">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q5k-A1-yPm">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -76,12 +76,32 @@
                         <outlet property="developerSwitchLabel" destination="3df-tl-MdY" id="DT0-44-Eam"/>
                         <outlet property="passWord" destination="0hc-4y-XNs" id="jEY-jA-ymm"/>
                         <outlet property="userName" destination="50X-f3-3Cn" id="A0f-Y3-lWa"/>
-                        <segue destination="Q7d-Ky-v0v" kind="presentation" identifier="success" id="cAc-du-jEf"/>
+                        <segue destination="Q7d-Ky-v0v" kind="presentation" identifier="developers" id="cAc-du-jEf"/>
+                        <segue destination="MhU-Qi-YhJ" kind="presentation" identifier="customers" id="RzR-lY-IhG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2239" y="-233"/>
+        </scene>
+        <!--customer-->
+        <scene sceneID="FlD-Dc-2HC">
+            <objects>
+                <viewController id="vVG-Hq-a7j" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iQJ-NI-qIy"/>
+                        <viewControllerLayoutGuide type="bottom" id="CmA-fk-BBx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fe3-6d-C5m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="customer" id="tKI-YA-heS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L9B-Nj-cIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3820" y="-594"/>
         </scene>
         <!--Developer Profile-->
         <scene sceneID="VNs-gX-xoC">
@@ -106,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OpD-Le-oG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776.8" y="447.52623688155927"/>
+            <point key="canvasLocation" x="1614" y="618"/>
         </scene>
         <!--Login-->
         <scene sceneID="xTI-SP-q3G">
@@ -157,7 +177,7 @@
                     <connections>
                         <outlet property="passWord" destination="TnD-2p-AJz" id="gnH-d2-6ZN"/>
                         <outlet property="userName" destination="3kn-st-7Az" id="s2h-yS-4r1"/>
-                        <segue destination="Q7d-Ky-v0v" kind="presentation" identifier="success" id="lUw-5x-Oto"/>
+                        <segue destination="Q7d-Ky-v0v" kind="presentation" identifier="developers" id="lUw-5x-Oto"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPy-sD-o4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -180,7 +200,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Nd-Tt-VvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837.60000000000002" y="447.52623688155927"/>
+            <point key="canvasLocation" x="842" y="618"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GnM-iz-X8D">
@@ -200,8 +220,26 @@
             </objects>
             <point key="canvasLocation" x="397.60000000000002" y="-233.43328335832086"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VRB-sB-dOn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MhU-Qi-YhJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4dg-Si-rYD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vVG-Hq-a7j" kind="relationship" relationship="rootViewController" id="DON-MV-1Wz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KiM-W1-RXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2994" y="-556"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cAc-du-jEf"/>
+        <segue reference="lUw-5x-Oto"/>
     </inferredMetricsTieBreakers>
 </document>

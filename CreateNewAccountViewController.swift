@@ -72,18 +72,28 @@ class CreateNewAccountViewController: UIViewController {
                         let values  = ["user_type" : "customer",
                                        "email" : self.userName.text!]
                         
-                        self.ref.child("users").child(user!.uid).setValue(values)
+                        createAccount(accountType: customers, user: user!, values: values as Dictionary<String, AnyObject>)
+                        self.performSegue(withIdentifier: customers, sender: nil)
+             
                         
-                    } else if (self.customerSwitchLael.isOn) {
+                    } else if (self.developerSwitchLabel.isOn) {
                         
+                        let values  = ["user_type" : "developer",
+                                       "email" : self.userName.text!]
+                        
+                         createAccount(accountType: developer, user: user!, values: values as Dictionary<String, AnyObject>)
+                        
+                         self.performSegue(withIdentifier: developer, sender: nil)
                     }
                     
                  
                     
-                    self.performSegue(withIdentifier: "success", sender: nil)
+                   
                     
                 } else {
                     
+                    print("here is the error \(error)")
+                    // pop up error message
                     
                 }
                 
