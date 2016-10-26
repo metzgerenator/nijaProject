@@ -39,3 +39,15 @@ func createAccount(accountType: String,user: FIRUser ,values: Dictionary<String,
 
     
 }
+
+
+
+func appendValues(user: String ,values: Dictionary<String, AnyObject>) {
+    let ref = FIRDatabase.database().reference().child("users").child(user)
+    print(ref)
+
+    ref.updateChildValues(values)
+    
+
+    
+}

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0EF8EEFC97357C0043289E75 /* Pods_ObjectiveCApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634C315DBD45B55980785A43 /* Pods_ObjectiveCApp.framework */; };
 		2702CAD91DBD37150020D6A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2702CAD81DBD37150020D6A8 /* Constants.swift */; };
-		2711E3801DBC17A600D5BC0A /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711E37F1DBC17A600D5BC0A /* CreateProfileViewController.swift */; };
 		27280E251DA46E4000D00E2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27280E241DA46E4000D00E2E /* AppDelegate.swift */; };
 		27280E2A1DA46E4000D00E2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27280E281DA46E4000D00E2E /* Main.storyboard */; };
 		27280E2C1DA46E4000D00E2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27280E2B1DA46E4000D00E2E /* Assets.xcassets */; };
@@ -18,6 +17,7 @@
 		27280E451DA46E4000D00E2E /* ObjectiveCAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27280E441DA46E4000D00E2E /* ObjectiveCAppUITests.swift */; };
 		27280E531DA46F7A00D00E2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27280E521DA46F7A00D00E2E /* GoogleService-Info.plist */; };
 		27280E551DA4715C00D00E2E /* CreateNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27280E541DA4715C00D00E2E /* CreateNewAccountViewController.swift */; };
+		27C429DE1DC02A7D00A6E1EA /* CreateDeveloperTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C429DD1DC02A7D00A6E1EA /* CreateDeveloperTableViewController.swift */; };
 		320C8670D9B35AAFEB31521F /* Pods_ObjectiveCAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CEEBCD56949C0F85AA3117 /* Pods_ObjectiveCAppTests.framework */; };
 		4C865D9D281F3929BB754DE9 /* Pods_ObjectiveCAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A46BAAB172D2E77BCFB649 /* Pods_ObjectiveCAppUITests.framework */; };
 		5755BE391DBEE8DB006F26C8 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755BE381DBEE8DB006F26C8 /* Users.swift */; };
@@ -43,7 +43,6 @@
 
 /* Begin PBXFileReference section */
 		2702CAD81DBD37150020D6A8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		2711E37F1DBC17A600D5BC0A /* CreateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
 		2711E3811DBC1C7400D5BC0A /* ObjectiveCApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ObjectiveCApp.entitlements; sourceTree = "<group>"; };
 		27280E211DA46E4000D00E2E /* ObjectiveCApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27280E241DA46E4000D00E2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		27280E461DA46E4000D00E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27280E521DA46F7A00D00E2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		27280E541DA4715C00D00E2E /* CreateNewAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewAccountViewController.swift; path = ../CreateNewAccountViewController.swift; sourceTree = "<group>"; };
+		27C429DD1DC02A7D00A6E1EA /* CreateDeveloperTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateDeveloperTableViewController.swift; sourceTree = "<group>"; };
 		360D3187661738CD6309599F /* Pods-ObjectiveCAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectiveCAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectiveCAppTests/Pods-ObjectiveCAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5755BE381DBEE8DB006F26C8 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		57607DC61DAFA5E2008FD070 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -100,12 +100,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2711E37E1DBC177300D5BC0A /* CreateProfile */ = {
+		2711E37E1DBC177300D5BC0A /* CreateDeveloperProfile */ = {
 			isa = PBXGroup;
 			children = (
-				2711E37F1DBC17A600D5BC0A /* CreateProfileViewController.swift */,
+				27C429DD1DC02A7D00A6E1EA /* CreateDeveloperTableViewController.swift */,
 			);
-			name = CreateProfile;
+			name = CreateDeveloperProfile;
 			sourceTree = "<group>";
 		};
 		27280E181DA46E4000D00E2E = {
@@ -135,7 +135,7 @@
 			children = (
 				2702CAD81DBD37150020D6A8 /* Constants.swift */,
 				2711E3811DBC1C7400D5BC0A /* ObjectiveCApp.entitlements */,
-				2711E37E1DBC177300D5BC0A /* CreateProfile */,
+				2711E37E1DBC177300D5BC0A /* CreateDeveloperProfile */,
 				57607DC51DAFA4B2008FD070 /* Authentication */,
 				27280E241DA46E4000D00E2E /* AppDelegate.swift */,
 				27280E281DA46E4000D00E2E /* Main.storyboard */,
@@ -487,11 +487,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2702CAD91DBD37150020D6A8 /* Constants.swift in Sources */,
-				2711E3801DBC17A600D5BC0A /* CreateProfileViewController.swift in Sources */,
 				57607DC71DAFA5E2008FD070 /* LoginViewController.swift in Sources */,
 				27280E551DA4715C00D00E2E /* CreateNewAccountViewController.swift in Sources */,
 				5755BE391DBEE8DB006F26C8 /* Users.swift in Sources */,
 				27280E251DA46E4000D00E2E /* AppDelegate.swift in Sources */,
+				27C429DE1DC02A7D00A6E1EA /* CreateDeveloperTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
