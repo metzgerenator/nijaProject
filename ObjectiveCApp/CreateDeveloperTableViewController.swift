@@ -42,28 +42,40 @@ class CreateDeveloperTableViewController: UITableViewController {
     
     @IBAction func saveButton(_ sender: AnyObject) {
         
-        if let user = FIRAuth.auth()?.currentUser {
-        
-             let user = user
+        if (userNameField.text?.characters.count)! > 0 &&  (phoneField.text?.characters.count)! > 0 {
             
-            print("here is the user \(user.uid)")
+            let values = ["username" : userNameField.text!,
+                          "phone" : phoneField.text!]
             
-            let values = ["username" : userNameField.text,
-                          "phone" : phoneField.text]
+            appendValues(values: values as Dictionary<String, AnyObject>)
             
-
-           appendValues(user: user.uid, values: values as Dictionary<String, AnyObject>)
-        
-        
+            
+        } else {
+            
+             alertControllerView(title: "fill out all forms", message: "please fill out all the forms")
         }
-        
         
         
         
     }
     
+    //MARK: alertview
     
     
+    func alertControllerView(title: String, message: String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        
+        alertController.addAction(okAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
