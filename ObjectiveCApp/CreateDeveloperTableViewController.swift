@@ -18,13 +18,27 @@ class CreateDeveloperTableViewController: UITableViewController {
     
     @IBOutlet var userNameField: UITextField!
     
-    
     @IBOutlet var emailField: UITextField!
-    
     
     @IBOutlet var phoneField: UITextField!
     
+    @IBOutlet var website: UITextField!
     
+    @IBOutlet var github: UITextField!
+    
+    @IBOutlet var address: UITextField!
+    
+    @IBAction func freelancer(_ sender: AnyObject) {
+        
+        
+    }
+    
+    
+    @IBAction func devShop(_ sender: AnyObject) {
+        
+        
+        
+    }
     
     @IBAction func logOutButton(_ sender: AnyObject) {
         
