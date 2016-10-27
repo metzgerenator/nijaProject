@@ -69,17 +69,22 @@ class CreateDeveloperTableViewController: UITableViewController {
     
     @IBAction func saveButton(_ sender: AnyObject) {
         
-        if (userNameField.text?.characters.count)! > 0 &&  (phoneField.text?.characters.count)! > 0 && (website.text?.characters.count)! > 0 {
+        if (userNameField.text?.characters.count)! > 0 &&  (phoneField.text?.characters.count)! > 0 && (website.text?.characters.count)! > 0 && (github.text?.characters.count)! > 0
+        && (address.text?.characters.count)! > 0 {
             
             let values = ["username" : userNameField.text!,
-                          "phone" : phoneField.text!]
+                          "phone" : phoneField.text!,
+                          "website" : website.text!,
+                          "github" : github.text!,
+                          "address" : address.text!,
+                          ]
             
             appendValues(values: values as Dictionary<String, AnyObject>)
             
             
         } else {
             
-             alertControllerView(title: "fill out all forms", message: "please fill out all the forms")
+             alertControllerView(title: "fill out all forms", message: "please fill out all the fields")
         }
         
         
