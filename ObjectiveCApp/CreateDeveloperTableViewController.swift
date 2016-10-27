@@ -13,12 +13,13 @@ import Firebase
 class CreateDeveloperTableViewController: UITableViewController {
     
     
+    
+    
+    
     // properties 
     
     
     @IBOutlet var userNameField: UITextField!
-    
-    @IBOutlet var emailField: UITextField!
     
     @IBOutlet var phoneField: UITextField!
     
@@ -28,15 +29,27 @@ class CreateDeveloperTableViewController: UITableViewController {
     
     @IBOutlet var address: UITextField!
     
+    
+    @IBOutlet var freeLancerOutlet: UIButton!
+    
+    @IBOutlet var devShopOutlet: UIButton!
+    
+    
     @IBAction func freelancer(_ sender: AnyObject) {
         
+        
+        freeLancerOutlet.setTitleColor(UIColor.red, for: .normal)
+        devShopOutlet.setTitleColor(UIColor.blue, for: .normal)
+        
+      
         
     }
     
     
     @IBAction func devShop(_ sender: AnyObject) {
         
-        
+        devShopOutlet.setTitleColor(UIColor.red, for: .normal)
+        freeLancerOutlet.setTitleColor(UIColor.blue, for: .normal)
         
     }
     
@@ -56,7 +69,7 @@ class CreateDeveloperTableViewController: UITableViewController {
     
     @IBAction func saveButton(_ sender: AnyObject) {
         
-        if (userNameField.text?.characters.count)! > 0 &&  (phoneField.text?.characters.count)! > 0 {
+        if (userNameField.text?.characters.count)! > 0 &&  (phoneField.text?.characters.count)! > 0 && (website.text?.characters.count)! > 0 {
             
             let values = ["username" : userNameField.text!,
                           "phone" : phoneField.text!]
