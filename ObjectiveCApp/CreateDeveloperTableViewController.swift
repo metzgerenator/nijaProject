@@ -18,6 +18,8 @@ class CreateDeveloperTableViewController: UITableViewController {
     
     // properties 
     
+    var ref: FIRDatabaseReference!
+    
     
     @IBOutlet var userNameField: UITextField!
     
@@ -29,30 +31,7 @@ class CreateDeveloperTableViewController: UITableViewController {
     
     @IBOutlet var address: UITextField!
     
-    
-    @IBOutlet var freeLancerOutlet: UIButton!
-    
-    @IBOutlet var devShopOutlet: UIButton!
-    
-    
-    @IBAction func freelancer(_ sender: AnyObject) {
-        
-        
-        freeLancerOutlet.setTitleColor(UIColor.red, for: .normal)
-        devShopOutlet.setTitleColor(UIColor.blue, for: .normal)
-        
-      
-        
-    }
-    
-    
-    @IBAction func devShop(_ sender: AnyObject) {
-        
-        devShopOutlet.setTitleColor(UIColor.red, for: .normal)
-        freeLancerOutlet.setTitleColor(UIColor.blue, for: .normal)
-        
-    }
-    
+
     @IBAction func logOutButton(_ sender: AnyObject) {
         
         try! FIRAuth.auth()!.signOut()
@@ -80,6 +59,8 @@ class CreateDeveloperTableViewController: UITableViewController {
                           ]
             
             appendValues(values: values as Dictionary<String, AnyObject>)
+            
+            alertControllerView(title: "up to date", message: "we've updated your profile")
             
             
         } else {
@@ -111,12 +92,50 @@ class CreateDeveloperTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        if let user = FIRAuth.auth()?.currentUser {
+            
+            ref = FIRDatabase.database().reference().child("users").child(user.uid)
+            
+            ref.observe(FIRDataEventType.value, with: { (snapshot) in
+                let userData = snapshot.value as! [String : AnyObject]
+                
+              let developer =  Developer(userdata: userData)
+                
+                if let userName = developer.userName{
+                    self.userNameField.text = userName
+                }
+                
+                if let phone = developer.phone{
+                    self.phoneField.text = phone
+                }
+                
+                if let gitHub = developer.github{
+                    self.github.text = gitHub
+                }
+                if let website = developer.website{
+                    self.website.text = website
+                }
+                if let address = developer.address{
+                    self.address.text = address
+                }
+                
+                
+                
+                
+            })
+            
+            
+        }
+        
+        
+        
+        
+       
+        
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    
     }
 
     override func didReceiveMemoryWarning() {
