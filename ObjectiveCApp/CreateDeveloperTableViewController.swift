@@ -23,6 +23,8 @@ class CreateDeveloperTableViewController: UITableViewController {
     
     @IBOutlet var userNameField: UITextField!
     
+    @IBOutlet weak var companyNameField: UITextField!
+    
     @IBOutlet var phoneField: UITextField!
     
     @IBOutlet var website: UITextField!
@@ -56,6 +58,7 @@ class CreateDeveloperTableViewController: UITableViewController {
                           "website" : website.text!,
                           "github" : github.text!,
                           "address" : address.text!,
+                          "companyName" : companyNameField.text!
                           ]
             
             appendValues(values: values as Dictionary<String, AnyObject>)
@@ -65,7 +68,7 @@ class CreateDeveloperTableViewController: UITableViewController {
             
         } else {
             
-             alertControllerView(title: "fill out all forms", message: "please fill out all the fields")
+             alertControllerView(title: "fill out all fields", message: "please fill out all the fields")
         }
         
         
