@@ -35,6 +35,11 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
     }
     
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        alertView(title: "selectsomething", message: "test")
+    }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -63,4 +68,27 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
     }
     */
 
+    
+    func alertView(title: String, message: String) {
+        
+        let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .actionSheet)
+
+        
+        let oneAction = UIAlertAction(title: "One", style: .default) { (_) in }
+        let twoAction = UIAlertAction(title: "Two", style: .default) { (_) in }
+        let threeAction = UIAlertAction(title: "Three", style: .default) { (_) in }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (_) in }
+        
+        alertController.addAction(oneAction)
+        alertController.addAction(twoAction)
+        alertController.addAction(threeAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+        
+    }
+    
+    
+    
 }
