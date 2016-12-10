@@ -111,7 +111,15 @@ class LoginViewController: UIViewController {
                     
                 }
                 
-                
+                if (error != nil) {
+                    
+                    if let userInfo = error?.localizedDescription {
+                        
+                        self.alertControllerView(title: "Error", message: userInfo)
+                        
+                    }
+                    
+                }
                 // add error handeling here for loging errors
                 
             })

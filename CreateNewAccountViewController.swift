@@ -110,9 +110,15 @@ class CreateNewAccountViewController: UIViewController {
                    
                     
                 } else {
+                
+                   
                     
-                    print("here is the error \(error)")
-                    // pop up error message
+                    if let userInfo = error?.localizedDescription {
+                        
+                        self.alertControllerView(title: "Error", message: userInfo)
+                    }
+                    
+                    
                     
                 }
                 
