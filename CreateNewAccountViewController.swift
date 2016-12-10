@@ -73,7 +73,6 @@ class CreateNewAccountViewController: UIViewController {
                                        "email" : self.userName.text!]
                         
                         createAccount(accountType: customers, user: user!, values: values as Dictionary<String, AnyObject>)
-                        self.performSegue(withIdentifier: customers, sender: nil)
              
                         
                     } else if (self.developerSwitchLabel.isOn) {
@@ -83,10 +82,27 @@ class CreateNewAccountViewController: UIViewController {
                         
                          createAccount(accountType: developer, user: user!, values: values as Dictionary<String, AnyObject>)
                         
-                         self.performSegue(withIdentifier: developer, sender: nil)
-                    }
+                        
+                     }
                     
+                    //send email verification
+                    FIRAuth.auth()?.currentUser?.sendEmailVerification(completion: { (error) in
+                        
+                        if error == nil {
+                            
+                            try! FIRAuth.auth()!.signOut()
+                            
+                            self.alertControllerViewPostEmailVerification(title: "Check your email", message: "please check your email for verification and then log in")
+                            
+                            self.dismiss(animated: true, completion: nil)
                  
+                        } else {
+                            
+                            self.alertControllerView(title: "Invalid Email", message: "Please check your email and log in again")
+                        }
+                        
+                        
+                    })
                     
                    
                     
@@ -109,10 +125,28 @@ class CreateNewAccountViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //MARK: alertview
+    
+    
+    func alertControllerViewPostEmailVerification(title: String, message: String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            
+            self.dismiss(animated: true, completion: nil)
+            
+        })
+        
+        alertController.addAction(okAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+        
+    }
     
     
     func alertControllerView(title: String, message: String) {

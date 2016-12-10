@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
         
         ref = FIRDatabase.database().reference()
         
-       // try! FIRAuth.auth()!.signOut()
+        //try! FIRAuth.auth()!.signOut()
         
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
             
@@ -33,6 +33,9 @@ class LoginViewController: UIViewController {
                 
                 
                 self.ref.child(users).child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    //determine if email is verified
+                    let emailVerified = user!.isEmailVerified
                     // Get user value
                     
                     let value = snapshot.value as? NSDictionary
@@ -42,11 +45,11 @@ class LoginViewController: UIViewController {
                     print("here is the user type \(userType)")
                     
                     
-                    if userType == "developer" {
-                        
+                    if userType == "developer" && emailVerified == true {
+        
                         self.performSegue(withIdentifier: developer, sender: nil)
                         
-                    } else if userType == customers {
+                    } else if userType == customers && emailVerified == true {
                         
                         self.performSegue(withIdentifier: developer, sender: nil)
                         
