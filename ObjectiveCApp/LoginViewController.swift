@@ -97,11 +97,20 @@ class LoginViewController: UIViewController {
     @IBAction func loginButton(_ sender: AnyObject) {
         
         
-        
+        if userName.text?.characters.count == 0 || passWord.text?.characters.count == 0 {
+            self.alertControllerView(title: "Credential Error", message: "Please fill in all the credentials")
+        }
             
             FIRAuth.auth()?.signIn(withEmail: userName.text!, password: passWord.text!, completion: { (user, error) in
                 
-                print("user \(user) error \(error)")
+                
+                // tell user if they are not verified
+                if user?.isEmailVerified == false {
+                    
+                    self.alertControllerView(title: "Verify Email", message: "Please verify your email before loging in.")
+                    
+                }
+                
                 
                 // add error handeling here for loging errors
                 
@@ -111,6 +120,20 @@ class LoginViewController: UIViewController {
         
         
         
+        
+    }
+    
+    
+    func alertControllerView(title: String, message: String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        
+        alertController.addAction(okAction)
+        
+        self.present(alertController, animated: true, completion: nil)
         
     }
     

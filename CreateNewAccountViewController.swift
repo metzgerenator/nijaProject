@@ -50,6 +50,12 @@ class CreateNewAccountViewController: UIViewController {
     }
     
     @IBAction func createAccountButton(_ sender: AnyObject) {
+        
+        
+        if userName.text?.characters.count == 0 || passWord.text?.characters.count == 0 {
+            self.alertControllerView(title: "Credential Error", message: "Please fill in all the credentials")
+        }
+        
         ref = FIRDatabase.database().reference()
         
         if customerSwitchLael.isOn != true && developerSwitchLabel.isOn != true {
@@ -58,9 +64,7 @@ class CreateNewAccountViewController: UIViewController {
             
             
         } else {
-            
-            
-            
+   
             FIRAuth.auth()?.createUser(withEmail: userName.text!, password: passWord.text!) { (user, error) in
                 
                 
@@ -94,7 +98,6 @@ class CreateNewAccountViewController: UIViewController {
                             
                             self.alertControllerViewPostEmailVerification(title: "Check your email", message: "please check your email for verification and then log in")
                             
-                            self.dismiss(animated: true, completion: nil)
                  
                         } else {
                             
@@ -135,13 +138,14 @@ class CreateNewAccountViewController: UIViewController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: {(action) in
             
-            self.dismiss(animated: true, completion: nil)
+           _ = self.navigationController?.popViewController(animated: true)
             
         })
-        
+
         alertController.addAction(okAction)
+        
         
         self.present(alertController, animated: true, completion: nil)
         
@@ -161,12 +165,11 @@ class CreateNewAccountViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
         
     }
+    
+
+
+
 }
-
-
-
-
-
 
 
 
