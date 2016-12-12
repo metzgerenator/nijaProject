@@ -46,6 +46,10 @@ class LoginViewController: UIViewController {
                     
                     
                     if userType == "developer" && emailVerified == true {
+                        
+                        //check to see if they are developer of freelancer 
+                        //guard let devType = value[]
+                        
         
                         self.performSegue(withIdentifier: developer, sender: nil)
                         
@@ -58,7 +62,7 @@ class LoginViewController: UIViewController {
                 
                     
                     
-                    // ...
+                   
                 }) { (error) in
                     print(error.localizedDescription)
                 }

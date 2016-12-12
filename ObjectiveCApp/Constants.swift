@@ -11,11 +11,14 @@ import Foundation
 
 let users = "users"
 
-let developer = "developers"
-
 let customers = "customers"
 
 let userIDType = "user_type"
 
+//Developers
 
 
+
+let DEVELOPERTYPE = "developerType"
+
+let developer = "developers"
