@@ -20,5 +20,7 @@ let userIDType = "user_type"
 
 
 let DEVELOPERTYPE = "developerType"
+let FREELANCER = "freelancer"
+let COMPANY = "company"
 
 let developer = "developers"

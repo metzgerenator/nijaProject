@@ -124,6 +124,15 @@ class CreateDeveloperTableViewController: UITableViewController {
                     self.address.text = address
                 }
                 
+                if let devType = developer.developerType{
+                    
+                    print("here is the devType \(devType)")
+                    
+                } else {
+                    
+                    self.performSegue(withIdentifier: "devType", sender: self)
+                }
+                
                 
                 
                 

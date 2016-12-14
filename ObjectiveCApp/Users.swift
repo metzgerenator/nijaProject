@@ -19,6 +19,8 @@ struct Developer {
     var phone: String?
     var address: String?
     
+    var developerType: String?
+    
     
     init(email: String, accountType: String) {
         
@@ -69,6 +71,12 @@ struct Developer {
             
         }
         
+        
+        if let devType = userdata[DEVELOPERTYPE] {
+            
+            self.developerType = devType as? String
+            
+        }
         
         
        
