@@ -58,7 +58,10 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        alertView(title: "selectsomething", message: "test")
+        
+        let selectedItem = userSelections[indexPath.row]
+        
+        self.performSegue(withIdentifier: selectedItem.segue, sender: self)
     }
     
     

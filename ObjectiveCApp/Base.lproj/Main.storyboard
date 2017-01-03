@@ -404,11 +404,47 @@
                     <navigationItem key="navigationItem" id="Ma9-OZ-tNy"/>
                     <connections>
                         <outlet property="collectionView" destination="XOR-IV-8P7" id="q94-tW-oAm"/>
+                        <segue destination="el4-gW-KUz" kind="show" identifier="Video" id="pLR-QS-Uk8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cl3-ZL-tlT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3320.8000000000002" y="2095.5022488755626"/>
+        </scene>
+        <!--Upload Photo View Controller-->
+        <scene sceneID="lgV-5p-Il2">
+            <objects>
+                <viewController id="el4-gW-KUz" customClass="UploadPhotoViewController" customModule="ObjectiveCApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8IZ-nN-swt"/>
+                        <viewControllerLayoutGuide type="bottom" id="OC7-xb-eLK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eep-qb-ABQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbK-Fg-cF5">
+                                <rect key="frame" x="140" y="403" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Upload Photo"/>
+                                <connections>
+                                    <action selector="uploadPhoto:" destination="el4-gW-KUz" eventType="touchUpInside" id="STN-ug-27J"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f9N-pq-hy2">
+                                <rect key="frame" x="74" y="182" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="userImage" destination="f9N-pq-hy2" id="e4p-UR-NOa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aaN-1D-XtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4116" y="2085"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qkA-nw-EH2">
@@ -603,6 +639,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RzR-lY-IhG"/>
+        <segue reference="VUs-w0-wGv"/>
     </inferredMetricsTieBreakers>
 </document>
