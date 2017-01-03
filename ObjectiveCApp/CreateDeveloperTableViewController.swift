@@ -102,7 +102,7 @@ class CreateDeveloperTableViewController: UITableViewController {
             ref = FIRDatabase.database().reference().child("users").child(user.uid)
             
             ref.observe(FIRDataEventType.value, with: { (snapshot) in
-                let userData = snapshot.value as! [String : AnyObject]
+                guard let userData = snapshot.value as? [String : AnyObject] else {return}
                 
               let developer =  Developer(userdata: userData)
                 
@@ -126,7 +126,9 @@ class CreateDeveloperTableViewController: UITableViewController {
                 
                 if let devType = developer.developerType{
                     
-                    print("here is the devType \(devType)")
+                    currentUserDevType = devType
+                    self.setNavTitle(devTpe: devType)
+                    
                     
                 } else {
                     
@@ -141,14 +143,16 @@ class CreateDeveloperTableViewController: UITableViewController {
             
         }
         
-        
-        
-        
-       
-        
 
     
     }
+    
+    
+    func setNavTitle(devTpe: String) {
+        
+        self.navigationItem.title = devTpe
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

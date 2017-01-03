@@ -14,11 +14,44 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
     
     let arrray = ["Upload Video", "Upload pic / logo", "I am looking for", "My skill level is", "I am a", "I specialize in", "I am looking for work that is", "I can start", "MY minimum $ requirment is", "would you like to add a list of previous Clients", "would you lie to add references?", "Would you like to add samples of your work", "Do you provide testing", "Will you submit your app for your client" ]
     
+    let userSelections = ["Video" : "Upload Video",
+                          "UploadPic" : "Upload pic / logo",
+                          "availibility" : "I am looking for",
+                          "skill_level" :"My skill level is",
+                          "language" : "I am a",
+                          "specilty" : "I specialize in",
+                          "work_type" : "I am looking for work that is",
+                          "start_date" : "I can start",
+                          "minimum pay" : "MY minimum $ requirment is",
+                          "previous_clients" : "MY minimum $ requirment is",
+                          "references" : "would you lie to add references?",
+                          "samples" :  "Would you like to add samples of your work",
+                          "testing" : "Do you provide testing",
+                          "submission" : "Will you submit your app for your client"
+                          ]
+    
+    
+    
+    
+    func userselection(inputSelection: String) {
+        
+        var selector: String
+        
+        performSegue(withIdentifier: inputSelection, sender: self)
+        
+    }
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let devType = currentUserDevType {
+            
+            self.navigationItem.title = devType
+            
+        }
         
         
         

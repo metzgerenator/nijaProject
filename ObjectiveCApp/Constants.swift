@@ -24,3 +24,6 @@ let FREELANCER = "freelancer"
 let COMPANY = "company"
 
 let developer = "developers"
+
+
+var currentUserDevType: String?
