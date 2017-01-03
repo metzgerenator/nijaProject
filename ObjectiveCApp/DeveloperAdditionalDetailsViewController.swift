@@ -12,23 +12,9 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
     
     
     
-    let arrray = ["Upload Video", "Upload pic / logo", "I am looking for", "My skill level is", "I am a", "I specialize in", "I am looking for work that is", "I can start", "MY minimum $ requirment is", "would you like to add a list of previous Clients", "would you lie to add references?", "Would you like to add samples of your work", "Do you provide testing", "Will you submit your app for your client" ]
+//    let arrray = ["Upload Video", "Upload pic / logo", "I am looking for", "My skill level is", "I am a", "I specialize in", "I am looking for work that is", "I can start", "MY minimum $ requirment is", "would you like to add a list of previous Clients", "would you lie to add references?", "Would you like to add samples of your work", "Do you provide testing", "Will you submit your app for your client" ]
     
-    let userSelections = ["Video" : "Upload Video",
-                          "UploadPic" : "Upload pic / logo",
-                          "availibility" : "I am looking for",
-                          "skill_level" :"My skill level is",
-                          "language" : "I am a",
-                          "specilty" : "I specialize in",
-                          "work_type" : "I am looking for work that is",
-                          "start_date" : "I can start",
-                          "minimum pay" : "MY minimum $ requirment is",
-                          "previous_clients" : "MY minimum $ requirment is",
-                          "references" : "would you lie to add references?",
-                          "samples" :  "Would you like to add samples of your work",
-                          "testing" : "Do you provide testing",
-                          "submission" : "Will you submit your app for your client"
-                          ]
+    var userSelections = [CollectionFields]()
     
     
     
@@ -53,6 +39,9 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
             
         }
         
+        userSelections = createCollections()
+        self.collectionView.reloadData()
+        
         
         
     }
@@ -64,7 +53,7 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrray.count
+        return userSelections.count
     }
     
     
@@ -79,9 +68,9 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
         
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! DeveloperAdditionalCollectionViewCell
         
-        let item = arrray[indexPath.row]
+        let item = userSelections[indexPath.row]
         
-        cell.configureCell(inputString: item)
+        cell.configureCell(inputString: item.message)
         
         
         return cell
