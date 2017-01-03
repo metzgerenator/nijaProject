@@ -8,9 +8,10 @@
 
 import UIKit
 
-class UploadPhotoViewController: UIPageViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+class UploadPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var userImage: UIImageView!
+
     
     @IBAction func uploadPhoto(_ sender: Any) {
         
@@ -21,11 +22,9 @@ class UploadPhotoViewController: UIPageViewController, UIImagePickerControllerDe
         picker.sourceType = .camera
         picker.modalPresentationStyle = .fullScreen
         
-        present(picker, animated: true, completion: nil)
         
+        present(picker, animated: true, completion: nil)
     }
-    
-    
     
 
     override func viewDidLoad() {
@@ -40,20 +39,16 @@ class UploadPhotoViewController: UIPageViewController, UIImagePickerControllerDe
     }
  
     
-
-}
-
-
-extension UploadPhotoViewController {
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] {
             
             self.userImage.image = image as? UIImage
+            dismiss(animated: true, completion: nil)
+            
         }
     }
     
-    
-    
+
 }
+
 

@@ -404,47 +404,12 @@
                     <navigationItem key="navigationItem" id="Ma9-OZ-tNy"/>
                     <connections>
                         <outlet property="collectionView" destination="XOR-IV-8P7" id="q94-tW-oAm"/>
-                        <segue destination="el4-gW-KUz" kind="show" identifier="Video" id="pLR-QS-Uk8"/>
+                        <segue destination="e8N-yI-AIQ" kind="show" identifier="Video" id="zpz-Gu-gzr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cl3-ZL-tlT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3320.8000000000002" y="2095.5022488755626"/>
-        </scene>
-        <!--Upload Photo View Controller-->
-        <scene sceneID="lgV-5p-Il2">
-            <objects>
-                <viewController id="el4-gW-KUz" customClass="UploadPhotoViewController" customModule="ObjectiveCApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8IZ-nN-swt"/>
-                        <viewControllerLayoutGuide type="bottom" id="OC7-xb-eLK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eep-qb-ABQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbK-Fg-cF5">
-                                <rect key="frame" x="140" y="403" width="94" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Upload Photo"/>
-                                <connections>
-                                    <action selector="uploadPhoto:" destination="el4-gW-KUz" eventType="touchUpInside" id="STN-ug-27J"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f9N-pq-hy2">
-                                <rect key="frame" x="74" y="182" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="userImage" destination="f9N-pq-hy2" id="e4p-UR-NOa"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aaN-1D-XtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4116" y="2085"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qkA-nw-EH2">
@@ -479,38 +444,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPb-0X-ILa">
-                                <rect key="frame" x="132" y="505" width="111" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create Account "/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="wKw-f1-hTO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVU-sB-l5a">
-                                <rect key="frame" x="168" y="450" width="38" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="loginButton:" destination="YcE-6W-UHW" eventType="touchUpInside" id="kxO-V6-EzF"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3kn-st-7Az">
-                                <rect key="frame" x="40" y="222" width="294" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password  " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TnD-2p-AJz">
-                                <rect key="frame" x="40" y="289" width="294" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XEp-pU-U0T" userLabel="username and password">
+                                <rect key="frame" x="16" y="161" width="343" height="70"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3kn-st-7Az">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password  " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TnD-2p-AJz">
+                                        <rect key="frame" x="0.0" y="40" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="27F-mJ-MJo" userLabel="longin and create">
+                                <rect key="frame" x="131" y="296" width="111" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVU-sB-l5a">
+                                        <rect key="frame" x="36.5" y="0.0" width="38" height="30"/>
+                                        <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="loginButton:" destination="YcE-6W-UHW" eventType="touchUpInside" id="kxO-V6-EzF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPb-0X-ILa">
+                                        <rect key="frame" x="0.0" y="30" width="111" height="30"/>
+                                        <state key="normal" title="Create Account "/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="wKw-f1-hTO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XEp-pU-U0T" firstAttribute="leading" secondItem="F1R-Qh-1S5" secondAttribute="leadingMargin" id="36c-ar-Tq3"/>
+                            <constraint firstItem="27F-mJ-MJo" firstAttribute="leading" secondItem="F1R-Qh-1S5" secondAttribute="leadingMargin" constant="115" id="Lim-oX-YtU"/>
+                            <constraint firstItem="XEp-pU-U0T" firstAttribute="top" secondItem="SJs-RB-MQn" secondAttribute="bottom" constant="97" id="SHz-Fj-H3j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="27F-mJ-MJo" secondAttribute="trailing" constant="117" id="WQS-8L-1mh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XEp-pU-U0T" secondAttribute="trailing" id="WZT-SI-Qpk"/>
+                            <constraint firstItem="27F-mJ-MJo" firstAttribute="top" secondItem="XEp-pU-U0T" secondAttribute="bottom" constant="65" id="os2-nV-eKz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="gGQ-a0-vqY"/>
                     <connections>
@@ -637,7 +616,45 @@
             </objects>
             <point key="canvasLocation" x="2340" y="2106"/>
         </scene>
+        <!--Upload Photo View Controller-->
+        <scene sceneID="lyU-V6-AYx">
+            <objects>
+                <viewController id="e8N-yI-AIQ" customClass="UploadPhotoViewController" customModule="ObjectiveCApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WeN-gr-iTe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fob-Eo-UMa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d8I-e9-Fqu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbK-Fg-cF5">
+                                <rect key="frame" x="140.5" y="481" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Upload Photo"/>
+                                <connections>
+                                    <action selector="uploadPhoto:" destination="e8N-yI-AIQ" eventType="touchUpInside" id="6fo-ai-rCX"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="f9N-pq-hy2">
+                                <rect key="frame" x="71" y="150" width="234" height="216"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="userImage" destination="f9N-pq-hy2" id="SiP-89-OoL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7m-6B-azP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4089" y="2721"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="camera" width="234" height="216"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="VUs-w0-wGv"/>
     </inferredMetricsTieBreakers>
