@@ -65,12 +65,25 @@ class PreviousClientsViewController: UIViewController, UITableViewDataSource, UI
         self.ref.child(users).child((user?.uid)!).observe(.value, with: { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
+            guard let currentUsers = value?["previous_clients"] else {return}
             
+            var newArray = [String]()
             
-            let currentUsers = value?["previous_clients"] as! NSArray
+            for user in currentUsers as! NSArray {
+                
+                if user is String {
+                    
+                   newArray.append(user as! String)
+                    
+                }
+                
+               
+                
+            }
             
-            self.clientData = currentUsers as! [String]
+            self.clientData = newArray
             self.tableView.reloadData()
+            
             
         })
         
