@@ -20,6 +20,15 @@ class PayscaleViewController: UIViewController {
         
     }
 
+    @IBAction func saveButton(_ sender: Any) {
+        
+        appendValues(values: ["minimum_pay" : dollarAmount.text as AnyObject])
+        
+        
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
