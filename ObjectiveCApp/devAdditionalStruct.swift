@@ -31,7 +31,7 @@ func createCollections() -> [CollectionFields] {
                           "start_date" : "I can start",
                           "minimum pay" : "MY minimum $ requirment is",
                           "previous_clients" : "MY minimum $ requirment is",
-                          "references" : "would you lie to add references?",
+                          "references" : "would you like to add references?",
                           "samples" :  "Would you like to add samples of your work",
                           "testing" : "Do you provide testing",
                           "submission" : "Will you submit your app for your client" ]

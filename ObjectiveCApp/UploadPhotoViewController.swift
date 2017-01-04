@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Firebase
 
 class UploadPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+
     @IBOutlet var userImage: UIImageView!
 
     
@@ -29,7 +30,8 @@ class UploadPhotoViewController: UIViewController, UIImagePickerControllerDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Do any additional setup after loading the view.
     }
 
