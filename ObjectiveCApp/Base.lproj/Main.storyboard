@@ -723,10 +723,10 @@
             </objects>
             <point key="canvasLocation" x="4202" y="2803"/>
         </scene>
-        <!--View Controller-->
+        <!--Previous Clients View Controller-->
         <scene sceneID="VPE-9b-JjD">
             <objects>
-                <viewController id="9rG-aU-LSj" sceneMemberID="viewController">
+                <viewController id="9rG-aU-LSj" customClass="PreviousClientsViewController" customModule="ObjectiveCApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hxI-u1-hVl"/>
                         <viewControllerLayoutGuide type="bottom" id="2tp-JB-nUY"/>
@@ -746,6 +746,9 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5u-lP-XIt">
                                         <rect key="frame" x="321" y="0.0" width="22" height="30"/>
+                                        <connections>
+                                            <action selector="addClient:" destination="9rG-aU-LSj" eventType="touchUpInside" id="cgx-CT-G5q"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -753,15 +756,34 @@
                                 <rect key="frame" x="0.0" y="156" width="375" height="462"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="wKD-1X-OCa">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="wKD-1X-OCa" customClass="PreviousClientTableViewCell" customModule="ObjectiveCApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wKD-1X-OCa" id="Lmz-fq-irC">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A client name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgb-Q8-QcZ">
+                                                    <rect key="frame" x="18" y="8" width="108" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wgb-Q8-QcZ" firstAttribute="top" secondItem="Lmz-fq-irC" secondAttribute="topMargin" id="CEJ-iK-3Uu"/>
+                                                <constraint firstItem="wgb-Q8-QcZ" firstAttribute="leading" secondItem="Lmz-fq-irC" secondAttribute="leadingMargin" constant="10" id="cgQ-Uz-Ovh"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ClientName" destination="wgb-Q8-QcZ" id="ZCL-j5-Qbw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9rG-aU-LSj" id="tlg-4W-7Hu"/>
+                                    <outlet property="delegate" destination="9rG-aU-LSj" id="ZYK-tn-B7N"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -775,6 +797,10 @@
                             <constraint firstItem="bIz-C3-fem" firstAttribute="leading" secondItem="cuG-aW-THQ" secondAttribute="leadingMargin" id="ubG-1c-leM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="clientDetails" destination="1QE-9o-GHv" id="YJP-EQ-skf"/>
+                        <outlet property="tableView" destination="Hmc-jq-RdF" id="sBQ-fp-jCV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nra-bS-Vbw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
