@@ -406,6 +406,7 @@
                         <outlet property="collectionView" destination="XOR-IV-8P7" id="q94-tW-oAm"/>
                         <segue destination="e8N-yI-AIQ" kind="show" identifier="UploadPic" id="zpz-Gu-gzr"/>
                         <segue destination="U77-sA-spf" kind="show" identifier="minimum_pay" id="bpn-tk-Pkg"/>
+                        <segue destination="9rG-aU-LSj" kind="show" identifier="previous_clients" id="Pvm-qD-B9i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cl3-ZL-tlT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -720,7 +721,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7m-6B-azP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4089" y="2806"/>
+            <point key="canvasLocation" x="4202" y="2803"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="VPE-9b-JjD">
+            <objects>
+                <viewController id="9rG-aU-LSj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hxI-u1-hVl"/>
+                        <viewControllerLayoutGuide type="bottom" id="2tp-JB-nUY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cuG-aW-THQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bIz-C3-fem">
+                                <rect key="frame" x="16" y="81" width="343" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add client details" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1QE-9o-GHv">
+                                        <rect key="frame" x="0.0" y="0.0" width="316" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5u-lP-XIt">
+                                        <rect key="frame" x="321" y="0.0" width="22" height="30"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hmc-jq-RdF">
+                                <rect key="frame" x="0.0" y="156" width="375" height="462"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="wKD-1X-OCa">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wKD-1X-OCa" id="Lmz-fq-irC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hmc-jq-RdF" firstAttribute="top" secondItem="hxI-u1-hVl" secondAttribute="bottom" constant="92" id="52q-ai-H5D"/>
+                            <constraint firstItem="Hmc-jq-RdF" firstAttribute="leading" secondItem="cuG-aW-THQ" secondAttribute="leading" id="F8t-7c-Nh7"/>
+                            <constraint firstItem="bIz-C3-fem" firstAttribute="top" secondItem="hxI-u1-hVl" secondAttribute="bottom" constant="17" id="MQQ-5Q-WEp"/>
+                            <constraint firstAttribute="trailing" secondItem="Hmc-jq-RdF" secondAttribute="trailing" id="PCy-Rp-97K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bIz-C3-fem" secondAttribute="trailing" id="bty-QU-YSt"/>
+                            <constraint firstItem="2tp-JB-nUY" firstAttribute="top" secondItem="Hmc-jq-RdF" secondAttribute="bottom" id="dJJ-EQ-qAj"/>
+                            <constraint firstItem="bIz-C3-fem" firstAttribute="leading" secondItem="cuG-aW-THQ" secondAttribute="leadingMargin" id="ubG-1c-leM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nra-bS-Vbw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4165.6000000000004" y="3474.5127436281864"/>
         </scene>
     </scenes>
     <resources>
