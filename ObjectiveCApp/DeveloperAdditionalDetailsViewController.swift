@@ -64,6 +64,8 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
             languageSelect()
 
         default:
+            
+            
             self.performSegue(withIdentifier: selectedItem.segue, sender: self)
         }
         

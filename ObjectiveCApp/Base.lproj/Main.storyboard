@@ -405,11 +405,60 @@
                     <connections>
                         <outlet property="collectionView" destination="XOR-IV-8P7" id="q94-tW-oAm"/>
                         <segue destination="e8N-yI-AIQ" kind="show" identifier="UploadPic" id="zpz-Gu-gzr"/>
+                        <segue destination="U77-sA-spf" kind="show" identifier="minimum_pay" id="bpn-tk-Pkg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cl3-ZL-tlT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3320.8000000000002" y="2095.5022488755626"/>
+        </scene>
+        <!--Payscale View Controller-->
+        <scene sceneID="Ic9-YF-D1t">
+            <objects>
+                <viewController id="U77-sA-spf" customClass="PayscaleViewController" customModule="ObjectiveCApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="73o-Bt-gBb"/>
+                        <viewControllerLayoutGuide type="bottom" id="eLc-gG-v0o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9s3-H1-iLz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65c-2r-JHl">
+                                <rect key="frame" x="164" y="247" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8k-h7-a8U">
+                                <rect key="frame" x="164" y="375" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ahM-Ft-MHO">
+                                <rect key="frame" x="-2" y="295" width="379" height="31"/>
+                                <connections>
+                                    <action selector="sliderAction:" destination="U77-sA-spf" eventType="valueChanged" id="He9-J4-HV0"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="65c-2r-JHl" firstAttribute="leading" secondItem="z8k-h7-a8U" secondAttribute="leading" id="3uO-yc-trH"/>
+                            <constraint firstItem="65c-2r-JHl" firstAttribute="top" secondItem="73o-Bt-gBb" secondAttribute="bottom" constant="183" id="MMC-Qu-foO"/>
+                            <constraint firstAttribute="trailing" secondItem="ahM-Ft-MHO" secondAttribute="trailing" id="PJW-bh-waO"/>
+                            <constraint firstItem="ahM-Ft-MHO" firstAttribute="top" secondItem="65c-2r-JHl" secondAttribute="bottom" constant="27" id="QFQ-NU-C7l"/>
+                            <constraint firstItem="65c-2r-JHl" firstAttribute="centerX" secondItem="ahM-Ft-MHO" secondAttribute="centerX" id="Tow-Qe-RHa"/>
+                            <constraint firstItem="z8k-h7-a8U" firstAttribute="top" secondItem="ahM-Ft-MHO" secondAttribute="bottom" constant="50" id="W7m-va-2Ao"/>
+                            <constraint firstItem="ahM-Ft-MHO" firstAttribute="leading" secondItem="9s3-H1-iLz" secondAttribute="leading" id="q58-lz-E8I"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dollarAmount" destination="65c-2r-JHl" id="cbj-0I-S49"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lmo-di-3Ps" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4166" y="2117"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qkA-nw-EH2">
@@ -668,7 +717,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7m-6B-azP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4089" y="2721"/>
+            <point key="canvasLocation" x="4089" y="2806"/>
         </scene>
     </scenes>
     <resources>
