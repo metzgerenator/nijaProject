@@ -57,6 +57,9 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
         case "availibility":
            AvailiBilityAlert()
             
+        case "skill_level":
+            skillLevel()
+
         default:
             self.performSegue(withIdentifier: selectedItem.segue, sender: self)
         }
@@ -94,6 +97,17 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
     */
 
     
+    
+    
+    
+}
+
+
+extension DeveloperAdditionalDetailsViewController {
+    
+    
+    //MARK: alertviews
+    
     func AvailiBilityAlert() {
         
         let alertController = UIAlertController(title: "Availibility", message: "Select One", preferredStyle: .actionSheet)
@@ -104,7 +118,7 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
             appendValues(values: [attributeTitle : input as AnyObject])
         }
         let twoAction = UIAlertAction(title: "Parttime", style: .default) { (action) in
-        
+            
             let input = action.title!
             appendValues(values: [attributeTitle : input as AnyObject])
         }
@@ -112,13 +126,13 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
             
             let input = action.title!
             appendValues(values: [attributeTitle : input as AnyObject])
-        
+            
         }
         let fourAction = UIAlertAction(title: "Internship", style: .default) { (action) in
             
             let input = action.title!
             appendValues(values: [attributeTitle : input as AnyObject])
-        
+            
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
         
@@ -128,12 +142,52 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
         alertController.addAction(fourAction)
         alertController.addAction(cancelAction)
         
-      
-       self.present(alertController, animated: true, completion: nil)
+        
+        self.present(alertController, animated: true, completion: nil)
         
         
     }
     
     
     
+    
+    func skillLevel() {
+    
+    let alertController = UIAlertController(title: "Skill Level", message: "Select One", preferredStyle: .actionSheet)
+    let attributeTitle = "skill_level"
+    
+    let oneAction = UIAlertAction(title: "Senior", style: .default) { (action) in
+    let input = action.title!
+    appendValues(values: [attributeTitle : input as AnyObject])
+    }
+    let twoAction = UIAlertAction(title: "Junior", style: .default) { (action) in
+    
+    let input = action.title!
+    appendValues(values: [attributeTitle : input as AnyObject])
+    }
+    let threeAction = UIAlertAction(title: "Intern", style: .default) { (action) in
+    
+    let input = action.title!
+    appendValues(values: [attributeTitle : input as AnyObject])
+    
+    }
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+    
+    alertController.addAction(oneAction)
+    alertController.addAction(twoAction)
+    alertController.addAction(threeAction)
+    alertController.addAction(cancelAction)
+    
+    
+    self.present(alertController, animated: true, completion: nil)
+    
+    
+    }
+
+    
+    
 }
+
+
+
+
