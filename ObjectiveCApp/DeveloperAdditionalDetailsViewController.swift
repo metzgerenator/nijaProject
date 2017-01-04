@@ -59,6 +59,9 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
             
         case "skill_level":
             skillLevel()
+            
+        case "language":
+            languageSelect()
 
         default:
             self.performSegue(withIdentifier: selectedItem.segue, sender: self)
@@ -182,6 +185,57 @@ extension DeveloperAdditionalDetailsViewController {
     self.present(alertController, animated: true, completion: nil)
     
     
+    }
+    
+    
+    
+    func languageSelect()  {
+        
+        
+        let alertController = UIAlertController(title: "Language", message: "Select One", preferredStyle: .actionSheet)
+        let attributeTitle = "language"
+        
+        let oneAction = UIAlertAction(title: "iOS", style: .default) { (action) in
+            let input = action.title!
+            appendValues(values: [attributeTitle : input as AnyObject])
+        }
+        let twoAction = UIAlertAction(title: "Android", style: .default) { (action) in
+            
+            let input = action.title!
+            appendValues(values: [attributeTitle : input as AnyObject])
+        }
+        let threeAction = UIAlertAction(title: "Both", style: .default) { (action) in
+            
+            appendValues(values: [attributeTitle : ["iOS", "Android"] as AnyObject])
+            
+        }
+        
+        let fourAction = UIAlertAction(title: "Web Developer", style: .default) { (action) in
+            
+            let input = action.title!
+            appendValues(values: [attributeTitle : input as AnyObject])
+            
+        }
+        
+        let fiveAction = UIAlertAction(title: "All of the Above", style: .default) { (action) in
+            
+            appendValues(values: [attributeTitle : ["iOS", "Android", "WebDeveloper"] as AnyObject])
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        alertController.addAction(oneAction)
+        alertController.addAction(twoAction)
+        alertController.addAction(threeAction)
+        alertController.addAction(fourAction)
+        alertController.addAction(fiveAction)
+        
+        alertController.addAction(cancelAction)
+        
+        
+        self.present(alertController, animated: true, completion: nil)
+        
     }
 
     
