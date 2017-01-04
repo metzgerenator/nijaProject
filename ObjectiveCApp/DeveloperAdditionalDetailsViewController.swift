@@ -52,7 +52,16 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
         
         let selectedItem = userSelections[indexPath.row]
         
-        self.performSegue(withIdentifier: selectedItem.segue, sender: self)
+        switch selectedItem.segue {
+            
+        case "availibility":
+           AvailiBilityAlert()
+            
+        default:
+            self.performSegue(withIdentifier: selectedItem.segue, sender: self)
+        }
+        
+        
     }
     
     
@@ -85,22 +94,42 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
     */
 
     
-    func alertView(title: String, message: String) {
+    func AvailiBilityAlert() {
         
-        let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .actionSheet)
-
+        let alertController = UIAlertController(title: "Availibility", message: "Select One", preferredStyle: .actionSheet)
+        let attributeTitle = "availibility"
         
-        let oneAction = UIAlertAction(title: "One", style: .default) { (_) in }
-        let twoAction = UIAlertAction(title: "Two", style: .default) { (_) in }
-        let threeAction = UIAlertAction(title: "Three", style: .default) { (_) in }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (_) in }
+        let oneAction = UIAlertAction(title: "Fulltime Work", style: .default) { (action) in
+            let input = action.title!
+            appendValues(values: [attributeTitle : input as AnyObject])
+        }
+        let twoAction = UIAlertAction(title: "Parttime", style: .default) { (action) in
+        
+            let input = action.title!
+            appendValues(values: [attributeTitle : input as AnyObject])
+        }
+        let threeAction = UIAlertAction(title: "Contractwork", style: .default) { (action) in
+            
+            let input = action.title!
+            appendValues(values: [attributeTitle : input as AnyObject])
+        
+        }
+        let fourAction = UIAlertAction(title: "Internship", style: .default) { (action) in
+            
+            let input = action.title!
+            appendValues(values: [attributeTitle : input as AnyObject])
+        
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
         
         alertController.addAction(oneAction)
         alertController.addAction(twoAction)
         alertController.addAction(threeAction)
+        alertController.addAction(fourAction)
         alertController.addAction(cancelAction)
         
-        self.present(alertController, animated: true, completion: nil)
+      
+       self.present(alertController, animated: true, completion: nil)
         
         
     }
