@@ -11,21 +11,12 @@ import UIKit
 class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
-    
-//    let arrray = ["Upload Video", "Upload pic / logo", "I am looking for", "My skill level is", "I am a", "I specialize in", "I am looking for work that is", "I can start", "MY minimum $ requirment is", "would you like to add a list of previous Clients", "would you lie to add references?", "Would you like to add samples of your work", "Do you provide testing", "Will you submit your app for your client" ]
+
     
     var userSelections = [CollectionFields]()
     
     
-    
-    
-    func userselection(inputSelection: String) {
-        
-        var selector: String
-        
-        performSegue(withIdentifier: inputSelection, sender: self)
-        
-    }
+
     
     
     @IBOutlet weak var collectionView: UICollectionView!
