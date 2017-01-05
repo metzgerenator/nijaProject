@@ -107,6 +107,7 @@ func appendValues(values: Dictionary<String, AnyObject>) {
         
         let ref = FIRDatabase.database().reference().child("users").child(user.uid)
         ref.updateChildValues(values)
+
         
         
     }

@@ -15,6 +15,9 @@ class DevSpecialityViewController: UIViewController, UITableViewDelegate, UITabl
    let specialties = ["UI", "UX", "Desktop software development", "ecommerce development", "game development", "Mobile development", "product management", "QA & testing, scripts & utilities", "web development", "web & mobile design", "other software development", "word press", "wix", "square space", "data base development"]
     
     
+    var specialtiesToAppend = [String]()
+    
+    
     @IBOutlet var tableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -27,9 +30,13 @@ class DevSpecialityViewController: UIViewController, UITableViewDelegate, UITabl
         if let cell = tableView.cellForRow(at: indexPath) {
             if cell.accessoryType == .checkmark {
                 cell.accessoryType = .none
+                
+                
             } else {
                 cell.accessoryType = .checkmark
-                
+                specialtiesToAppend.append(specialties[indexPath.row])
+                appendValues(values: ["specialties" : specialtiesToAppend as AnyObject])
+       
             }
             
         }
