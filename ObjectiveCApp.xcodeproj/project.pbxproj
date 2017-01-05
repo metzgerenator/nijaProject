@@ -19,6 +19,7 @@
 		27280E531DA46F7A00D00E2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27280E521DA46F7A00D00E2E /* GoogleService-Info.plist */; };
 		27280E551DA4715C00D00E2E /* CreateNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27280E541DA4715C00D00E2E /* CreateNewAccountViewController.swift */; };
 		27C429DE1DC02A7D00A6E1EA /* CreateDeveloperTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C429DD1DC02A7D00A6E1EA /* CreateDeveloperTableViewController.swift */; };
+		27ED98971E1EADA30033CB43 /* DevSpecialityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ED98961E1EADA30033CB43 /* DevSpecialityViewController.swift */; };
 		27EE8C151E1C2CED005511C8 /* devAdditionalStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE8C141E1C2CED005511C8 /* devAdditionalStruct.swift */; };
 		27EE8C171E1C3FF9005511C8 /* UploadPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE8C161E1C3FF9005511C8 /* UploadPhotoViewController.swift */; };
 		27F311971E1D73D100D4A582 /* PayscaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F311961E1D73D100D4A582 /* PayscaleViewController.swift */; };
@@ -68,6 +69,7 @@
 		27280E521DA46F7A00D00E2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		27280E541DA4715C00D00E2E /* CreateNewAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewAccountViewController.swift; path = ../CreateNewAccountViewController.swift; sourceTree = "<group>"; };
 		27C429DD1DC02A7D00A6E1EA /* CreateDeveloperTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateDeveloperTableViewController.swift; sourceTree = "<group>"; };
+		27ED98961E1EADA30033CB43 /* DevSpecialityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevSpecialityViewController.swift; sourceTree = "<group>"; };
 		27EE8C141E1C2CED005511C8 /* devAdditionalStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = devAdditionalStruct.swift; sourceTree = "<group>"; };
 		27EE8C161E1C3FF9005511C8 /* UploadPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadPhotoViewController.swift; sourceTree = "<group>"; };
 		27F311961E1D73D100D4A582 /* PayscaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayscaleViewController.swift; sourceTree = "<group>"; };
@@ -119,8 +121,8 @@
 		270D5BA71DFCAF4200A78260 /* Freelancers */ = {
 			isa = PBXGroup;
 			children = (
+				27ED98951E1EAD7A0033CB43 /* dev speciality */,
 				27EE8C131E1C2CA1005511C8 /* devadditionaldetails */,
-				27F311981E1D89E600D4A582 /* PreviousClientsViewController.swift */,
 			);
 			name = Freelancers;
 			sourceTree = "<group>";
@@ -194,6 +196,14 @@
 			path = ObjectiveCAppUITests;
 			sourceTree = "<group>";
 		};
+		27ED98951E1EAD7A0033CB43 /* dev speciality */ = {
+			isa = PBXGroup;
+			children = (
+				27ED98961E1EADA30033CB43 /* DevSpecialityViewController.swift */,
+			);
+			name = "dev speciality";
+			sourceTree = "<group>";
+		};
 		27EE8C131E1C2CA1005511C8 /* devadditionaldetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +211,7 @@
 				570FAA0A1DC9748B00FB0F48 /* DeveloperAdditionalCollectionViewCell.swift */,
 				27EE8C141E1C2CED005511C8 /* devAdditionalStruct.swift */,
 				27F3119A1E1DA77600D4A582 /* PreviousClientTableViewCell.swift */,
+				27F311981E1D89E600D4A582 /* PreviousClientsViewController.swift */,
 			);
 			name = devadditionaldetails;
 			sourceTree = "<group>";
@@ -534,6 +545,7 @@
 				270895561E00DFBC006CE509 /* DeveloperFreelancerViewController.swift in Sources */,
 				27EE8C171E1C3FF9005511C8 /* UploadPhotoViewController.swift in Sources */,
 				27EE8C151E1C2CED005511C8 /* devAdditionalStruct.swift in Sources */,
+				27ED98971E1EADA30033CB43 /* DevSpecialityViewController.swift in Sources */,
 				27280E551DA4715C00D00E2E /* CreateNewAccountViewController.swift in Sources */,
 				570FAA0F1DC9782400FB0F48 /* DeveloperAdditionalDetailsViewController.swift in Sources */,
 				5755BE391DBEE8DB006F26C8 /* Users.swift in Sources */,
