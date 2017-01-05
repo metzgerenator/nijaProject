@@ -31,14 +31,15 @@ class DevSpecialityViewController: UIViewController, UITableViewDelegate, UITabl
             if cell.accessoryType == .checkmark {
                 cell.accessoryType = .none
                 
+                specialtiesToAppend = specialtiesToAppend.filter{$0 != specialties[indexPath.row]}
                 
             } else {
                 cell.accessoryType = .checkmark
                 specialtiesToAppend.append(specialties[indexPath.row])
-                appendValues(values: ["specialties" : specialtiesToAppend as AnyObject])
-       
+         
             }
             
+            appendValues(values: ["specialties" : specialtiesToAppend as AnyObject])
         }
     }
     
