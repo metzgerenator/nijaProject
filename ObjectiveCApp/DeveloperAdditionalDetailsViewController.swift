@@ -62,6 +62,11 @@ class DeveloperAdditionalDetailsViewController: UIViewController, UICollectionVi
             
         case "language":
             languageSelect()
+            
+        case "submission":
+            submission()
+            
+            
 
         default:
             
@@ -237,6 +242,35 @@ extension DeveloperAdditionalDetailsViewController {
         
         
         self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+    func submission() {
+        
+        let alertController = UIAlertController(title: "App Deployment", message: "Select One", preferredStyle: .actionSheet)
+        let attributeTitle = "submission"
+        
+        let oneAction = UIAlertAction(title: "Yes", style: .default) { (action) in
+            let input = action.title!
+            appendValues(values: [attributeTitle : input as AnyObject])
+        }
+        let twoAction = UIAlertAction(title: "No", style: .default) { (action) in
+            
+            let input = action.title!
+            appendValues(values: [attributeTitle : input as AnyObject])
+        }
+       
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        alertController.addAction(oneAction)
+        alertController.addAction(twoAction)
+        alertController.addAction(cancelAction)
+        
+        
+        self.present(alertController, animated: true, completion: nil)
+        
         
     }
 
