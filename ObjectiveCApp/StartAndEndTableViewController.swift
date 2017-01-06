@@ -28,25 +28,44 @@ class StartAndEndTableViewController: UITableViewController {
     
     @IBAction func startPickerAction(_ sender: UIDatePicker) {
         
-        
-        
+        startDateLabel.text = sender.date.westernTime()
+
     }
     
     
     
     @IBAction func endPickerAction(_ sender: UIDatePicker) {
+        
+        if sender.date < starPicker.date {
+            
+            
+            
+            endDateLabel.text = starPicker.date.westernTime()
+            
+            endPicker.date = starPicker.date
+            
+        } else {
+            
+            endDateLabel.text = sender.date.westernTime()
+            
+        }
+        
+        
+        
     }
+    
+    
+    
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startDateLabel.text = Date().westernTime()
+        
+        endDateLabel.text = Date().dayAdderandSubtractor(1).westernTime()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {

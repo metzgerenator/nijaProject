@@ -504,7 +504,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="134"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="aoe-ZQ-yh0">
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="aoe-ZQ-yh0">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="134"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="505406967.77151501">
                                                         <!--2017-01-06 14:49:27 +0000-->
@@ -549,7 +549,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="159"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="a4w-v9-goX">
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="a4w-v9-goX">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="159"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="505407064.73795402">
                                                         <!--2017-01-06 14:51:04 +0000-->

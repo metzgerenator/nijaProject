@@ -8,6 +8,7 @@
 
 import Foundation
 
+ let dateFormatter = DateFormatter()
 
 let users = "users"
 
@@ -30,3 +31,48 @@ var currentUserDevType: String?
 
 
 
+extension Date {
+    
+    func westernTime() ->String{
+        
+        let date = self.currentTimeInt()
+    
+        return "\(date.month)/ \(date.day)/ \(date.year)"
+    }
+    
+    
+    
+    func currentTimeInt() ->(hours: Int, minutes: Int, seconds: Int, month: Int, day: Int, year: Int, weekday: Int, monthString: String, weekofmonth: Int){
+        
+        
+        let calendar = Calendar.current
+        let components = (calendar as NSCalendar).components([.day , .month , .year, .hour, .minute, .second, .weekday, .weekOfMonth], from: self)
+        
+        let year =  components.year
+        let month = components.month
+        let months = dateFormatter.shortMonthSymbols
+        
+        let monthSymbol = (months?[month!-1])! as String
+        
+        let day = components.day
+        let hours = components.hour
+        let minutes = components.minute
+        let seconds = components.second
+        let weekday = components.weekday
+        let weekofMonth = components.weekOfMonth
+        
+        return (hours!, minutes!, seconds!, month!, day!, year!, weekday!, monthSymbol, weekofMonth!)
+    }
+    
+    
+    
+    func dayAdderandSubtractor(_ daystoModify: Int) -> Date {
+        
+        
+        return  Calendar.current.date(byAdding: .day, value: daystoModify, to: self)!
+        
+        
+    }
+
+    
+}
