@@ -28,7 +28,11 @@ class StartAndEndTableViewController: UITableViewController {
     
     @IBAction func startPickerAction(_ sender: UIDatePicker) {
         
-        startDateLabel.text = sender.date.westernTime()
+       startDateLabel.text = sender.date.westernTime()
+    
+        
+        
+        appendTimes()
 
     }
     
@@ -36,6 +40,7 @@ class StartAndEndTableViewController: UITableViewController {
     
     @IBAction func endPickerAction(_ sender: UIDatePicker) {
         
+
         if sender.date < starPicker.date {
             
             
@@ -50,13 +55,24 @@ class StartAndEndTableViewController: UITableViewController {
             
         }
         
-        
+        appendTimes()
         
     }
     
     
+ 
     
-    
+    func appendTimes(){
+        
+        let startTime = starPicker.date.timeIntervalSince1970
+        let endTime = endPicker.date.timeIntervalSince1970
+        
+        let inputDictionary = ["start_date" : ["begin" : startTime, "end" : endTime]]
+        
+        appendValues(values: inputDictionary as Dictionary<String, AnyObject>)
+        
+        
+    }
     
 
     override func viewDidLoad() {
