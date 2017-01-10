@@ -12,7 +12,7 @@ import Foundation
 
 let users = "users"
 
-let customers = "customers"
+let customers = "customer"
 
 let userIDType = "user_type"
 
