@@ -34,7 +34,11 @@ func createCollections() -> [CollectionFields] {
                           "references" : "would you like to add references?",
                           "samples" :  "Would you like to add samples of your work",
                           "testing" : "Do you provide testing",
-                          "submission" : "Will you submit your app for your client" ]
+                          "submission" : "Will you submit your app for your client"
+        
+        //not done yet
+    
+    ]
     
     
     for (segue, message) in userSelections {

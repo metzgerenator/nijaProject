@@ -7,8 +7,22 @@
 //
 
 import UIKit
+import Firebase
 
 class CustomerQuestionsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    
+    @IBAction func logoutButton(_ sender: Any) {
+        
+        
+        try! FIRAuth.auth()!.signOut()
+        
+        
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
     
     @IBOutlet var collectionView: UICollectionView!
     

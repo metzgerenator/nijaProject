@@ -159,7 +159,13 @@
                             <constraint firstItem="if8-qA-DXd" firstAttribute="leading" secondItem="fe3-6d-C5m" secondAttribute="leadingMargin" id="zff-Ex-w3Y"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="customer" id="tKI-YA-heS"/>
+                    <navigationItem key="navigationItem" title="customer" id="tKI-YA-heS">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="Uu2-b8-eek">
+                            <connections>
+                                <action selector="logoutButton:" destination="vVG-Hq-a7j" id="iDN-k3-sqf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="if8-qA-DXd" id="6yx-gq-YwS"/>
                     </connections>
