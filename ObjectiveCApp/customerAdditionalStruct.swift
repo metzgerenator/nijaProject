@@ -18,7 +18,7 @@ struct CustomerCollectionFields {
 }
 
 
-func createCollections() -> [CustomerCollectionFields] {
+func createCustomerQuestions() -> [CustomerCollectionFields] {
     
     var collectionFieldsToReturn = [CustomerCollectionFields]()
     let userSelections = ["duration" : "Is this a onetime or ongoing project",

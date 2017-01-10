@@ -12,6 +12,17 @@ class CustomerQuestionsCollectionViewCell: UICollectionViewCell {
     
     
     
+    @IBOutlet var cellLabel: UILabel!
+    
+    
+    
+    func conFigureCell(inputString: String) {
+        
+        cellLabel.text = inputString
+        
+    }
+    
+    
     
     
     

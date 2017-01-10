@@ -126,8 +126,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="155" height="145"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8D9-6E-dGx">
-                                                    <rect key="frame" x="56.5" y="62" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a usful questio for a customer " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8D9-6E-dGx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="145"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -135,9 +135,14 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="8D9-6E-dGx" firstAttribute="centerY" secondItem="H9Y-Uw-Jk4" secondAttribute="centerY" id="EoJ-8I-CEr"/>
-                                            <constraint firstItem="8D9-6E-dGx" firstAttribute="centerX" secondItem="H9Y-Uw-Jk4" secondAttribute="centerX" id="ncJ-hu-yju"/>
+                                            <constraint firstAttribute="trailing" secondItem="8D9-6E-dGx" secondAttribute="trailing" id="DBi-XS-VmX"/>
+                                            <constraint firstItem="8D9-6E-dGx" firstAttribute="top" secondItem="H9Y-Uw-Jk4" secondAttribute="top" id="b8b-1c-fGW"/>
+                                            <constraint firstItem="8D9-6E-dGx" firstAttribute="leading" secondItem="H9Y-Uw-Jk4" secondAttribute="leading" id="ftf-Kt-Bby"/>
+                                            <constraint firstAttribute="bottom" secondItem="8D9-6E-dGx" secondAttribute="bottom" id="wDc-vM-f2Q"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="cellLabel" destination="8D9-6E-dGx" id="7Pc-Hb-C8I"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

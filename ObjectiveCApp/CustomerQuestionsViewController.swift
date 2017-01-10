@@ -12,19 +12,36 @@ class CustomerQuestionsViewController: UIViewController, UICollectionViewDataSou
     
     @IBOutlet var collectionView: UICollectionView!
     
-    var userSelections = [CollectionFields]()
+    var userSelections = [CustomerCollectionFields]()
+ 
     
-    
-
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        return userSelections.count
+    }
+
+ 
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CustomerQuestionsCollectionViewCell
+        
+        let item = userSelections[indexPath.row]
+        
+        cell.conFigureCell(inputString: item.message)
+        
+        return cell
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userSelections = createCustomerQuestions()
+        collectionView.reloadData()
+        
+        
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
