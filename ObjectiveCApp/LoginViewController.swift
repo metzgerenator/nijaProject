@@ -90,27 +90,9 @@ class LoginViewController: UIViewController {
         //add radius to login button
         loginButton.layer.cornerRadius = 5
         
-        //border for textfields 
-        let border = CALayer()
-        let width = CGFloat(0.5)
-        border.borderColor = UIColor.darkGray.cgColor
-        border.frame = CGRect(x: 0, y: userName.frame.height - width,
-                              width: userName.frame.size.width,
-                              height: userName.frame.size.height)
-        
-        border.borderWidth = width
-        userName.layer.addSublayer(border)
-        userName.layer.masksToBounds = true
-        
-        let border2 = CALayer()
-        border2.borderColor = UIColor.darkGray.cgColor
-        border2.frame = CGRect(x: 0, y: passWord.frame.height - width,
-                              width: passWord.frame.size.width,
-                              height: passWord.frame.size.height)
-        
-        border2.borderWidth = width
-        passWord.layer.addSublayer(border2)
-        passWord.layer.masksToBounds = true
+        passWord.setBottomBorder(borderColor: .darkGray)
+        userName.setBottomBorder(borderColor: .darkGray)
+     
         
         
         
