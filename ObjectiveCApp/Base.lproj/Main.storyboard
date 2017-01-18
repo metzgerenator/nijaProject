@@ -904,7 +904,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hba-Tr-nm6" userLabel="Freelancer">
                                                 <rect key="frame" x="0.0" y="0.0" width="99" height="94.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HjZ-RY-Zdk">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HjZ-RY-Zdk">
                                                         <rect key="frame" x="0.0" y="0.0" width="99" height="74"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="74" id="ExC-CS-L0N"/>
@@ -926,7 +926,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WxO-3h-Nsx" userLabel="Small Team">
                                                 <rect key="frame" x="102" y="0.0" width="99" height="94.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iH-Uv-t5B">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iH-Uv-t5B">
                                                         <rect key="frame" x="0.0" y="0.0" width="99" height="74"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="99" id="1PM-BO-chZ"/>
@@ -948,7 +948,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="scS-c7-XuP" userLabel="Dev Shop">
                                                 <rect key="frame" x="204" y="0.0" width="99" height="94.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7k-Cq-og3">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7k-Cq-og3">
                                                         <rect key="frame" x="0.0" y="0.0" width="99" height="74"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="74" id="Yl0-MC-gpw"/>
@@ -1022,9 +1022,9 @@
                     </view>
                     <connections>
                         <outlet property="companyNameField" destination="vWq-PK-s7D" id="PH0-SZ-TOi"/>
-                        <outlet property="devShopOutlet" destination="t7k-Cq-og3" id="GZ2-nC-bRM"/>
-                        <outlet property="freeLancerOutlet" destination="HjZ-RY-Zdk" id="cY3-Oj-zGd"/>
-                        <outlet property="smallTeamOutlet" destination="3iH-Uv-t5B" id="wWB-yV-jfI"/>
+                        <outlet property="devShopSize" destination="QgG-cV-ewz" id="9mk-OG-8bn"/>
+                        <outlet property="freelanceSize" destination="Lq4-OM-af8" id="SNY-Uv-ius"/>
+                        <outlet property="smallTeamSize" destination="sjd-Io-F9Q" id="O0g-QD-f7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgY-N2-FhO" userLabel="First Responder" sceneMemberID="firstResponder"/>

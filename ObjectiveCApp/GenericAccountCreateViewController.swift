@@ -21,24 +21,58 @@ class GenericAccountCreateViewController: UIViewController {
     //companysize icons 
     
     
+    @IBOutlet var freelanceSize: UILabel!
     
-    @IBOutlet var freeLancerOutlet: UIButton!
+    @IBOutlet var smallTeamSize: UILabel!
     
-    @IBOutlet var smallTeamOutlet: UIButton!
-
-    @IBOutlet var devShopOutlet: UIButton!
-    
+    @IBOutlet var devShopSize: UILabel!
     
     
     
-    @IBAction func FreeLancerAction(_ sender: Any) {
+    @IBAction func FreeLancerAction(_ sender: UIButton) {
+        
+        
+        setButtonBackgrounds(tagID: sender.tag)
+        
     }
     
     
-    @IBAction func SmallTeam(_ sender: Any) {
+    @IBAction func SmallTeam(_ sender: UIButton) {
+        
+        setButtonBackgrounds(tagID: sender.tag)
     }
     
-    @IBAction func DevShop(_ sender: Any) {
+    @IBAction func DevShop(_ sender: UIButton) {
+        
+        setButtonBackgrounds(tagID: sender.tag)
+    }
+    
+    
+    
+    func setButtonBackgrounds(tagID: Int) {
+        
+        
+        
+        self.freelanceSize.backgroundColor = UIColor.white
+        self.smallTeamSize.backgroundColor = UIColor.white
+        self.devShopSize.backgroundColor = UIColor.white
+        
+        switch tagID {
+        case 1:
+            self.freelanceSize.backgroundColor = UIColor.gray
+            
+        case 2:
+            self.smallTeamSize.backgroundColor = UIColor.gray
+            
+        case 3:
+            self.devShopSize.backgroundColor = UIColor.gray
+        default:
+            break
+        }
+       
+        
+        
+        
     }
     
     
@@ -58,8 +92,30 @@ class GenericAccountCreateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        setAttributes()
         // Do any additional setup after loading the view.
+    }
+    
+    
+    
+    func setAttributes() {
+        let border = CGFloat(0.5)
+        let radius = CGFloat(5.0)
+        
+        
+        freelanceSize.layer.cornerRadius = radius
+        freelanceSize.clipsToBounds = true
+        freelanceSize.layer.borderWidth = border
+        
+        smallTeamSize.layer.cornerRadius = radius
+        smallTeamSize.clipsToBounds = true
+        smallTeamSize.layer.borderWidth = border
+        
+        devShopSize.layer.cornerRadius = radius
+        devShopSize.clipsToBounds = true
+        devShopSize.layer.borderWidth = border
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
