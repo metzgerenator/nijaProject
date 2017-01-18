@@ -807,16 +807,74 @@
                             <constraint firstItem="fyY-vn-MI4" firstAttribute="top" secondItem="RSX-FY-Clc" secondAttribute="bottom" id="lJb-Gk-Z9L"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="SrG-vG-SL5"/>
+                    <navigationItem key="navigationItem" id="SrG-vG-SL5">
+                        <barButtonItem key="rightBarButtonItem" title="test button " id="TqJ-Dk-7uV">
+                            <connections>
+                                <action selector="testbutton:" destination="aXG-py-GNh" id="ckE-Iv-2Tc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="RSX-FY-Clc" id="PCL-4h-F95"/>
                         <outlet property="tableView" destination="fyY-vn-MI4" id="UWI-dQ-de3"/>
+                        <segue destination="m5J-fu-b8E" kind="show" identifier="dev" id="LSj-7M-4BV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMz-vd-Ucm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2672.8000000000002" y="-913.49325337331345"/>
+        </scene>
+        <!--Type Select View Controller-->
+        <scene sceneID="IMD-Re-Wqe">
+            <objects>
+                <viewController id="m5J-fu-b8E" customClass="TypeSelectViewController" customModule="ObjectiveCApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ctk-fY-snv"/>
+                        <viewControllerLayoutGuide type="bottom" id="r70-6d-hdA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WQu-mg-Ee6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LPe-RN-ddm">
+                                <rect key="frame" x="75" y="318.5" width="225.5" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1B-OR-RXj">
+                                        <rect key="frame" x="0.0" y="0.0" width="9" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L49-b6-QgG">
+                                        <rect key="frame" x="9" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="am"/>
+                                        <connections>
+                                            <action selector="devSelectButton:" destination="m5J-fu-b8E" eventType="touchUpInside" id="ZZp-Fw-AqN"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a Developer or dev shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhC-Vt-9Yg">
+                                        <rect key="frame" x="39" y="0.0" width="186.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LPe-RN-ddm" firstAttribute="centerY" secondItem="WQu-mg-Ee6" secondAttribute="centerY" id="Xgf-Sm-7wD"/>
+                            <constraint firstItem="LPe-RN-ddm" firstAttribute="centerX" secondItem="WQu-mg-Ee6" secondAttribute="centerX" id="laq-13-JgK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="devSelectOutlet" destination="L49-b6-QgG" id="GqF-a1-OTj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kFZ-TY-7Iz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3533.5999999999999" y="-913.49325337331345"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VRB-sB-dOn">
@@ -834,7 +892,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KiM-W1-RXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3932" y="-556.37181409295351"/>
+            <point key="canvasLocation" x="4338" y="-511"/>
         </scene>
         <!--profile-->
         <scene sceneID="7MM-9t-rHS">
