@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+@IBDesignable
 class GenericAccountCreateViewController: UIViewController {
     
     
@@ -16,8 +16,11 @@ class GenericAccountCreateViewController: UIViewController {
     @IBOutlet var companyNameField: UITextField!
     
     
+    @IBOutlet var cityField: UITextField!
     
+    @IBOutlet var websiteField: UITextField!
     
+    @IBOutlet var emailField: UITextField!
     //companysize icons 
     
     
@@ -28,6 +31,7 @@ class GenericAccountCreateViewController: UIViewController {
     @IBOutlet var devShopSize: UILabel!
     
     
+    @IBOutlet var saveButtonOutlet: UIButton!
     
     @IBAction func FreeLancerAction(_ sender: UIButton) {
         
@@ -99,6 +103,15 @@ class GenericAccountCreateViewController: UIViewController {
     
     
     func setAttributes() {
+        
+        companyNameField.setBottomBorder(borderColor: .gray)
+        
+        cityField.setBottomBorder(borderColor: .gray)
+        websiteField.setBottomBorder(borderColor: .gray)
+        emailField.setBottomBorder(borderColor: .gray)
+        
+        saveButtonOutlet.layer.cornerRadius = 5.0
+        
         let border = CGFloat(0.5)
         let radius = CGFloat(5.0)
         
@@ -121,6 +134,12 @@ class GenericAccountCreateViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    
+    @IBAction func saveButtonAction(_ sender: UIButton) {
     }
     
 
