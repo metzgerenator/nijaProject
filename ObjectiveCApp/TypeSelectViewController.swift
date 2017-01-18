@@ -37,6 +37,11 @@ class TypeSelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        //Add barbutton 
+        let barButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(TypeSelectViewController.nextStep))
+        self.navigationItem.rightBarButtonItem = barButton
+        
        // devSelectOutlet.setTitle(notADev, for: .normal)
 
         // Do any additional setup after loading the view.
@@ -45,6 +50,12 @@ class TypeSelectViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func nextStep() {
+        
+        print("next step")
+        
     }
     
 
