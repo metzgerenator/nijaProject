@@ -14,6 +14,7 @@ class SelectLocationViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet var tableView: UITableView!
     
    var locatons = [MKMapItem]()
     
@@ -73,6 +74,7 @@ extension SelectLocationViewController: UISearchBarDelegate {
                 guard let results = response else {return}
                 
                 self.locatons = results.mapItems
+                self.tableView.reloadData()
  
             })
         }
@@ -83,6 +85,45 @@ extension SelectLocationViewController: UISearchBarDelegate {
     
     
 }
+
+
+
+extension SelectLocationViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return locatons.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        cell.textLabel?.text = locatons[indexPath.row].name
+        
+        return cell
+        
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
