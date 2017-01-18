@@ -15,6 +15,8 @@ class SelectLocationViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     
+   var locatons = [MKMapItem]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,8 +70,10 @@ extension SelectLocationViewController: UISearchBarDelegate {
         } else {
             
             localSearch.start(completionHandler: { (response, error) in
-                let results = response?.mapItems
-                print("here are the results \(results)")
+                guard let results = response else {return}
+                
+                self.locatons = results.mapItems
+ 
             })
         }
         
