@@ -37,12 +37,14 @@ PODS:
   - GoogleSymbolUtilities (1.1.2)
   - GoogleUtilities (1.3.2):
     - GoogleSymbolUtilities (~> 1.1)
+  - IQKeyboardManagerSwift (4.0.7)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - IQKeyboardManagerSwift
 
 SPEC CHECKSUMS:
   Firebase: 3875e140d77c7572c6d4852faf94144ffcdb0704
@@ -56,7 +58,8 @@ SPEC CHECKSUMS:
   GoogleNetworkingUtilities: 3edd3a8161347494f2da60ea0deddc8a472d94cb
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
+  IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
 
-PODFILE CHECKSUM: 3dc0822256b976f994c5b694144271e864fad703
+PODFILE CHECKSUM: 36c4f3a81c65778436695fb1692959982ccc49ef
 
 COCOAPODS: 1.1.1
