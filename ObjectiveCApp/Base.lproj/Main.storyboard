@@ -911,6 +911,9 @@
                                                             <constraint firstAttribute="width" constant="99" id="KZM-r7-xYf"/>
                                                         </constraints>
                                                         <state key="normal" image="camera"/>
+                                                        <connections>
+                                                            <action selector="FreeLancerAction:" destination="xox-Cv-7Zi" eventType="touchUpInside" id="wIP-EB-x5t"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Freelancer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lq4-OM-af8">
                                                         <rect key="frame" x="9" y="74" width="81" height="20.5"/>
@@ -930,6 +933,9 @@
                                                             <constraint firstAttribute="height" constant="74" id="Z7t-3z-SeQ"/>
                                                         </constraints>
                                                         <state key="normal" image="camera"/>
+                                                        <connections>
+                                                            <action selector="SmallTeam:" destination="xox-Cv-7Zi" eventType="touchUpInside" id="gD1-Rd-Fji"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Small Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjd-Io-F9Q">
                                                         <rect key="frame" x="5.5" y="74" width="88" height="20.5"/>
@@ -949,6 +955,9 @@
                                                             <constraint firstAttribute="width" constant="99" id="bkF-bQ-bsf"/>
                                                         </constraints>
                                                         <state key="normal" image="camera"/>
+                                                        <connections>
+                                                            <action selector="DevShop:" destination="xox-Cv-7Zi" eventType="touchUpInside" id="ugn-bh-zHF"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dev Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgG-cV-ewz">
                                                         <rect key="frame" x="12.5" y="74" width="74.5" height="20.5"/>
@@ -1011,6 +1020,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="3GX-Nh-VUz" secondAttribute="trailing" id="zyB-ys-Woy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="companyNameField" destination="vWq-PK-s7D" id="PH0-SZ-TOi"/>
+                        <outlet property="devShopOutlet" destination="t7k-Cq-og3" id="GZ2-nC-bRM"/>
+                        <outlet property="freeLancerOutlet" destination="HjZ-RY-Zdk" id="cY3-Oj-zGd"/>
+                        <outlet property="smallTeamOutlet" destination="3iH-Uv-t5B" id="wWB-yV-jfI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgY-N2-FhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

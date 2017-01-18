@@ -12,6 +12,36 @@ import UIKit
 class GenericAccountCreateViewController: UIViewController {
     
     
+    
+    @IBOutlet var companyNameField: UITextField!
+    
+    
+    
+    
+    //companysize icons 
+    
+    
+    
+    @IBOutlet var freeLancerOutlet: UIButton!
+    
+    @IBOutlet var smallTeamOutlet: UIButton!
+
+    @IBOutlet var devShopOutlet: UIButton!
+    
+    
+    
+    
+    @IBAction func FreeLancerAction(_ sender: Any) {
+    }
+    
+    
+    @IBAction func SmallTeam(_ sender: Any) {
+    }
+    
+    @IBAction func DevShop(_ sender: Any) {
+    }
+    
+    
     var devTypeTitle: String?
     
     
