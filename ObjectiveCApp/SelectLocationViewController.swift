@@ -11,12 +11,7 @@ import MapKit
 
 class SelectLocationViewController: UIViewController {
 
-    @IBAction func testbutton(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "dev", sender: self)
-        
-        
-    }
+  
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -24,12 +19,10 @@ class SelectLocationViewController: UIViewController {
     
    var locatons = [MKMapItem]()
     
-    var testTer = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        testTer = ["test", "testing"]
         
         searchBar.delegate = self
         self.searchBar.endEditing(true)
@@ -73,23 +66,23 @@ extension SelectLocationViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-//        let localSearhRequest = MKLocalSearchRequest()
-//        localSearhRequest.naturalLanguageQuery = searchBar.text
-//        
-//       let localSearch = MKLocalSearch(request: localSearhRequest)
-//        
-//        if localSearch.isSearching {
-//            localSearch.cancel()
-//        } else {
-//            
-//            localSearch.start(completionHandler: { (response, error) in
-//                guard let results = response else {return}
-//                
-//                self.locatons = results.mapItems
-//                self.tableView.reloadData()
-// 
-//            })
-//        }
+        let localSearhRequest = MKLocalSearchRequest()
+        localSearhRequest.naturalLanguageQuery = searchBar.text
+        
+       let localSearch = MKLocalSearch(request: localSearhRequest)
+        
+        if localSearch.isSearching {
+            localSearch.cancel()
+        } else {
+            
+            localSearch.start(completionHandler: { (response, error) in
+                guard let results = response else {return}
+                
+                self.locatons = results.mapItems
+                self.tableView.reloadData()
+ 
+            })
+        }
         
         
         
@@ -104,7 +97,7 @@ extension SelectLocationViewController: UITableViewDataSource, UITableViewDelega
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testTer.count
+        return locatons.count
     }
     
     
@@ -112,9 +105,7 @@ extension SelectLocationViewController: UITableViewDataSource, UITableViewDelega
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        //cell.textLabel?.text = locatons[indexPath.row].name
-        
-        cell.textLabel?.text = testTer[indexPath.row]
+        cell.textLabel?.text = locatons[indexPath.row].name
         
         return cell
         

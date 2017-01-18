@@ -807,13 +807,7 @@
                             <constraint firstItem="fyY-vn-MI4" firstAttribute="top" secondItem="RSX-FY-Clc" secondAttribute="bottom" id="lJb-Gk-Z9L"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="SrG-vG-SL5">
-                        <barButtonItem key="rightBarButtonItem" title="test button " id="TqJ-Dk-7uV">
-                            <connections>
-                                <action selector="testbutton:" destination="aXG-py-GNh" id="ckE-Iv-2Tc"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="SrG-vG-SL5"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="RSX-FY-Clc" id="PCL-4h-F95"/>
