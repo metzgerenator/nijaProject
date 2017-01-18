@@ -864,16 +864,17 @@
                     </view>
                     <connections>
                         <outlet property="devSelectOutlet" destination="L49-b6-QgG" id="GqF-a1-OTj"/>
+                        <segue destination="xox-Cv-7Zi" kind="show" identifier="accountCreate" id="dz4-2E-oOW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFZ-TY-7Iz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3533.5999999999999" y="-913.49325337331345"/>
         </scene>
-        <!--View Controller-->
+        <!--Generic Account Create View Controller-->
         <scene sceneID="gO1-hE-F3A">
             <objects>
-                <viewController id="xox-Cv-7Zi" sceneMemberID="viewController">
+                <viewController id="xox-Cv-7Zi" customClass="GenericAccountCreateViewController" customModule="ObjectiveCApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u30-85-dax"/>
                         <viewControllerLayoutGuide type="bottom" id="tuS-9q-bG5"/>

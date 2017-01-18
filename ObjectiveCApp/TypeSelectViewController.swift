@@ -11,8 +11,10 @@ import UIKit
 class TypeSelectViewController: UIViewController {
     
     
-    var notADev = "Am not "
-    var amADev = "Am"
+    var notADev = "am not "
+    var amADev = "am"
+    
+    var currentTitle: String?
 
     
     
@@ -25,8 +27,11 @@ class TypeSelectViewController: UIViewController {
         switch sender.currentTitle! {
         case notADev:
             devSelectOutlet.setTitle(amADev, for: .normal)
+            currentTitle = "I am a developer or dev shop"
         default:
             devSelectOutlet.setTitle(notADev, for: .normal)
+            currentTitle = "I am not a developer or dev shop"
+            
         }
     }
     
@@ -38,7 +43,7 @@ class TypeSelectViewController: UIViewController {
         super.viewDidLoad()
         
 
-        //Add barbutton 
+        //Add barbutton
         let barButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(TypeSelectViewController.nextStep))
         self.navigationItem.rightBarButtonItem = barButton
         
@@ -54,19 +59,26 @@ class TypeSelectViewController: UIViewController {
     
     func nextStep() {
         
-        print("next step")
+        self.performSegue(withIdentifier: "accountCreate", sender: self)
         
     }
     
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "accountCreate" {
+            
+             let vc = segue.destination as! GenericAccountCreateViewController
+            
+            vc.devTypeTitle = currentTitle
+            
+        }
+      
     }
-    */
+ 
 
 }

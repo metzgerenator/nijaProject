@@ -24,6 +24,7 @@
 		27A7D7B91E257EF60006AA26 /* customerAdditionalStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A7D7B81E257EF60006AA26 /* customerAdditionalStruct.swift */; };
 		27C429DE1DC02A7D00A6E1EA /* CreateDeveloperTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C429DD1DC02A7D00A6E1EA /* CreateDeveloperTableViewController.swift */; };
 		27D956B31E2FBC2E00D9882E /* TypeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D956B21E2FBC2E00D9882E /* TypeSelectViewController.swift */; };
+		27D956B51E2FD2E400D9882E /* GenericAccountCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D956B41E2FD2E400D9882E /* GenericAccountCreateViewController.swift */; };
 		27ED98971E1EADA30033CB43 /* DevSpecialityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ED98961E1EADA30033CB43 /* DevSpecialityViewController.swift */; };
 		27EE8C151E1C2CED005511C8 /* devAdditionalStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE8C141E1C2CED005511C8 /* devAdditionalStruct.swift */; };
 		27EE8C171E1C3FF9005511C8 /* UploadPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE8C161E1C3FF9005511C8 /* UploadPhotoViewController.swift */; };
@@ -80,6 +81,7 @@
 		27A7D7B81E257EF60006AA26 /* customerAdditionalStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customerAdditionalStruct.swift; sourceTree = "<group>"; };
 		27C429DD1DC02A7D00A6E1EA /* CreateDeveloperTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateDeveloperTableViewController.swift; sourceTree = "<group>"; };
 		27D956B21E2FBC2E00D9882E /* TypeSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeSelectViewController.swift; sourceTree = "<group>"; };
+		27D956B41E2FD2E400D9882E /* GenericAccountCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericAccountCreateViewController.swift; sourceTree = "<group>"; };
 		27ED98961E1EADA30033CB43 /* DevSpecialityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevSpecialityViewController.swift; sourceTree = "<group>"; };
 		27EE8C141E1C2CED005511C8 /* devAdditionalStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = devAdditionalStruct.swift; sourceTree = "<group>"; };
 		27EE8C161E1C3FF9005511C8 /* UploadPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadPhotoViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			children = (
 				57F559401E2EEF75000A0BC1 /* SelectLocationViewController.swift */,
 				27D956B21E2FBC2E00D9882E /* TypeSelectViewController.swift */,
+				27D956B41E2FD2E400D9882E /* GenericAccountCreateViewController.swift */,
 			);
 			name = createAccount;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				27EE8C171E1C3FF9005511C8 /* UploadPhotoViewController.swift in Sources */,
 				27A7D7B91E257EF60006AA26 /* customerAdditionalStruct.swift in Sources */,
 				27EE8C151E1C2CED005511C8 /* devAdditionalStruct.swift in Sources */,
+				27D956B51E2FD2E400D9882E /* GenericAccountCreateViewController.swift in Sources */,
 				27ED98971E1EADA30033CB43 /* DevSpecialityViewController.swift in Sources */,
 				27280E551DA4715C00D00E2E /* CreateNewAccountViewController.swift in Sources */,
 				570FAA0F1DC9782400FB0F48 /* DeveloperAdditionalDetailsViewController.swift in Sources */,
