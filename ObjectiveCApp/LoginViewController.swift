@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-
+@IBDesignable
 class LoginViewController: UIViewController {
 
     

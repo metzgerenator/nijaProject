@@ -35,6 +35,7 @@
 		570FAA0F1DC9782400FB0F48 /* DeveloperAdditionalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FAA0E1DC9782400FB0F48 /* DeveloperAdditionalDetailsViewController.swift */; };
 		5755BE391DBEE8DB006F26C8 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755BE381DBEE8DB006F26C8 /* Users.swift */; };
 		57607DC71DAFA5E2008FD070 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57607DC61DAFA5E2008FD070 /* LoginViewController.swift */; };
+		57F559411E2EEF75000A0BC1 /* SelectLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F559401E2EEF75000A0BC1 /* SelectLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		570FAA0E1DC9782400FB0F48 /* DeveloperAdditionalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperAdditionalDetailsViewController.swift; sourceTree = "<group>"; };
 		5755BE381DBEE8DB006F26C8 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		57607DC61DAFA5E2008FD070 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		57F559401E2EEF75000A0BC1 /* SelectLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLocationViewController.swift; sourceTree = "<group>"; };
 		634C315DBD45B55980785A43 /* Pods_ObjectiveCApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjectiveCApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7F927120D9D0173A27A036 /* Pods-ObjectiveCAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectiveCAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectiveCAppTests/Pods-ObjectiveCAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		807D40314A61DE26B17C0356 /* Pods-ObjectiveCApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectiveCApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectiveCApp/Pods-ObjectiveCApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		27280E231DA46E4000D00E2E /* ObjectiveCApp */ = {
 			isa = PBXGroup;
 			children = (
+				57F5593F1E2EEF54000A0BC1 /* createAccount */,
 				2702CAD81DBD37150020D6A8 /* Constants.swift */,
 				2711E3811DBC1C7400D5BC0A /* ObjectiveCApp.entitlements */,
 				27A7D7B11E257C3D0006AA26 /* customer */,
@@ -244,6 +247,14 @@
 				5755BE381DBEE8DB006F26C8 /* Users.swift */,
 			);
 			name = Authentication;
+			sourceTree = "<group>";
+		};
+		57F5593F1E2EEF54000A0BC1 /* createAccount */ = {
+			isa = PBXGroup;
+			children = (
+				57F559401E2EEF75000A0BC1 /* SelectLocationViewController.swift */,
+			);
+			name = createAccount;
 			sourceTree = "<group>";
 		};
 		7E68308081AD2044A1A0503F /* Pods */ = {
@@ -570,6 +581,7 @@
 				27ED98971E1EADA30033CB43 /* DevSpecialityViewController.swift in Sources */,
 				27280E551DA4715C00D00E2E /* CreateNewAccountViewController.swift in Sources */,
 				570FAA0F1DC9782400FB0F48 /* DeveloperAdditionalDetailsViewController.swift in Sources */,
+				57F559411E2EEF75000A0BC1 /* SelectLocationViewController.swift in Sources */,
 				5755BE391DBEE8DB006F26C8 /* Users.swift in Sources */,
 				570FAA0B1DC9748B00FB0F48 /* DeveloperAdditionalCollectionViewCell.swift in Sources */,
 				27A7D7B71E257D5D0006AA26 /* CustomerQuestionsViewController.swift in Sources */,
