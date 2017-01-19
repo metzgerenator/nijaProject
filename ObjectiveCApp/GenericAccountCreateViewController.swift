@@ -147,8 +147,7 @@ class GenericAccountCreateViewController: UIViewController {
     
     @IBAction func saveButtonAction(_ sender: UIButton) {
         
-        
-        saveUIAlert()
+        saveUIAlert(title: "Credentials", message: "Please fill out the credentials below")
         
         
         
@@ -171,36 +170,45 @@ class GenericAccountCreateViewController: UIViewController {
 extension GenericAccountCreateViewController {
     
     
-    func saveUIAlert()  {
+    func saveUIAlert(title: String, message: String)  {
         
         
         if ((companyNameField.text?.characters.count)! > 0 && (cityField.text?.characters.count)! > 0 ) && (websiteField.text?.characters.count)! > 0 && (emailField.text?.characters.count)! > 0  {
       
             
-            let alertController = UIAlertController(title: "Credentials", message: "please fill in your credentials", preferredStyle: .alert)
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
             
             
             
-            let loginAction = UIAlertAction(title: "Login", style: .default) { [weak alertController] _ in
+            let loginAction = UIAlertAction(title: "Create Account", style: .default) { [weak alertController] _ in
                 if let alertController = alertController {
                     let loginTextField = alertController.textFields![0] as UITextField
                     let passwordTextField = alertController.textFields![1] as UITextField
                     
-                    print("logging in username\(loginTextField.text)  password \(passwordTextField.text)")
+                    self.createNewAccount(username: loginTextField.text!, password: passwordTextField.text!)
                     
                     
                 }
             }
             
             alertController.addTextField { (textField) in
+                
+                if let userName = self.userName {
+                    textField.text = userName
+                }
                 textField.placeholder = "User Name"
                 textField.keyboardType = .default
                 
             }
             
             alertController.addTextField { textField in
+                
+                if let password = self.userPassword {
+                    
+                    textField.placeholder = password
+                }
                 textField.placeholder = "Password"
                 textField.isSecureTextEntry = true
             }
@@ -257,13 +265,25 @@ extension GenericAccountCreateViewController {
                     
                     createAccount(accountType: self.companySize!, user: user!, values: valuesToAdd as Dictionary<String, AnyObject>)
                     
+                    self.userName = nil
+                    self.userPassword = nil
+                    
+                    //segue to next view
+                    
+                } else {
+                    
+                    self.userName = username
+                    self.userPassword = password
+                    
+                    self.saveUIAlert(title: "Error", message: (error?.localizedDescription)!)
+                    
+                    
                 }
                 
                 
             })
             
-            // don't for get to clear out creds if there is not error 
-            
+        
        
 
         
