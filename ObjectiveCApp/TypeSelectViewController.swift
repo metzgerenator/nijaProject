@@ -69,16 +69,22 @@ class TypeSelectViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+            let vc = segue.destination as! GenericAccountCreateViewController
         if segue.identifier == "accountCreate" {
             
-             let vc = segue.destination as! GenericAccountCreateViewController
-            
-            vc.devTypeTitle = currentTitle
-            
-        }
-      
+            if let titleToSend = currentTitle {
+                
+                vc.devTypeTitle = titleToSend
+            } else {
+                
+                vc.devTypeTitle = "I am developer or dev shop"
+                
+            }
+ 
     }
  
+
+}
+
 
 }

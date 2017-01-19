@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+
+//company types 
+let FREELANCERTYPE = "Freelancer"
+let SMALLTEAMTYPE =   "Small Team"
+let DEVSHOPTYPE = "Dev Shop"
+
  let dateFormatter = DateFormatter()
 
 let users = "users"
@@ -18,8 +24,6 @@ let customers = "customer"
 let userIDType = "user_type"
 
 //Developers
-
-
 
 let DEVELOPERTYPE = "developerType"
 let FREELANCER = "freelancer"

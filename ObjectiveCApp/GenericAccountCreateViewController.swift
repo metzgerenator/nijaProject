@@ -7,11 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
-@IBDesignable
 class GenericAccountCreateViewController: UIViewController {
     
-    
+    var companySize: String?
     
     @IBOutlet var companyNameField: UITextField!
     
@@ -35,18 +35,20 @@ class GenericAccountCreateViewController: UIViewController {
     
     @IBAction func FreeLancerAction(_ sender: UIButton) {
         
-        
+        companySize = FREELANCERTYPE
         setButtonBackgrounds(tagID: sender.tag)
         
     }
     
     
     @IBAction func SmallTeam(_ sender: UIButton) {
-        
+        companySize = SMALLTEAMTYPE
         setButtonBackgrounds(tagID: sender.tag)
     }
     
     @IBAction func DevShop(_ sender: UIButton) {
+        
+        companySize = DEVSHOPTYPE
         
         setButtonBackgrounds(tagID: sender.tag)
     }
@@ -140,6 +142,12 @@ class GenericAccountCreateViewController: UIViewController {
     
     
     @IBAction func saveButtonAction(_ sender: UIButton) {
+        
+        
+        saveUIAlert()
+        
+        
+        
     }
     
 
@@ -154,3 +162,104 @@ class GenericAccountCreateViewController: UIViewController {
     */
 
 }
+//MARK: alert views
+
+extension GenericAccountCreateViewController {
+    
+    
+    func saveUIAlert()  {
+        
+        let alertController = UIAlertController(title: "Credentials", message: "please fill in your credentials", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        
+  
+        
+        let loginAction = UIAlertAction(title: "Login", style: .default) { [weak alertController] _ in
+            if let alertController = alertController {
+                let loginTextField = alertController.textFields![0] as UITextField
+                let passwordTextField = alertController.textFields![1] as UITextField
+                
+                print("logging in username\(loginTextField.text)  password \(passwordTextField.text)")
+                
+                
+            }
+        }
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "User Name"
+            textField.keyboardType = .default
+            
+        }
+        
+        alertController.addTextField { textField in
+            textField.placeholder = "Password"
+            textField.isSecureTextEntry = true
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(loginAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    
+    func userAlerts(title: String, message: String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+       // let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        
+        let okAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+            self.saveUIAlert()
+        }
+        
+        alertController.addAction(okAction)
+        
+       
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+}
+
+
+//MARK: firebase create user methods
+extension GenericAccountCreateViewController {
+
+    
+    func createNewAccount(username: String, password: String) -> Bool {
+        
+        
+        
+        
+        
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
