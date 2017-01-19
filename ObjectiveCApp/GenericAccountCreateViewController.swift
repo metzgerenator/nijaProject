@@ -11,6 +11,10 @@ import Firebase
 
 class GenericAccountCreateViewController: UIViewController {
     
+    
+    var userName: String?
+    var userPassword: String?
+    
     var companySize: String?
     
     @IBOutlet var companyNameField: UITextField!
@@ -169,55 +173,65 @@ extension GenericAccountCreateViewController {
     
     func saveUIAlert()  {
         
-        let alertController = UIAlertController(title: "Credentials", message: "please fill in your credentials", preferredStyle: .alert)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
-        
-  
-        
-        let loginAction = UIAlertAction(title: "Login", style: .default) { [weak alertController] _ in
-            if let alertController = alertController {
-                let loginTextField = alertController.textFields![0] as UITextField
-                let passwordTextField = alertController.textFields![1] as UITextField
-                
-                print("logging in username\(loginTextField.text)  password \(passwordTextField.text)")
-                
+        if ((companyNameField.text?.characters.count)! > 0 && (cityField.text?.characters.count)! > 0 ) && (websiteField.text?.characters.count)! > 0 && (emailField.text?.characters.count)! > 0  {
+      
+            
+            let alertController = UIAlertController(title: "Credentials", message: "please fill in your credentials", preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+            
+            
+            
+            let loginAction = UIAlertAction(title: "Login", style: .default) { [weak alertController] _ in
+                if let alertController = alertController {
+                    let loginTextField = alertController.textFields![0] as UITextField
+                    let passwordTextField = alertController.textFields![1] as UITextField
+                    
+                    print("logging in username\(loginTextField.text)  password \(passwordTextField.text)")
+                    
+                    
+                }
+            }
+            
+            alertController.addTextField { (textField) in
+                textField.placeholder = "User Name"
+                textField.keyboardType = .default
                 
             }
-        }
-        
-        alertController.addTextField { (textField) in
-            textField.placeholder = "User Name"
-            textField.keyboardType = .default
+            
+            alertController.addTextField { textField in
+                textField.placeholder = "Password"
+                textField.isSecureTextEntry = true
+            }
+            
+            alertController.addAction(cancelAction)
+            alertController.addAction(loginAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else {
+            
+            userAlerts(title: "Check all fields", message: "Please fill in all the required fileds")
             
         }
         
-        alertController.addTextField { textField in
-            textField.placeholder = "Password"
-            textField.isSecureTextEntry = true
-        }
         
-        alertController.addAction(cancelAction)
-        alertController.addAction(loginAction)
         
-        self.present(alertController, animated: true, completion: nil)
         
     }
     
     
+    //MARK: general alert funciton
     func userAlerts(title: String, message: String) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-       // let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-        
-        let okAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
-            self.saveUIAlert()
-        }
-        
+        let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+     
         alertController.addAction(okAction)
         
-       
+        
         self.present(alertController, animated: true, completion: nil)
         
     }
@@ -228,10 +242,18 @@ extension GenericAccountCreateViewController {
 extension GenericAccountCreateViewController {
 
     
-    func createNewAccount(username: String, password: String) -> Bool {
+    
+    
+    func createNewAccount(username: String, password: String)  {
         
         
         
+            //FIRAuth.auth()?.createUser(withEmail: <#T##String#>, password: <#T##String#>, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
+            
+            // don't for get to clear out creds if there is not error 
+            
+       
+
         
         
     }
