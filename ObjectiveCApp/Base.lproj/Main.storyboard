@@ -1065,6 +1065,9 @@
                                                     <constraint firstAttribute="height" constant="136" id="hCQ-x1-Z5Y"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="photoButton:" destination="Xdw-uD-rBG" eventType="touchUpInside" id="cNa-nz-YZ1"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="t2N-30-57G" userLabel="Devshop name">
                                                 <rect key="frame" x="0.0" y="156" width="128" height="37.5"/>

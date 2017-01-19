@@ -9,6 +9,49 @@ import Foundation
 import Firebase
 
 
+
+
+struct User {
+    
+    var companyName: String?
+    var city: String?
+    var website: String?
+    var userName: String?
+    var companySize: String?
+    
+    
+    init(snapShot: NSDictionary) {
+        
+        
+        for (key, value) in snapShot {
+            
+            print("here is key \(key), here is value \(value)")
+//            
+//            if let companySize = value[COMPANYSIZE] {
+//                
+//                self.companySize = companySize as? String
+//            }
+            
+        }
+       
+      
+        
+        
+        
+        
+        
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
 struct Developer {
     
     var email: String

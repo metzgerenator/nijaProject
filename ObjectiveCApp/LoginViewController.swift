@@ -30,8 +30,8 @@ class LoginViewController: UIViewController {
         
         //try! FIRAuth.auth()!.signOut()
         
-        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
-            
+//        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+//            
 //            if user != nil {
 //                
 //                
@@ -73,9 +73,9 @@ class LoginViewController: UIViewController {
 //                
 //                
 //            }
-            
-    
-        }
+//            
+//    
+//        }
         
        
     }

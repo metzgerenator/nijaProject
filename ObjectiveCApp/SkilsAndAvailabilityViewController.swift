@@ -7,13 +7,45 @@
 //
 
 import UIKit
+import Firebase
 
 class SkilsAndAvailabilityViewController: UIViewController {
+    
+    
+    var ref: FIRDatabaseReference!
+    
+    var currentUSer: User?
+    
 
+    @IBAction func photoButton(_ sender: Any) {
+        
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
+        ref = FIRDatabase.database().reference()
+        
+        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+            
+            
+            if user != nil {
+                
+                 self.ref.child(users).child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    let snapshotINput = snapshot.value as! NSDictionary
+                    
+                    let userCheck = User(snapShot: snapshotINput)
+                    
+                    
+                })
+                
+                
+            }
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

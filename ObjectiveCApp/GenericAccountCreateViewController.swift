@@ -147,7 +147,10 @@ class GenericAccountCreateViewController: UIViewController {
     
     @IBAction func saveButtonAction(_ sender: UIButton) {
         
-        saveUIAlert(title: "Credentials", message: "Please fill out the credentials below")
+        
+         self.performSegue(withIdentifier: "account_created", sender: self)
+        
+       //saveUIAlert(title: "Credentials", message: "Please fill out the credentials below")
         
         
         
@@ -254,13 +257,15 @@ extension GenericAccountCreateViewController {
     
     func createNewAccount(username: String, password: String)  {
         
+       
+        
         
         
             FIRAuth.auth()?.createUser(withEmail: emailField.text!, password: password, completion: { (user, error) in
                 
                 if error == nil {
                     
-                    let valuesToAdd = [USERNAME : username, COMPANYNAME: self.companyNameField.text!, USERWEBSITE : self.websiteField.text!, USERCITY : self.cityField.text!] as [String : Any]
+                    let valuesToAdd = [USERNAME : username, COMPANYNAME: self.companyNameField.text!, USERWEBSITE : self.websiteField.text!, USERCITY : self.cityField.text!, "companysize" : self.companySize!] as [String : Any]
                     
                     
                     createAccount(accountType: self.companySize!, user: user!, values: valuesToAdd as Dictionary<String, AnyObject>)
@@ -282,7 +287,7 @@ extension GenericAccountCreateViewController {
                 
                 
             })
-            
+        
         
        
 

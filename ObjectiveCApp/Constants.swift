@@ -10,11 +10,17 @@ import Foundation
 import UIKit
 
 
-//company types 
+//company types new ones
+let COMPANYSIZE = "company_size"
 let FREELANCERTYPE = "Freelancer"
-let SMALLTEAMTYPE =   "Small Team"
+let SMALLTEAMTYPE = "Small Team"
 let DEVSHOPTYPE = "Dev Shop"
+let CITY = "city"
+let USERLOCATION = "company_name"
+let USERSWEBSITE = "user_website"
+let USERSNAME = "username"
 
+//////
  let dateFormatter = DateFormatter()
 
 let users = "users"
