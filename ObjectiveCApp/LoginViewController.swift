@@ -32,51 +32,47 @@ class LoginViewController: UIViewController {
         
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
             
-            if user != nil {
-                
-                
-                self.ref.child(users).child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
-                    
-                    //determine if email is verified
-                    let emailVerified = user!.isEmailVerified
-                    // Get user value
-                    
-                    let value = snapshot.value as? NSDictionary
-                    print("here is the value \(value)")
-                    
-                    let userType = value?[userIDType] as! String
-                    print("here is the user type \(userType)")
-                    
-                    
-                    if userType == "developer" && emailVerified == true {
-                        
-                    
-        
-                        self.performSegue(withIdentifier: developer, sender: nil)
-                        
-                    } else if userType == customers && emailVerified == true {
-                        
-                        self.performSegue(withIdentifier: customers, sender: nil)
-                        
-                    }
-                 
-                
-                    
-                    
-                   
-                }) { (error) in
-                    print(error.localizedDescription)
-                }
-                
-                
-                
-                
-                
-            } else {
-                
-                
-                
-            }
+//            if user != nil {
+//                
+//                
+//                self.ref.child(users).child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
+//                    
+//                    //determine if email is verified
+//                    let emailVerified = user!.isEmailVerified
+//                    // Get user value
+//                    
+//                    let value = snapshot.value as? NSDictionary
+//                    print("here is the value \(value)")
+//                    
+//                    let userType = value?[userIDType] as! String
+//                    print("here is the user type \(userType)")
+//                    
+//                    
+//                    if userType == "developer" && emailVerified == true {
+//                        
+//                    
+//        
+//                        self.performSegue(withIdentifier: developer, sender: nil)
+//                        
+//                    } else if userType == customers && emailVerified == true {
+//                        
+//                        self.performSegue(withIdentifier: customers, sender: nil)
+//                        
+//                    }
+//                 
+//                
+//                    
+//                    
+//                   
+//                }) { (error) in
+//                    print(error.localizedDescription)
+//                }
+//                
+//                
+//                
+//                
+//                
+//            }
             
     
         }

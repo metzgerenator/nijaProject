@@ -173,7 +173,7 @@ extension GenericAccountCreateViewController {
     func saveUIAlert(title: String, message: String)  {
         
         
-        if ((companyNameField.text?.characters.count)! > 0 && (cityField.text?.characters.count)! > 0 ) && (websiteField.text?.characters.count)! > 0 && (emailField.text?.characters.count)! > 0  {
+        if ((companyNameField.text?.characters.count)! > 0 && (cityField.text?.characters.count)! > 0 ) && (websiteField.text?.characters.count)! > 0 && (emailField.text?.characters.count)! > 0 && companySize != nil {
       
             
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
