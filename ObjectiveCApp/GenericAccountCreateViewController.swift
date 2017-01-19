@@ -248,7 +248,19 @@ extension GenericAccountCreateViewController {
         
         
         
-            //FIRAuth.auth()?.createUser(withEmail: <#T##String#>, password: <#T##String#>, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
+            FIRAuth.auth()?.createUser(withEmail: emailField.text!, password: password, completion: { (user, error) in
+                
+                if error == nil {
+                    
+                    let valuesToAdd = [USERNAME : username, COMPANYNAME: self.companyNameField.text!, USERWEBSITE : self.websiteField.text!, USERCITY : self.cityField.text!] as [String : Any]
+                    
+                    
+                    createAccount(accountType: self.companySize!, user: user!, values: valuesToAdd as Dictionary<String, AnyObject>)
+                    
+                }
+                
+                
+            })
             
             // don't for get to clear out creds if there is not error 
             
