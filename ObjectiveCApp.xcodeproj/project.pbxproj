@@ -33,6 +33,7 @@
 		27F3119B1E1DA77600D4A582 /* PreviousClientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F3119A1E1DA77600D4A582 /* PreviousClientTableViewCell.swift */; };
 		27F46A7E1E3129F00015627D /* schemaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A7D1E3129F00015627D /* schemaConstants.swift */; };
 		27F46A821E3141A60015627D /* SkilsAndAvailabilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A811E3141A60015627D /* SkilsAndAvailabilityViewController.swift */; };
+		27F46A841E31A9330015627D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F46A831E31A9330015627D /* MapKit.framework */; };
 		320C8670D9B35AAFEB31521F /* Pods_ObjectiveCAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CEEBCD56949C0F85AA3117 /* Pods_ObjectiveCAppTests.framework */; };
 		4C865D9D281F3929BB754DE9 /* Pods_ObjectiveCAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A46BAAB172D2E77BCFB649 /* Pods_ObjectiveCAppUITests.framework */; };
 		570FAA0B1DC9748B00FB0F48 /* DeveloperAdditionalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FAA0A1DC9748B00FB0F48 /* DeveloperAdditionalCollectionViewCell.swift */; };
@@ -92,6 +93,7 @@
 		27F3119A1E1DA77600D4A582 /* PreviousClientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviousClientTableViewCell.swift; sourceTree = "<group>"; };
 		27F46A7D1E3129F00015627D /* schemaConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = schemaConstants.swift; sourceTree = "<group>"; };
 		27F46A811E3141A60015627D /* SkilsAndAvailabilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkilsAndAvailabilityViewController.swift; sourceTree = "<group>"; };
+		27F46A831E31A9330015627D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		360D3187661738CD6309599F /* Pods-ObjectiveCAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectiveCAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectiveCAppTests/Pods-ObjectiveCAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		570FAA0A1DC9748B00FB0F48 /* DeveloperAdditionalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperAdditionalCollectionViewCell.swift; sourceTree = "<group>"; };
 		570FAA0E1DC9782400FB0F48 /* DeveloperAdditionalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperAdditionalDetailsViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F46A841E31A9330015627D /* MapKit.framework in Frameworks */,
 				0EF8EEFC97357C0043289E75 /* Pods_ObjectiveCApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +312,7 @@
 		82C62DC4D2277BBF8D33BDA2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27F46A831E31A9330015627D /* MapKit.framework */,
 				634C315DBD45B55980785A43 /* Pods_ObjectiveCApp.framework */,
 				D7CEEBCD56949C0F85AA3117 /* Pods_ObjectiveCAppTests.framework */,
 				D4A46BAAB172D2E77BCFB649 /* Pods_ObjectiveCAppUITests.framework */,
@@ -397,6 +401,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
 						};
