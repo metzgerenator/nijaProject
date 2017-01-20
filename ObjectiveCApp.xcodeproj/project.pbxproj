@@ -397,7 +397,7 @@
 				TargetAttributes = {
 					27280E201DA46E4000D00E2E = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = BP8BUJFQU2;
+						DevelopmentTeam = K56TMNQLJF;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -787,7 +787,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ObjectiveCApp/ObjectiveCApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = BP8BUJFQU2;
+				DEVELOPMENT_TEAM = K56TMNQLJF;
 				INFOPLIST_FILE = ObjectiveCApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.metzger.ObjectiveCApp;
@@ -803,7 +803,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ObjectiveCApp/ObjectiveCApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = BP8BUJFQU2;
+				DEVELOPMENT_TEAM = K56TMNQLJF;
 				INFOPLIST_FILE = ObjectiveCApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.metzger.ObjectiveCApp;

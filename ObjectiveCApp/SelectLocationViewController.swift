@@ -19,10 +19,16 @@ class SelectLocationViewController: UIViewController {
     
    var locatons = [MKMapItem]()
     
+    override func viewWillAppear(_ animated: Bool) {
+         self.navigationController?.isNavigationBarHidden = true
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.navigationController?.isToolbarHidden = true
         
         searchBar.delegate = self
         self.searchBar.endEditing(true)
