@@ -39,6 +39,8 @@ class SkilsAndAvailabilityViewController: UIViewController {
                     
                     let userCheck = User(snapShot: snapshotINput)
                     
+                    print("here is the user \(userCheck)")
+                    
                     
                 })
                 

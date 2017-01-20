@@ -25,13 +25,31 @@ struct User {
         
         for (key, value) in snapShot {
             
-            print("here is key \(key), here is value \(value)")
-//            
-//            if let companySize = value[COMPANYSIZE] {
-//                
-//                self.companySize = companySize as? String
-//            }
             
+            guard let keyCheck = key as? String else {continue}
+            guard let valueCheck = value as? String else {continue}
+            
+            print("key = \(keyCheck)")
+            
+            switch keyCheck {
+            case CITY:
+                self.city = valueCheck
+                
+            case COMPANYNAME:
+                self.companyName = valueCheck
+                
+            case USERSWEBSITE:
+                self.website = valueCheck
+                
+            case USERSNAME:
+                self.userName = valueCheck
+                
+            case COMPANYSIZE:
+                self.companySize = valueCheck
+            default:
+                break
+            }
+        
         }
        
       
