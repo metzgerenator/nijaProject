@@ -40,6 +40,7 @@
 		570FAA0F1DC9782400FB0F48 /* DeveloperAdditionalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FAA0E1DC9782400FB0F48 /* DeveloperAdditionalDetailsViewController.swift */; };
 		5755BE391DBEE8DB006F26C8 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755BE381DBEE8DB006F26C8 /* Users.swift */; };
 		57607DC71DAFA5E2008FD070 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57607DC61DAFA5E2008FD070 /* LoginViewController.swift */; };
+		57D3C02E1E32C521000AF102 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D3C02D1E32C521000AF102 /* DescriptionViewController.swift */; };
 		57F559411E2EEF75000A0BC1 /* SelectLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F559401E2EEF75000A0BC1 /* SelectLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		570FAA0E1DC9782400FB0F48 /* DeveloperAdditionalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperAdditionalDetailsViewController.swift; sourceTree = "<group>"; };
 		5755BE381DBEE8DB006F26C8 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		57607DC61DAFA5E2008FD070 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		57D3C02D1E32C521000AF102 /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		57F559401E2EEF75000A0BC1 /* SelectLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLocationViewController.swift; sourceTree = "<group>"; };
 		634C315DBD45B55980785A43 /* Pods_ObjectiveCApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjectiveCApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7F927120D9D0173A27A036 /* Pods-ObjectiveCAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectiveCAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectiveCAppTests/Pods-ObjectiveCAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				27F46A811E3141A60015627D /* SkilsAndAvailabilityViewController.swift */,
+				57D3C02D1E32C521000AF102 /* DescriptionViewController.swift */,
 			);
 			name = "additional details ";
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				27F3119B1E1DA77600D4A582 /* PreviousClientTableViewCell.swift in Sources */,
 				57607DC71DAFA5E2008FD070 /* LoginViewController.swift in Sources */,
 				270895561E00DFBC006CE509 /* DeveloperFreelancerViewController.swift in Sources */,
+				57D3C02E1E32C521000AF102 /* DescriptionViewController.swift in Sources */,
 				27EE8C171E1C3FF9005511C8 /* UploadPhotoViewController.swift in Sources */,
 				27A7D7B91E257EF60006AA26 /* customerAdditionalStruct.swift in Sources */,
 				27EE8C151E1C2CED005511C8 /* devAdditionalStruct.swift in Sources */,
