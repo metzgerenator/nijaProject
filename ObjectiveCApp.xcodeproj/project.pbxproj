@@ -10,6 +10,9 @@
 		0EF8EEFC97357C0043289E75 /* Pods_ObjectiveCApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634C315DBD45B55980785A43 /* Pods_ObjectiveCApp.framework */; };
 		2702CAD91DBD37150020D6A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2702CAD81DBD37150020D6A8 /* Constants.swift */; };
 		270895561E00DFBC006CE509 /* DeveloperFreelancerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270895551E00DFBC006CE509 /* DeveloperFreelancerViewController.swift */; };
+		270E63211E33BA530029D2B8 /* EditSkillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E63201E33BA530029D2B8 /* EditSkillsTableViewController.swift */; };
+		270E63231E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E63221E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift */; };
+		270E63251E33BC5A0029D2B8 /* skillsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E63241E33BC5A0029D2B8 /* skillsStruct.swift */; };
 		27280E251DA46E4000D00E2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27280E241DA46E4000D00E2E /* AppDelegate.swift */; };
 		27280E2A1DA46E4000D00E2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27280E281DA46E4000D00E2E /* Main.storyboard */; };
 		27280E2C1DA46E4000D00E2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27280E2B1DA46E4000D00E2E /* Assets.xcassets */; };
@@ -64,6 +67,9 @@
 /* Begin PBXFileReference section */
 		2702CAD81DBD37150020D6A8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		270895551E00DFBC006CE509 /* DeveloperFreelancerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperFreelancerViewController.swift; sourceTree = "<group>"; };
+		270E63201E33BA530029D2B8 /* EditSkillsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSkillsTableViewController.swift; sourceTree = "<group>"; };
+		270E63221E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSkillsTableViewCell.swift; sourceTree = "<group>"; };
+		270E63241E33BC5A0029D2B8 /* skillsStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = skillsStruct.swift; sourceTree = "<group>"; };
 		2711E3811DBC1C7400D5BC0A /* ObjectiveCApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ObjectiveCApp.entitlements; sourceTree = "<group>"; };
 		27280E211DA46E4000D00E2E /* ObjectiveCApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27280E241DA46E4000D00E2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +155,16 @@
 				275E2DC61E1FE6BA00B0F8B9 /* StartAndEndTableViewController.swift */,
 			);
 			name = Freelancers;
+			sourceTree = "<group>";
+		};
+		270E631F1E33BA380029D2B8 /* Edit Skills */ = {
+			isa = PBXGroup;
+			children = (
+				270E63201E33BA530029D2B8 /* EditSkillsTableViewController.swift */,
+				270E63221E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift */,
+				270E63241E33BC5A0029D2B8 /* skillsStruct.swift */,
+			);
+			name = "Edit Skills";
 			sourceTree = "<group>";
 		};
 		2711E37E1DBC177300D5BC0A /* CreateDeveloperProfile */ = {
@@ -293,6 +309,7 @@
 		57F5593F1E2EEF54000A0BC1 /* createAccount */ = {
 			isa = PBXGroup;
 			children = (
+				270E631F1E33BA380029D2B8 /* Edit Skills */,
 				27F46A801E3141240015627D /* inital accont creation */,
 				27F46A7F1E3141060015627D /* additional details  */,
 			);
@@ -614,6 +631,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				270E63251E33BC5A0029D2B8 /* skillsStruct.swift in Sources */,
 				27F311971E1D73D100D4A582 /* PayscaleViewController.swift in Sources */,
 				2702CAD91DBD37150020D6A8 /* Constants.swift in Sources */,
 				27A7D7B51E257D060006AA26 /* CustomerQuestionsCollectionViewCell.swift in Sources */,
@@ -621,6 +639,7 @@
 				27F46A7E1E3129F00015627D /* schemaConstants.swift in Sources */,
 				27F3119B1E1DA77600D4A582 /* PreviousClientTableViewCell.swift in Sources */,
 				57607DC71DAFA5E2008FD070 /* LoginViewController.swift in Sources */,
+				270E63231E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift in Sources */,
 				270895561E00DFBC006CE509 /* DeveloperFreelancerViewController.swift in Sources */,
 				57D3C02E1E32C521000AF102 /* DescriptionViewController.swift in Sources */,
 				27EE8C171E1C3FF9005511C8 /* UploadPhotoViewController.swift in Sources */,
@@ -637,6 +656,7 @@
 				27A7D7B71E257D5D0006AA26 /* CustomerQuestionsViewController.swift in Sources */,
 				27280E251DA46E4000D00E2E /* AppDelegate.swift in Sources */,
 				27D956B31E2FBC2E00D9882E /* TypeSelectViewController.swift in Sources */,
+				270E63211E33BA530029D2B8 /* EditSkillsTableViewController.swift in Sources */,
 				275E2DC71E1FE6BA00B0F8B9 /* StartAndEndTableViewController.swift in Sources */,
 				27C429DE1DC02A7D00A6E1EA /* CreateDeveloperTableViewController.swift in Sources */,
 			);
