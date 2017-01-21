@@ -16,6 +16,10 @@ class EditSkillsTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let developerSkills = DeveloperSkills()
+        developerSkills.skillsFromDataBase()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

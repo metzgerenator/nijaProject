@@ -29,7 +29,6 @@ struct User {
             guard let keyCheck = key as? String else {continue}
             guard let valueCheck = value as? String else {continue}
             
-            print("key = \(keyCheck)")
             
             switch keyCheck {
             case CITY:
@@ -173,8 +172,17 @@ func appendValues(values: Dictionary<String, AnyObject>) {
         
     }
     
-   
-    
 
+    
+}
+
+
+func appendGenericValues(values: Dictionary<String, AnyObject>) {
+    
+    
+    let ref = FIRDatabase.database().reference().child("developer_skills")
+    ref.updateChildValues(values)
+    
+    
     
 }
