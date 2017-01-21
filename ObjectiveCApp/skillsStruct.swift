@@ -34,27 +34,25 @@ struct DeveloperSkills {
     
     func skillsFromDataBase()  {
         
-       // let ref = FIRDatabase.database().reference()
+        let ref = FIRDatabase.database().reference().child("developer_skills")
         
-        let values = ["Skills" : ["Web development", "iOS Development", "Design"]]
-        
-        appendGenericValues(values: values as Dictionary<String, AnyObject>)
-        
-//        ref.child("developer_skills").observe(.value, with: { (snapshot) in
-//            
-//            guard let skillDic  = snapshot.value as? NSDictionary else {return}
-//            
-//            for (key, value) in skillDic {
-//                
-//                print("here is key \(key) here is value\(value)")
-//                
-//                //guard let skill = key as? String else {continue}
-//                
-//               
-//            
-//            }
-//            
-//        })
+        ref.observe(.value, with: { (snapshot) in
+            
+            let skillDic  = snapshot.value as! NSDictionary
+            
+            for (key, value) in skillDic {
+                
+                print("here is key \(key) here is value\(value)")
+                
+                //guard let skill = key as? String else {continue}
+                
+                
+                
+            }
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
         
     }
     
