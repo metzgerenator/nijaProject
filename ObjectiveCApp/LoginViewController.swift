@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
         
         ref = FIRDatabase.database().reference()
         
-        //try! FIRAuth.auth()!.signOut()
+        try! FIRAuth.auth()!.signOut()
         
 //        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
 //            
