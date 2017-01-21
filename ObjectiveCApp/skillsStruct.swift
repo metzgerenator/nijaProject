@@ -32,7 +32,7 @@ struct DeveloperSkills {
     
     
     
-    func skillsFromDataBase() -> [DeveloperSkills] {
+    func skillsFromDataBase(completion: @escaping (_ skills: [DeveloperSkills])->Void) {
         
         var devSkillsArray = [DeveloperSkills]()
         let ref = FIRDatabase.database().reference().child("developer_skills")
@@ -46,12 +46,12 @@ struct DeveloperSkills {
                 let devSkill = DeveloperSkills(skillType: skill as! String, subSkills: subSkill as! Array<String>)
                 devSkillsArray.append(devSkill)
             }
-            
+            completion(devSkillsArray)
         }) { (error) in
             print(error.localizedDescription)
         }
         
-        return devSkillsArray
+    
         
     }
     

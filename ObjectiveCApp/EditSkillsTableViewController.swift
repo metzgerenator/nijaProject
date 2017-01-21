@@ -10,6 +10,11 @@ import UIKit
 
 class EditSkillsTableViewController: UITableViewController {
 
+    var skillsArray = [DeveloperSkills]()
+    
+    
+    
+    
     @IBAction func cacelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         
@@ -18,14 +23,14 @@ class EditSkillsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         let developerSkills = DeveloperSkills()
-        developerSkills.skillsFromDataBase()
         
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        developerSkills.skillsFromDataBase(completion: { skills in
+            
+             self.skillsArray = skills
+            self.tableView.reloadData()
+        })
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,23 +42,28 @@ class EditSkillsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return skillsArray.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EditSkillsTableViewCell
+        
+        if let skill = skillsArray[indexPath.row].skillType {
+            
+            cell.configureCell(input: skill)
+        }
+        
+       
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.

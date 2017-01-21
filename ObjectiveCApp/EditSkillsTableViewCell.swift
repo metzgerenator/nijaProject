@@ -15,13 +15,19 @@ class EditSkillsTableViewCell: UITableViewCell {
     
     @IBAction func additionalSkillsButton(_ sender: UIButton) {
         
-        
+        print("button pressed")
         
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    
+    func configureCell(input: String) {
+        
+        skillButton.text = input
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
