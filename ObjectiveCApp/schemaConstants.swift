@@ -15,5 +15,6 @@ let COMPANYNAME = "company_name"
 let USERWEBSITE = "user_website"
 let USERCITY = "city"
 
+let DEVELOPERSKILLS = "developer_skills"
 
 

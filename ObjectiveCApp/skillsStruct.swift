@@ -10,7 +10,9 @@ import Foundation
 import Firebase
 
 
-struct DeveloperSkills {
+
+
+class DeveloperSkills {
     
     var skillType: String?
     var subSkills: [String]?
@@ -34,19 +36,14 @@ struct DeveloperSkills {
     
      func skillsFromDataBase(completion: @escaping (_ skills: [DeveloperSkills])->Void) {
         
-        var devSkillsArray = [DeveloperSkills]()
-        let ref = FIRDatabase.database().reference().child("developer_skills")
+        //var devSkillsArray = [DeveloperSkills]()
+        let ref = FIRDatabase.database().reference().child(DEVELOPERSKILLS)
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             
             guard let skillDic  = snapshot.value as? NSDictionary else { return }
             
-            for (skill, subSkill) in skillDic {
-                
-                
-                let devSkill = DeveloperSkills(skillType: skill as! String, subSkills: subSkill as! Array<String>)
-                devSkillsArray.append(devSkill)
-            }
-            completion(devSkillsArray)
+
+            completion(self.snapShotParse(skillDic: skillDic))
             
         }) { (error) in
             print(error.localizedDescription)
@@ -58,10 +55,63 @@ struct DeveloperSkills {
     }
     
     
+      func snapShotParse(skillDic: NSDictionary)-> [DeveloperSkills] {
+        var devSkillsArray = [DeveloperSkills]()
+        
+        for (skill, subSkill) in skillDic {
+            
+            
+            let devSkill = DeveloperSkills(skillType: skill as! String, subSkills: subSkill as! Array<String>)
+            devSkillsArray.append(devSkill)
+        }
+        
+        return devSkillsArray
+    }
+    
     
     
     
 }
+
+
+
+
+
+class DevSelectSkils: DeveloperSkills {
+    
+   
+    override func skillsFromDataBase(completion: @escaping ([DeveloperSkills]) -> Void) {
+        guard let userId = FIRAuth.auth()?.currentUser?.uid else {return}
+        
+        let ref = FIRDatabase.database().reference().child(userId).child(DEVELOPERSKILLS)
+        
+        ref.observe(.value, with: { (snapshot) in
+            
+            guard let skillDic  = snapshot.value as? NSDictionary else { return }
+            
+            completion(self.snapShotParse(skillDic: skillDic))
+        })
+        
+    }
+    
+    
+    //skill match function
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

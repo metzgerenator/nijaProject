@@ -12,6 +12,7 @@ import Firebase
 class EditSkillsTableViewController: UITableViewController {
 
     var skillsArray = [DeveloperSkills]()
+    var devSelectSkills = [DeveloperSkills]()
     
     
     
@@ -24,13 +25,17 @@ class EditSkillsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         let developerSkills = DeveloperSkills()
+        let developerSelectSkills = DevSelectSkils()
         
         developerSkills.skillsFromDataBase(completion: { skills in
             self.skillsArray.removeAll()
              self.skillsArray = skills
             self.tableView.reloadData()
             
-            
+            developerSelectSkills.skillsFromDataBase(completion: { (skills) in
+                self.devSelectSkills.removeAll()
+                self.devSelectSkills = skills
+            })
             
         })
         
@@ -69,16 +74,27 @@ class EditSkillsTableViewController: UITableViewController {
     }
  
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let skill = skillsArray.count
-        
-      
-        
-        
-        
-       
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//        var dictionaryOfSkills:Dictionary<String, Any> = [:]
+//        
+//        let skill = skillsArray[indexPath.row]
+//        
+//        let userSelectCheck = devSelectSkills.contains{$0.skillType == skill.skillType}
+//        
+//        switch userSelectCheck {
+//        case true:
+//            devSelectSkills = devSelectSkills.filter{$0.skillType == skill.skillType}
+//        
+//        default:
+//            <#code#>
+//        }
+//        
+//        
+//        let values = [DEVELOPERSKILLS : ""]
+//        appendValues(values: <#T##Dictionary<String, AnyObject>#>)
+//       
+//    }
 
     /*
     // Override to support conditional editing of the table view.

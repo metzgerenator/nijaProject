@@ -172,7 +172,21 @@ func appendValues(values: Dictionary<String, AnyObject>) {
         
     }
     
+  
 
+    
+}
+
+func appendDevSkils(childPath: String, values: Dictionary<String, AnyObject>) {
+    
+    if let user = FIRAuth.auth()?.currentUser {
+        
+        let ref = FIRDatabase.database().reference().child("users").child(user.uid).child(DEVELOPERSKILLS).child(childPath)
+        ref.updateChildValues(values)
+        
+        
+        
+    }
     
 }
 
