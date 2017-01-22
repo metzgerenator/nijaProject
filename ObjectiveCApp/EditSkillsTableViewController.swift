@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class EditSkillsTableViewController: UITableViewController {
 
@@ -28,6 +29,9 @@ class EditSkillsTableViewController: UITableViewController {
             self.skillsArray.removeAll()
              self.skillsArray = skills
             self.tableView.reloadData()
+            
+            
+            
         })
         
         
@@ -65,12 +69,16 @@ class EditSkillsTableViewController: UITableViewController {
     }
  
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EditSkillsTableViewCell
-//        
-//        
-//       
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let skill = skillsArray.count
+        
+      
+        
+        
+        
+       
+    }
 
     /*
     // Override to support conditional editing of the table view.
