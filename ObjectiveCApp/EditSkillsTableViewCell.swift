@@ -10,12 +10,19 @@ import UIKit
 
 class EditSkillsTableViewCell: UITableViewCell {
     
+    var currentSkill: DeveloperSkills?
+    
     
     @IBOutlet var skillButton: UILabel!
     
     @IBAction func additionalSkillsButton(_ sender: UIButton) {
         
-        print("button pressed")
+        if let skill = currentSkill {
+            
+            print("skill pressed \(skill.subSkills)")
+            
+        }
+        
         
     }
 
@@ -25,13 +32,24 @@ class EditSkillsTableViewCell: UITableViewCell {
     }
     
     
-    func configureCell(input: String) {
+    func configureCell(input: DeveloperSkills) {
         
-        skillButton.text = input
+        currentSkill = input
+        
+        if let skilltype = input.skillType {
+            skillButton.text = skilltype
+        
+        }
+        
+       
+        
     }
-
+    
+  
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
+       
 
         // Configure the view for the selected state
     }

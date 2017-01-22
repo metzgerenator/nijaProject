@@ -25,7 +25,7 @@ class EditSkillsTableViewController: UITableViewController {
         let developerSkills = DeveloperSkills()
         
         developerSkills.skillsFromDataBase(completion: { skills in
-            
+            self.skillsArray.removeAll()
              self.skillsArray = skills
             self.tableView.reloadData()
         })
@@ -54,16 +54,23 @@ class EditSkillsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EditSkillsTableViewCell
         
-        if let skill = skillsArray[indexPath.row].skillType {
-            
+            let skill = skillsArray[indexPath.row]
+        
             cell.configureCell(input: skill)
-        }
+        
         
        
 
         return cell
     }
  
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EditSkillsTableViewCell
+//        
+//        
+//       
+//    }
 
     /*
     // Override to support conditional editing of the table view.

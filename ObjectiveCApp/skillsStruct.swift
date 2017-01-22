@@ -32,24 +32,26 @@ struct DeveloperSkills {
     
     
     
-    func skillsFromDataBase(completion: @escaping (_ skills: [DeveloperSkills])->Void) {
+     func skillsFromDataBase(completion: @escaping (_ skills: [DeveloperSkills])->Void) {
         
         var devSkillsArray = [DeveloperSkills]()
         let ref = FIRDatabase.database().reference().child("developer_skills")
-        
-        ref.observe(.value, with: { (snapshot) in
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
             
             guard let skillDic  = snapshot.value as? NSDictionary else { return }
             
             for (skill, subSkill) in skillDic {
-   
+                
+                
                 let devSkill = DeveloperSkills(skillType: skill as! String, subSkills: subSkill as! Array<String>)
                 devSkillsArray.append(devSkill)
             }
             completion(devSkillsArray)
+            
         }) { (error) in
             print(error.localizedDescription)
         }
+        
         
     
         
