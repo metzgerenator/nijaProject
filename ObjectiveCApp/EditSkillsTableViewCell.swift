@@ -13,9 +13,9 @@ class EditSkillsTableViewCell: UITableViewCell {
     var currentSkill: DeveloperSkills?
     
     var delegate: EditSkillsTableViewCellDelegate?
+
     
-    
-    
+    @IBOutlet var userSkillSelected: UIButton!
     
     @IBOutlet var skillButton: UILabel!
     
@@ -24,6 +24,7 @@ class EditSkillsTableViewCell: UITableViewCell {
         //let vc = UITableViewController as EditSkillsTableViewController
         
         if let skill = currentSkill {
+            
             
             
             delegate?.updateArray(selectedSkill: skill)
@@ -48,12 +49,20 @@ class EditSkillsTableViewCell: UITableViewCell {
     }
     
     
-    func configureCell(input: DeveloperSkills) {
+    func configureCell(input: DeveloperSkills, isSelectedSkill: Bool) {
         
         currentSkill = input
         
         if let skilltype = input.skillType {
             skillButton.text = skilltype
+            
+            switch isSelectedSkill {
+            case true:
+                userSkillSelected.backgroundColor = .green
+            case false:
+                userSkillSelected.backgroundColor = .black
+            }
+            
         
         }
         

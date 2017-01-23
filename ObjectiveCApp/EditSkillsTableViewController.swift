@@ -75,49 +75,24 @@ class EditSkillsTableViewController: UITableViewController {
         
             cell.delegate = self
         
-            cell.configureCell(input: skill)
+        let isInSelectedArray = devSelectSkills.contains{$0.skillType == skill.skillType}
         
-        
-       
-
+        cell.configureCell(input: skill, isSelectedSkill: isInSelectedArray)
+  
         return cell
     }
  
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//        
-//        let skill = skillsArray[indexPath.row]
-//        
-//        let userSelectCheck = devSelectSkills.contains{$0.skillType == skill.skillType}
-//        
-//        switch userSelectCheck {
-//        case true:
-//            devSelectSkills = devSelectSkills.filter{$0.skillType != skill.skillType}
-//
-//        case false:
-//            devSelectSkills.append(skill)
-//        
-//        
-//        }
-//        
-//        //loop through and update skills
-//        var valuesToAppend:Dictionary<String, Any> = [:]
-//        
-//        for skill in devSelectSkills {
-//            
-//            guard let skillToAppend = skill.skillType else {continue}
-//            guard let subSkill = skill.subSkills else {continue}
-//            
-//            valuesToAppend.updateValue(subSkill, forKey: skillToAppend)
-//            
-//        }
-//        
-//        let finalValues = [DEVELOPERSKILLS : valuesToAppend]
-//        
-//        appendValues(values: finalValues as Dictionary<String, AnyObject>)
-//       
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+       // let skill = skillsArray[indexPath.row]
+        
+        
+        
+   
+       
+    }
 
    
 
