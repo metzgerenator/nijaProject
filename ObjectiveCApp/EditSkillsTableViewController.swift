@@ -85,6 +85,10 @@ class EditSkillsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let skill = skillsArray[indexPath.row]
+        
+        self.performSegue(withIdentifier: "subSkills", sender: skill)
+        
         
        // let skill = skillsArray[indexPath.row]
         
@@ -98,6 +102,24 @@ class EditSkillsTableViewController: UITableViewController {
 
 }
 
+
+//MARK: navigation
+
+extension EditSkillsTableViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "subSkills" {
+            
+            let vc = segue.destination as! SubSkillsTableViewController
+            vc.skillSet = sender as! DeveloperSkills
+            
+            
+        }
+        
+    }
+    
+}
 
 extension EditSkillsTableViewController: EditSkillsTableViewCellDelegate {
     

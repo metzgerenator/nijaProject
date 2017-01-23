@@ -13,6 +13,8 @@
 		270E63211E33BA530029D2B8 /* EditSkillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E63201E33BA530029D2B8 /* EditSkillsTableViewController.swift */; };
 		270E63231E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E63221E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift */; };
 		270E63251E33BC5A0029D2B8 /* skillsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E63241E33BC5A0029D2B8 /* skillsStruct.swift */; };
+		270E63281E36A2550029D2B8 /* SubSkillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E63271E36A2550029D2B8 /* SubSkillsTableViewController.swift */; };
+		270E632A1E36A29A0029D2B8 /* SubSkillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E63291E36A29A0029D2B8 /* SubSkillsTableViewCell.swift */; };
 		27280E251DA46E4000D00E2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27280E241DA46E4000D00E2E /* AppDelegate.swift */; };
 		27280E2A1DA46E4000D00E2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27280E281DA46E4000D00E2E /* Main.storyboard */; };
 		27280E2C1DA46E4000D00E2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27280E2B1DA46E4000D00E2E /* Assets.xcassets */; };
@@ -70,6 +72,8 @@
 		270E63201E33BA530029D2B8 /* EditSkillsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSkillsTableViewController.swift; sourceTree = "<group>"; };
 		270E63221E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSkillsTableViewCell.swift; sourceTree = "<group>"; };
 		270E63241E33BC5A0029D2B8 /* skillsStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = skillsStruct.swift; sourceTree = "<group>"; };
+		270E63271E36A2550029D2B8 /* SubSkillsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubSkillsTableViewController.swift; sourceTree = "<group>"; };
+		270E63291E36A29A0029D2B8 /* SubSkillsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubSkillsTableViewCell.swift; sourceTree = "<group>"; };
 		2711E3811DBC1C7400D5BC0A /* ObjectiveCApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ObjectiveCApp.entitlements; sourceTree = "<group>"; };
 		27280E211DA46E4000D00E2E /* ObjectiveCApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27280E241DA46E4000D00E2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,11 +164,21 @@
 		270E631F1E33BA380029D2B8 /* Edit Skills */ = {
 			isa = PBXGroup;
 			children = (
+				270E63261E36A2330029D2B8 /* Sub Skills */,
 				270E63201E33BA530029D2B8 /* EditSkillsTableViewController.swift */,
 				270E63221E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift */,
 				270E63241E33BC5A0029D2B8 /* skillsStruct.swift */,
 			);
 			name = "Edit Skills";
+			sourceTree = "<group>";
+		};
+		270E63261E36A2330029D2B8 /* Sub Skills */ = {
+			isa = PBXGroup;
+			children = (
+				270E63271E36A2550029D2B8 /* SubSkillsTableViewController.swift */,
+				270E63291E36A29A0029D2B8 /* SubSkillsTableViewCell.swift */,
+			);
+			name = "Sub Skills";
 			sourceTree = "<group>";
 		};
 		2711E37E1DBC177300D5BC0A /* CreateDeveloperProfile */ = {
@@ -645,11 +659,13 @@
 				27EE8C171E1C3FF9005511C8 /* UploadPhotoViewController.swift in Sources */,
 				27A7D7B91E257EF60006AA26 /* customerAdditionalStruct.swift in Sources */,
 				27EE8C151E1C2CED005511C8 /* devAdditionalStruct.swift in Sources */,
+				270E63281E36A2550029D2B8 /* SubSkillsTableViewController.swift in Sources */,
 				27D956B51E2FD2E400D9882E /* GenericAccountCreateViewController.swift in Sources */,
 				27ED98971E1EADA30033CB43 /* DevSpecialityViewController.swift in Sources */,
 				27280E551DA4715C00D00E2E /* CreateNewAccountViewController.swift in Sources */,
 				27F46A821E3141A60015627D /* SkilsAndAvailabilityViewController.swift in Sources */,
 				570FAA0F1DC9782400FB0F48 /* DeveloperAdditionalDetailsViewController.swift in Sources */,
+				270E632A1E36A29A0029D2B8 /* SubSkillsTableViewCell.swift in Sources */,
 				57F559411E2EEF75000A0BC1 /* SelectLocationViewController.swift in Sources */,
 				5755BE391DBEE8DB006F26C8 /* Users.swift in Sources */,
 				570FAA0B1DC9748B00FB0F48 /* DeveloperAdditionalCollectionViewCell.swift in Sources */,
