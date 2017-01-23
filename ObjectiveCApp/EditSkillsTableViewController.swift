@@ -35,6 +35,7 @@ class EditSkillsTableViewController: UITableViewController {
             developerSelectSkills.skillsFromDataBase(completion: { (skills) in
                 self.devSelectSkills.removeAll()
                 self.devSelectSkills = skills
+                self.tableView.reloadData()
             })
             
         })
@@ -74,27 +75,40 @@ class EditSkillsTableViewController: UITableViewController {
     }
  
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//        var dictionaryOfSkills:Dictionary<String, Any> = [:]
-//        
-//        let skill = skillsArray[indexPath.row]
-//        
-//        let userSelectCheck = devSelectSkills.contains{$0.skillType == skill.skillType}
-//        
-//        switch userSelectCheck {
-//        case true:
-//            devSelectSkills = devSelectSkills.filter{$0.skillType == skill.skillType}
-//        
-//        default:
-//            <#code#>
-//        }
-//        
-//        
-//        let values = [DEVELOPERSKILLS : ""]
-//        appendValues(values: <#T##Dictionary<String, AnyObject>#>)
-//       
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        let skill = skillsArray[indexPath.row]
+        
+        let userSelectCheck = devSelectSkills.contains{$0.skillType == skill.skillType}
+        
+        switch userSelectCheck {
+        case true:
+            devSelectSkills = devSelectSkills.filter{$0.skillType != skill.skillType}
+
+        case false:
+            devSelectSkills.append(skill)
+        
+        
+        }
+        
+        //loop through and update skills
+        var valuesToAppend:Dictionary<String, Any> = [:]
+        
+        for skill in devSelectSkills {
+            
+            guard let skillToAppend = skill.skillType else {continue}
+            guard let subSkill = skill.subSkills else {continue}
+            
+            valuesToAppend.updateValue(subSkill, forKey: skillToAppend)
+            
+        }
+        
+        let finalValues = [DEVELOPERSKILLS : valuesToAppend]
+        
+        appendValues(values: finalValues as Dictionary<String, AnyObject>)
+       
+    }
 
     /*
     // Override to support conditional editing of the table view.

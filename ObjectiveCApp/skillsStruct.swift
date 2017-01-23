@@ -36,7 +36,6 @@ class DeveloperSkills {
     
      func skillsFromDataBase(completion: @escaping (_ skills: [DeveloperSkills])->Void) {
         
-        //var devSkillsArray = [DeveloperSkills]()
         let ref = FIRDatabase.database().reference().child(DEVELOPERSKILLS)
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             
@@ -81,9 +80,11 @@ class DevSelectSkils: DeveloperSkills {
     
    
     override func skillsFromDataBase(completion: @escaping ([DeveloperSkills]) -> Void) {
+        
         guard let userId = FIRAuth.auth()?.currentUser?.uid else {return}
         
-        let ref = FIRDatabase.database().reference().child(userId).child(DEVELOPERSKILLS)
+        let ref = FIRDatabase.database().reference().child("users").child(userId).child(DEVELOPERSKILLS)
+        
         
         ref.observe(.value, with: { (snapshot) in
             
@@ -93,10 +94,6 @@ class DevSelectSkils: DeveloperSkills {
         })
         
     }
-    
-    
-    //skill match function
-    
     
 }
 
