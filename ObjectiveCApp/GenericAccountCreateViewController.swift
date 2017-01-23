@@ -148,9 +148,9 @@ class GenericAccountCreateViewController: UIViewController {
     @IBAction func saveButtonAction(_ sender: UIButton) {
         
         
-        self.performSegue(withIdentifier: "account_created", sender: self)
+        //self.performSegue(withIdentifier: "account_created", sender: self)
         
-       //saveUIAlert(title: "Credentials", message: "Please fill out the credentials below")
+       saveUIAlert(title: "Credentials", message: "Please fill out the credentials below")
         
         
         
