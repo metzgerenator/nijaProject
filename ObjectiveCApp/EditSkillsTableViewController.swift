@@ -14,6 +14,7 @@ class EditSkillsTableViewController: UITableViewController {
     var skillsArray = [DeveloperSkills]()
     var devSelectSkills = [DeveloperSkills]()
     
+    var cellVC = EditSkillsTableViewCell()
     
     
     
@@ -24,6 +25,7 @@ class EditSkillsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         let developerSkills = DeveloperSkills()
         let developerSelectSkills = DevSelectSkils()
         
@@ -35,7 +37,12 @@ class EditSkillsTableViewController: UITableViewController {
             developerSelectSkills.skillsFromDataBase(completion: { (skills) in
                 self.devSelectSkills.removeAll()
                 self.devSelectSkills = skills
+                
+                
                 self.tableView.reloadData()
+                
+            
+                
             })
             
         })
@@ -66,6 +73,8 @@ class EditSkillsTableViewController: UITableViewController {
         
             let skill = skillsArray[indexPath.row]
         
+            cell.delegate = self
+        
             cell.configureCell(input: skill)
         
         
@@ -75,21 +84,65 @@ class EditSkillsTableViewController: UITableViewController {
     }
  
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//        
+//        let skill = skillsArray[indexPath.row]
+//        
+//        let userSelectCheck = devSelectSkills.contains{$0.skillType == skill.skillType}
+//        
+//        switch userSelectCheck {
+//        case true:
+//            devSelectSkills = devSelectSkills.filter{$0.skillType != skill.skillType}
+//
+//        case false:
+//            devSelectSkills.append(skill)
+//        
+//        
+//        }
+//        
+//        //loop through and update skills
+//        var valuesToAppend:Dictionary<String, Any> = [:]
+//        
+//        for skill in devSelectSkills {
+//            
+//            guard let skillToAppend = skill.skillType else {continue}
+//            guard let subSkill = skill.subSkills else {continue}
+//            
+//            valuesToAppend.updateValue(subSkill, forKey: skillToAppend)
+//            
+//        }
+//        
+//        let finalValues = [DEVELOPERSKILLS : valuesToAppend]
+//        
+//        appendValues(values: finalValues as Dictionary<String, AnyObject>)
+//       
+//    }
+
+   
+
+}
+
+
+extension EditSkillsTableViewController: EditSkillsTableViewCellDelegate {
+    
+    
+    func updateArray(selectedSkill: DeveloperSkills) {
         
+        //print("delegate works \(selectedSkill.skillType)")
         
-        let skill = skillsArray[indexPath.row]
+        let skill = selectedSkill
         
         let userSelectCheck = devSelectSkills.contains{$0.skillType == skill.skillType}
         
         switch userSelectCheck {
         case true:
             devSelectSkills = devSelectSkills.filter{$0.skillType != skill.skillType}
-
+            
         case false:
             devSelectSkills.append(skill)
-        
-        
+            
+            
         }
         
         //loop through and update skills
@@ -107,52 +160,11 @@ class EditSkillsTableViewController: UITableViewController {
         let finalValues = [DEVELOPERSKILLS : valuesToAppend]
         
         appendValues(values: finalValues as Dictionary<String, AnyObject>)
-       
+        
+        
+        
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+

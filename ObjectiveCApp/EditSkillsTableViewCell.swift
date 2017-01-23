@@ -12,23 +12,39 @@ class EditSkillsTableViewCell: UITableViewCell {
     
     var currentSkill: DeveloperSkills?
     
+    var delegate: EditSkillsTableViewCellDelegate?
+    
+    
+    
     
     @IBOutlet var skillButton: UILabel!
     
     @IBAction func additionalSkillsButton(_ sender: UIButton) {
         
+        //let vc = UITableViewController as EditSkillsTableViewController
+        
         if let skill = currentSkill {
             
-            print("skill pressed \(skill.subSkills)")
+            
+            delegate?.updateArray(selectedSkill: skill)
+            
+            
             
         }
         
         
     }
+    
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        
+        
+        
+            // Initialization code
     }
     
     
@@ -55,3 +71,11 @@ class EditSkillsTableViewCell: UITableViewCell {
     }
 
 }
+
+
+protocol EditSkillsTableViewCellDelegate {
+    func updateArray(selectedSkill: DeveloperSkills)
+}
+
+
+
