@@ -45,9 +45,11 @@ class SubSkillsTableViewController: UITableViewController {
         
          let subSkill = skillSet?.subSkills?[indexPath.row]
         
-        if let skillCheck = subSkill {
+        
+        if let skillCheck = subSkill, let userSkills = userSelectSkills, let currentMainSkill = skillSet {
             
-            cell.configueCell(subSkill: skillCheck, isSelected: true)
+            cell.configueCell(subSkill: skillCheck, subskills: userSkills, currentMainSkill: currentMainSkill)
+            
             
         }
         
