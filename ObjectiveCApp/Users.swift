@@ -183,12 +183,13 @@ func appendDevSkils(childPath: String, values: Array<String>) {
         
         let ref = FIRDatabase.database().reference().child("users").child(user.uid).child(DEVELOPERSKILLS).child(childPath)
         
-        var dictionaryToAdd: Dictionary<Int, String> = [:]
+        var dictionaryToAdd: Dictionary<String, Any> = [:]
         for (int,skill) in values.enumerated() {
             
-            dictionaryToAdd.updateValue(skill, forKey: int)
+            dictionaryToAdd.updateValue(skill, forKey: "\(int)")
             
         }
+        print("here is reference \(ref), here are key value pairs \(dictionaryToAdd)")
         
         ref.updateChildValues(dictionaryToAdd)
         
