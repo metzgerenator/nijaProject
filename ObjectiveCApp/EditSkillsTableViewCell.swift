@@ -21,7 +21,6 @@ class EditSkillsTableViewCell: UITableViewCell {
     
     @IBAction func additionalSkillsButton(_ sender: UIButton) {
         
-        //let vc = UITableViewController as EditSkillsTableViewController
         
         if let skill = currentSkill {
             

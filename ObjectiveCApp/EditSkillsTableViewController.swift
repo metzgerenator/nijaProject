@@ -2,22 +2,19 @@
 //  EditSkillsTableViewController.swift
 //  ObjectiveCApp
 //
-//  Created by Michael Metzger  on 1/21/17.
+//  Created by Michael Metzger  on 1/21/1/7.
 //  Copyright © 2017 Michael Metzger . All rights reserved.
 //
 
 import UIKit
-import Firebase
 
 class EditSkillsTableViewController: UITableViewController {
 
     var skillsArray = [DeveloperSkills]()
     var devSelectSkills = [DeveloperSkills]()
     
-    var cellVC = EditSkillsTableViewCell()
-    
-    
-    
+    var delegate: EditSkillsTableViewControllerDelegate?
+  
     @IBAction func cacelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         
@@ -38,7 +35,7 @@ class EditSkillsTableViewController: UITableViewController {
                 self.devSelectSkills.removeAll()
                 self.devSelectSkills = skills
                 
-                
+                self.delegate?.updateUserSelectSkills(userSelectSkills: self.devSelectSkills)
                 self.tableView.reloadData()
                 
             
@@ -89,13 +86,7 @@ class EditSkillsTableViewController: UITableViewController {
         
         self.performSegue(withIdentifier: "subSkills", sender: skill)
         
-        
-       // let skill = skillsArray[indexPath.row]
-        
-        
-        
-   
-       
+     
     }
 
    
@@ -112,7 +103,11 @@ extension EditSkillsTableViewController {
         if segue.identifier == "subSkills" {
             
             let vc = segue.destination as! SubSkillsTableViewController
-            vc.skillSet = sender as! DeveloperSkills
+            vc.skillSet = sender as? DeveloperSkills
+            self.delegate = vc
+            
+            vc.userSelectSkills = devSelectSkills
+        
             
             
         }
@@ -121,12 +116,13 @@ extension EditSkillsTableViewController {
     
 }
 
+
+//MARK: user select full skill
 extension EditSkillsTableViewController: EditSkillsTableViewCellDelegate {
     
     
     func updateArray(selectedSkill: DeveloperSkills) {
         
-        //print("delegate works \(selectedSkill.skillType)")
         
         let skill = selectedSkill
         
@@ -161,6 +157,11 @@ extension EditSkillsTableViewController: EditSkillsTableViewCellDelegate {
         
         
     }
+}
+
+
+protocol EditSkillsTableViewControllerDelegate {
+    func updateUserSelectSkills(userSelectSkills: [DeveloperSkills])
 }
 
 

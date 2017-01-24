@@ -11,6 +11,8 @@ import UIKit
 class SubSkillsTableViewCell: UITableViewCell {
     
     
+    var delegate: SubSkillsTableViewCellDelegate?
+    
     @IBOutlet var subSkillLabel: UILabel!
     
     
@@ -35,9 +37,12 @@ class SubSkillsTableViewCell: UITableViewCell {
         
         switch isSelected {
         case true:
-            selectSkillOutlet.backgroundColor = .green
-        case false:
             selectSkillOutlet.backgroundColor = .black
+            delegate?.updateSubSkills(subSkill: subSkill, remove: false)
+            
+        case false:
+            selectSkillOutlet.backgroundColor = .green
+            delegate?.updateSubSkills(subSkill: subSkill, remove: false)
         }
         
     }
@@ -51,4 +56,8 @@ class SubSkillsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+protocol SubSkillsTableViewCellDelegate {
+    func updateSubSkills(subSkill: String, remove: Bool)
 }
