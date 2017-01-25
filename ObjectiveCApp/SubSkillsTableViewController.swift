@@ -44,6 +44,8 @@ class SubSkillsTableViewController: UITableViewController {
         
          let subSkill = skillSet?.subSkills?[indexPath.row]
         
+        cell.delegate = self
+        
         
         if let skillCheck = subSkill, let userSkills = userSelectSkills, let currentMainSkill = skillSet {
             
@@ -63,7 +65,7 @@ class SubSkillsTableViewController: UITableViewController {
 
 
 
-extension SubSkillsTableViewController: EditSkillsTableViewControllerDelegate {
+extension SubSkillsTableViewController: EditSkillsTableViewControllerDelegate, SubSkillsTableViewCellDelegate {
     
     
     func updateUserSelectSkills(userSelectSkills: [DeveloperSkills]) {
@@ -71,6 +73,16 @@ extension SubSkillsTableViewController: EditSkillsTableViewControllerDelegate {
         self.userSelectSkills = userSelectSkills
         
     }
+    
+    
+    func updatesubSkills() {
+        
+        print("delegate works")
+        
+        
+    }
+    
+    
     
 }
 
