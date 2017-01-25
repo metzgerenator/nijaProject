@@ -21,11 +21,22 @@ class SubSkillsTableViewCell: UITableViewCell {
     
     
     @IBAction func selectSkill(_ sender: Any) {
-        var subSkillsToAppend = [String]()
         
-        // if there remove if not add 
-        if userSelectSkills.count > 0 {
-            
+        
+//        print("selectedMainSkill \(selectedMainSkill.skillType) " )
+//        
+//        for skill in userSelectSkills {
+//            
+//            print("head skill \(skill.skillType)")
+//            for sub in skill.subSkills! {
+//                print("sub skill \(sub)")
+//            }
+//            
+//            
+//        }
+        
+        
+            var subSkillsToAppend = [String]()
             for skills in userSelectSkills {
                 
                 if skills.skillType! == selectedMainSkill.skillType {
@@ -36,27 +47,29 @@ class SubSkillsTableViewCell: UITableViewCell {
                     case true:
                         subSkillsToAppend = skills.subSkills!.filter{$0 != subSkillLabel.text!}
                         selectSkillOutlet.backgroundColor = .black
-                        
+                        break
                     case false:
                         subSkillsToAppend = skills.subSkills!
                         subSkillsToAppend.append(subSkillLabel.text!)
                         selectSkillOutlet.backgroundColor = .green
+                        break
                     }
                     
                     
+                } else {
+                    
+                    subSkillsToAppend.append(subSkillLabel.text!)
+                    selectSkillOutlet.backgroundColor = .green
+                    break
                 }
                 
                 
             }
-            
-            
-        }
         
-           
-
+    
             
             appendDevSkils(childPath: selectedMainSkill.skillType! , values: subSkillsToAppend)
-            
+        
         
         
         
