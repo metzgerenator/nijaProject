@@ -87,11 +87,35 @@ extension SubSkillsTableViewController: EditSkillsTableViewControllerDelegate, S
     
     
     func updatesubSkills(subSkill: String, delete: Bool) {
-//        print("headerSkill \(skillSet?.skillType)")
-//        print("here is subSkill \(subSkill), delete skill\(delete)")
         
-       
+        //match main skill 
         
+        
+        var userSubSkills = skillSet?.subSkills!
+        
+        for mainSkills in userSelectSkills! {
+            
+            if mainSkills.skillType == skillSet?.skillType {
+                
+              userSubSkills = mainSkills.subSkills!
+                
+            }
+            
+            
+        }
+        
+
+        
+        if (delete) {
+            userSubSkills = userSubSkills?.filter{$0 != subSkill}
+        }
+        
+        let values = [skillSet!.skillType! : userSubSkills]
+        
+        
+        appendDevSkils(values: values as Dictionary<String, AnyObject>)
+        
+
         
     }
     
