@@ -54,10 +54,30 @@ class SubSkillsTableViewCell: UITableViewCell {
     }
 
     
-    func configueCell(subSkill: String, subskills: [DeveloperSkills], currentMainSkill: DeveloperSkills) {
+    func configueCell(subSkill: String, userSelectSkills: [DeveloperSkills], currentMainSkill: DeveloperSkills) {
         
         
         subSkillLabel.text = subSkill
+        
+        selectSkillOutlet.backgroundColor = UIColor.black
+        
+        // determine if button should be green 
+        
+        for headerSkill in userSelectSkills {
+            
+            if headerSkill.skillType == currentMainSkill.skillType {
+                
+                for userSubSkill in headerSkill.subSkills! {
+                    
+                    if userSubSkill == subSkill {
+                        selectSkillOutlet.backgroundColor = UIColor.green
+                    }
+                    
+                }
+                
+            }
+            
+        }
      
     
        

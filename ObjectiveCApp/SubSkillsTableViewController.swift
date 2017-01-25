@@ -14,9 +14,15 @@ class SubSkillsTableViewController: UITableViewController {
     var skillSet: DeveloperSkills?
     
     var userSelectSkills: [DeveloperSkills]?
+    
+   // var cellColorLabels: Dictionary<UIColor, String> = [:]
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
      
     }
 
@@ -45,11 +51,10 @@ class SubSkillsTableViewController: UITableViewController {
          let subSkill = skillSet?.subSkills?[indexPath.row]
         
         cell.delegate = self
-        
-        
+
         if let skillCheck = subSkill, let userSkills = userSelectSkills, let currentMainSkill = skillSet {
             
-            cell.configueCell(subSkill: skillCheck, subskills: userSkills, currentMainSkill: currentMainSkill)
+            cell.configueCell(subSkill: skillCheck, userSelectSkills: userSkills, currentMainSkill: currentMainSkill)
             
             
         }
@@ -67,17 +72,25 @@ class SubSkillsTableViewController: UITableViewController {
 
 extension SubSkillsTableViewController: EditSkillsTableViewControllerDelegate, SubSkillsTableViewCellDelegate {
     
-    
+    //called everytime user updates
     func updateUserSelectSkills(userSelectSkills: [DeveloperSkills]) {
         
         self.userSelectSkills = userSelectSkills
         
+        self.tableView.reloadData()
+        
+        
     }
     
     
+    
+    
+    
     func updatesubSkills(subSkill: String, delete: Bool) {
+//        print("headerSkill \(skillSet?.skillType)")
+//        print("here is subSkill \(subSkill), delete skill\(delete)")
         
-        print("delegate works")
+       
         
         
     }
