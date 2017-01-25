@@ -97,42 +97,6 @@ class DevSelectSkils: DeveloperSkills {
     
 }
 
-//
-//class DevSelectSubSkills: DeveloperSkills {
-//    
-//    var mainSkill: String?
-//    
-//    
-//    init(mainSkill: String, skillType: String, subKSills: [String]) {
-//        
-//        self.mainSkill = mainSkill
-//        super.init(skillType: skillType, subSkills: subKSills)
-//    }
-//    
-//    
-//    override func skillsFromDataBase(completion: @escaping ([DeveloperSkills]) -> Void) {
-//        
-//        guard let userId = FIRAuth.auth()?.currentUser?.uid else {return}
-//        
-//        if let mainSkillCheck = mainSkill {
-//            
-//            let ref = FIRDatabase.database().reference().child("users").child(userId).child(DEVELOPERSKILLS).child(mainSkillCheck)
-//            
-//            
-//            ref.observe(.value, with: { (snapshot) in
-//                
-//                guard let skillDic  = snapshot.value as? NSDictionary else { return }
-//                
-//                completion(self.snapShotParse(skillDic: skillDic))
-//            })
-//            
-//            
-//        }
-//        
-//        
-//    }
-//    
-//}
 
 
 

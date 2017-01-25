@@ -11,6 +11,13 @@ import UIKit
 class TypeSelectViewController: UIViewController {
     
     
+    @IBOutlet var amOutlet: UIStackView!
+    
+    @IBOutlet var selectionView: UIStackView!
+    
+    @IBOutlet var needOutlet: UIButton!
+    
+    
     var notADev = "am not "
     var amADev = "am"
     
@@ -24,21 +31,38 @@ class TypeSelectViewController: UIViewController {
     
     @IBAction func devSelectButton(_ sender: UIButton) {
         
-        switch sender.currentTitle! {
-        case notADev:
-            devSelectOutlet.setTitle(amADev, for: .normal)
-            currentTitle = "I am a developer or dev shop"
-        default:
-            devSelectOutlet.setTitle(notADev, for: .normal)
-            currentTitle = "I am not a developer or dev shop"
+        //show hide labels
+        
+        switch selectionView.isHidden {
+        case true:
             
+            selectionView.isHidden = false
+            
+        case false:
+            
+            selectionView.isHidden = true
         }
+        
+    
+        
+        
+//        switch sender.currentTitle! {
+//        case notADev:
+//            devSelectOutlet.setTitle(amADev, for: .normal)
+//            currentTitle = "I am a developer or dev shop"
+//        default:
+//            devSelectOutlet.setTitle(notADev, for: .normal)
+//            currentTitle = "I am not a developer or dev shop"
+//            
+//        }
     }
     
     
 
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
+        selectionView.isHidden = true
+        
     }
     
     override func viewDidLoad() {
@@ -48,10 +72,6 @@ class TypeSelectViewController: UIViewController {
         //Add barbutton
         let barButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(TypeSelectViewController.nextStep))
         self.navigationItem.rightBarButtonItem = barButton
-        
-       // devSelectOutlet.setTitle(notADev, for: .normal)
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
