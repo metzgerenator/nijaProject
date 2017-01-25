@@ -11,8 +11,7 @@ import UIKit
 class SubSkillsTableViewCell: UITableViewCell {
     
     
-    var selectedMainSkill: DeveloperSkills!
-    var userSelectSkills = [DeveloperSkills]()
+  
     
     var delegate: SubSkillsTableViewCellDelegate?
     
@@ -26,51 +25,23 @@ class SubSkillsTableViewCell: UITableViewCell {
     @IBAction func selectSkill(_ sender: Any) {
         
         
+        let labelBackgroundColor = selectSkillOutlet.backgroundColor!
         
-        delegate?.updatesubSkills()
-        
-        
-//        print("selectedMainSkill \(selectedMainSkill.skillType) " )
-//        
-//        for skill in userSelectSkills {
-//            
-//            print("head skill \(skill.skillType)")
-//            for sub in skill.subSkills! {
-//                print("sub skill \(sub)")
-//            }
-//            
-//            
-//        }
-        
-//        
-//            var subSkillsToAppend = [String]()
-//            subSkillsToAppend.removeAll()
-//            for skills in userSelectSkills {
-//                
-//                
-//                    let isSubSkillPresent = skills.subSkills!.contains{$0 == subSkillLabel.text!}
-//                    
-//                    switch isSubSkillPresent {
-//                    case true:
-//                        subSkillsToAppend = skills.subSkills!.filter{$0 != subSkillLabel.text!}
-//                        selectSkillOutlet.backgroundColor = .black
-//                        break
-//                    case false:
-//                        subSkillsToAppend = skills.subSkills!
-//                        subSkillsToAppend.append(subSkillLabel.text!)
-//                        selectSkillOutlet.backgroundColor = .green
-//                        break
-//                    }
-//                    
-//                    
-//                
-//                
-//            }
-//        
-//    
-//            
-//            appendDevSkils(childPath: selectedMainSkill.skillType! , values: subSkillsToAppend)
-        
+        switch labelBackgroundColor {
+        case UIColor.green:
+            selectSkillOutlet.backgroundColor = UIColor.black
+            delegate?.updatesubSkills(subSkill: subSkillLabel.text!, delete: true)
+            
+        case UIColor.black:
+            selectSkillOutlet.backgroundColor = UIColor.green
+            delegate?.updatesubSkills(subSkill: subSkillLabel.text!, delete: false)
+        default:
+            selectSkillOutlet.backgroundColor = UIColor.green
+            delegate?.updatesubSkills(subSkill: subSkillLabel.text!, delete: false)
+            
+            
+            
+        }
         
         
         
@@ -87,8 +58,7 @@ class SubSkillsTableViewCell: UITableViewCell {
         
         
         subSkillLabel.text = subSkill
-        self.userSelectSkills = subskills
-        self.selectedMainSkill = currentMainSkill
+     
     
        
     }
@@ -106,7 +76,9 @@ class SubSkillsTableViewCell: UITableViewCell {
 
 
 protocol SubSkillsTableViewCellDelegate {
-    func updatesubSkills()
+    func updatesubSkills(subSkill: String, delete: Bool)
+    
+    
 }
 
 

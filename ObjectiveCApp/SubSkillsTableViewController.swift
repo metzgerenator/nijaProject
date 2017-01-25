@@ -75,7 +75,7 @@ extension SubSkillsTableViewController: EditSkillsTableViewControllerDelegate, S
     }
     
     
-    func updatesubSkills() {
+    func updatesubSkills(subSkill: String, delete: Bool) {
         
         print("delegate works")
         
