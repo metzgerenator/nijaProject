@@ -184,7 +184,13 @@ func appendDevSkils(values: Dictionary<String, AnyObject>) {
         
         let ref = FIRDatabase.database().reference().child("users").child(user.uid).child(DEVELOPERSKILLS)
         
-       print("ref = \(ref), values = \(values)")
+       //print("ref = \(ref), values = \(values)")
+        
+        for (key, value) in values {
+            
+            print("key \(key) value \(value)")
+            
+        }
         
         ref.updateChildValues(values)
         
