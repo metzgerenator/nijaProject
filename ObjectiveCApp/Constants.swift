@@ -11,6 +11,12 @@ import UIKit
 
 
 //company types new ones
+
+let USERTYPE = "user_type"
+
+let CLIENT = "client"
+let DEVELOPER = "developer"
+
 let COMPANYSIZE = "company_size"
 let FREELANCERTYPE = "Freelancer"
 let SMALLTEAMTYPE = "Small Team"

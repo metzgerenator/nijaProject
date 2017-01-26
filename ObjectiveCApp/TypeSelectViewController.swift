@@ -29,7 +29,7 @@ class TypeSelectViewController: UIViewController {
     @IBAction func amDevButton(_ sender: UIButton){
         
         devSelectOutlet.setTitle("am", for: .normal)
-        currentTitle = "Developer"
+        currentTitle = DEVELOPER
         
     }
     
@@ -37,7 +37,7 @@ class TypeSelectViewController: UIViewController {
     @IBAction func notDev(_sender: UIButton) {
         
         devSelectOutlet.setTitle("need", for: .normal)
-        currentTitle = "Client"
+        currentTitle = CLIENT
     }
     
     
@@ -94,7 +94,28 @@ class TypeSelectViewController: UIViewController {
     
     func nextStep() {
         
-        self.performSegue(withIdentifier: "accountCreate", sender: self)
+        if let clientType = currentTitle {
+            
+            switch clientType {
+            case DEVELOPER:
+                appendValues(values: [USERTYPE : DEVELOPER as AnyObject])
+                
+            case CLIENT:
+                appendValues(values: [USERTYPE : CLIENT as AnyObject])
+            default:
+                break
+            }
+            
+        } else {
+            
+            appendValues(values: [USERTYPE : DEVELOPER as AnyObject])
+            
+        }
+        
+        
+        
+        
+        self.performSegue(withIdentifier: "accountDetails", sender: self)
         
     }
     
@@ -107,14 +128,18 @@ class TypeSelectViewController: UIViewController {
             let vc = segue.destination as! GenericAccountCreateViewController
         if segue.identifier == "accountCreate" {
             
-            if let titleToSend = currentTitle {
-                
-                vc.devTypeTitle = titleToSend
-            } else {
-                
-                vc.devTypeTitle = "I am developer or dev shop"
-                
-            }
+//            if let titleToSend = currentTitle {
+//                
+//                vc.devTypeTitle = titleToSend
+//                
+//                
+//                
+//            } else {
+//                
+//                vc.devTypeTitle = "I am developer or dev shop"
+//                
+//                
+//            }
  
     }
  
