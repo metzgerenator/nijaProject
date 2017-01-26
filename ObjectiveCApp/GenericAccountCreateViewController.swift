@@ -98,16 +98,34 @@ class GenericAccountCreateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        companyNameField.text = ""
         let currentUser = CurrentUser()
         currentUser.userAttributes { (Developer) in
             
             self.companyNameField.text = Developer.companyName ?? ""
             
             //MARK: finish companysize selection
-            if let companySize = Developer.developerType {
+            if let companySize = Developer.companySize {
                 
-                print(companySize)
+                
+                switch companySize {
+                    
+                case FREELANCERTYPE:
+                    self.setButtonBackgrounds(tagID: 1)
+                    self.companySize = FREELANCERTYPE
+                    
+                case SMALLTEAMTYPE:
+                    self.setButtonBackgrounds(tagID: 2)
+                    self.companySize = SMALLTEAMTYPE
+                    
+                case DEVSHOPTYPE:
+                    self.setButtonBackgrounds(tagID: 3)
+                    self.companySize = DEVSHOPTYPE
+                    
+                default:
+                    break
+                     
+                }
+                
                 
                 
             }

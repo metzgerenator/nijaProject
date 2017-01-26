@@ -80,7 +80,7 @@ struct Developer {
     var location: String?
     
     var companyName: String?
-    
+    var companySize: String?
     
     
     var developerType: String?
@@ -98,6 +98,13 @@ struct Developer {
         if let email = userdata[USERSEMAIL] {
             
             self.email = email as? String
+            
+        }
+        
+        
+        if let companySize = userdata[COMPANYSIZE] {
+            
+            self.companySize = companySize as? String
             
         }
         
