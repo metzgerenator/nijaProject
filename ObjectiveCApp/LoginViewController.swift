@@ -25,13 +25,13 @@ class LoginViewController: UIViewController {
         
         
         //log out user
-        //let firebaseAuth = FIRAuth.auth()
+//        let firebaseAuth = FIRAuth.auth()
 //        do {
 //            try firebaseAuth?.signOut()
 //        } catch let signOutError as NSError {
 //            print ("Error signing out: %@", signOutError)
 //        }
-//        
+
         //check state of user
         let currentUserStatusCheck = CurrentUser()
         currentUserStatusCheck.checkUSerStatus { (isLogged) in
@@ -97,6 +97,9 @@ class LoginViewController: UIViewController {
                 
                 
                 //MARK: segue to next view
+                
+                createAccount(user: user!)
+                
                 self.performSegue(withIdentifier: "accountCreated", sender: self)
                 
                 

@@ -95,6 +95,7 @@ extension SelectLocationViewController: UISearchBarDelegate {
                         
                         let locationToAdd = "\(city), \(state)"
                         
+                        
                         forLocations.append(locationToAdd)
                     }
                     
@@ -143,6 +144,8 @@ extension SelectLocationViewController: UITableViewDataSource, UITableViewDelega
         
         
         let location = locatons[indexPath.row]
+        
+        //append location here
         
         
         

@@ -150,11 +150,15 @@ struct Developer {
 }
 
 
-func createAccount(accountType: String,user: FIRUser ,values: Dictionary<String, AnyObject>) {
+func createAccount(user: FIRUser) {
     
     let ref = FIRDatabase.database().reference()
     
-    ref.child("users").child(user.uid).setValue(values)
+    guard let email = user.email else {return}
+    
+    let emailAttribute = ["email" : email]
+    
+    ref.child("users").child(user.uid).setValue(emailAttribute)
 
     
 }

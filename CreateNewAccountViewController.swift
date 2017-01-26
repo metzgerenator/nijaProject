@@ -76,7 +76,7 @@ class CreateNewAccountViewController: UIViewController {
                         let values  = ["user_type" : "customer",
                                        "email" : self.userName.text!]
                         
-                        createAccount(accountType: customers, user: user!, values: values as Dictionary<String, AnyObject>)
+                        //createAccount(accountType: customers, user: user!, values: values as Dictionary<String, AnyObject>)
              
                         
                     } else if (self.developerSwitchLabel.isOn) {
@@ -84,7 +84,7 @@ class CreateNewAccountViewController: UIViewController {
                         let values  = ["user_type" : "developer",
                                        "email" : self.userName.text!]
                         
-                         createAccount(accountType: developer, user: user!, values: values as Dictionary<String, AnyObject>)
+                         //createAccount(accountType: developer, user: user!, values: values as Dictionary<String, AnyObject>)
                         
                         
                      }
