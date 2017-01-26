@@ -148,9 +148,8 @@ class GenericAccountCreateViewController: UIViewController {
     @IBAction func saveButtonAction(_ sender: UIButton) {
         
         
-        self.performSegue(withIdentifier: "account_created", sender: self)
+        self.performSegue(withIdentifier: "user_details", sender: self)
         
-       //saveUIAlert(title: "Credentials", message: "Please fill out the credentials below")
         
         
         
@@ -173,64 +172,6 @@ class GenericAccountCreateViewController: UIViewController {
 extension GenericAccountCreateViewController {
     
     
-    func saveUIAlert(title: String, message: String)  {
-        
-        
-        if ((companyNameField.text?.characters.count)! > 0 && (cityField.text?.characters.count)! > 0 ) && (websiteField.text?.characters.count)! > 0 && (emailField.text?.characters.count)! > 0 && companySize != nil {
-      
-            
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
-            
-            
-            
-            let loginAction = UIAlertAction(title: "Create Account", style: .default) { [weak alertController] _ in
-                if let alertController = alertController {
-                    let loginTextField = alertController.textFields![0] as UITextField
-                    let passwordTextField = alertController.textFields![1] as UITextField
-                    
-                    self.createNewAccount(username: loginTextField.text!, password: passwordTextField.text!)
-                    
-                    
-                }
-            }
-            
-            alertController.addTextField { (textField) in
-                
-                if let userName = self.userName {
-                    textField.text = userName
-                }
-                textField.placeholder = "User Name"
-                textField.keyboardType = .default
-                
-            }
-            
-            alertController.addTextField { textField in
-                
-                if let password = self.userPassword {
-                    
-                    textField.placeholder = password
-                }
-                textField.placeholder = "Password"
-                textField.isSecureTextEntry = true
-            }
-            
-            alertController.addAction(cancelAction)
-            alertController.addAction(loginAction)
-            
-            self.present(alertController, animated: true, completion: nil)
-            
-        } else {
-            
-            userAlerts(title: "Check all fields", message: "Please fill in all the required fileds")
-            
-        }
-        
-        
-        
-        
-    }
     
     
     //MARK: general alert funciton
@@ -249,58 +190,6 @@ extension GenericAccountCreateViewController {
 }
 
 
-//MARK: firebase create user methods
-extension GenericAccountCreateViewController {
-
-    
-    
-    
-    func createNewAccount(username: String, password: String)  {
-        
-       
-        
-        
-        
-            FIRAuth.auth()?.createUser(withEmail: emailField.text!, password: password, completion: { (user, error) in
-                
-                if error == nil {
-                    
-                    let valuesToAdd = [USERNAME : username, COMPANYNAME: self.companyNameField.text!, USERWEBSITE : self.websiteField.text!, USERCITY : self.cityField.text!, "companysize" : self.companySize!] as [String : Any]
-                    
-                    
-                    createAccount(accountType: self.companySize!, user: user!, values: valuesToAdd as Dictionary<String, AnyObject>)
-                    
-                    self.userName = nil
-                    self.userPassword = nil
-                    
-                    //MARK: segue to next view
-                    self.performSegue(withIdentifier: "account_created", sender: self)
-                    
-                    
-                } else {
-                    
-                    self.userName = username
-                    self.userPassword = password
-                    
-                    self.saveUIAlert(title: "Error", message: (error?.localizedDescription)!)
-                    
-                    
-                }
-                
-                
-            })
-        
-        
-       
-
-        
-        
-    }
-
-
-
-
-}
 
 
 

@@ -908,7 +908,7 @@
                         <outlet property="devSelectOutlet" destination="L49-b6-QgG" id="GqF-a1-OTj"/>
                         <outlet property="needOutlet" destination="S7x-6G-4fN" id="0tf-hO-2Mf"/>
                         <outlet property="selectionView" destination="JdY-zM-zdq" id="Vbb-tt-wi3"/>
-                        <segue destination="xox-Cv-7Zi" kind="show" identifier="accountCreate" id="dz4-2E-oOW"/>
+                        <segue destination="xox-Cv-7Zi" kind="presentation" identifier="accountCreate" id="dz4-2E-oOW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFZ-TY-7Iz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1076,7 +1076,7 @@
                         <outlet property="saveButtonOutlet" destination="UTg-BQ-fpN" id="eeo-Ac-c8J"/>
                         <outlet property="smallTeamSize" destination="sjd-Io-F9Q" id="O0g-QD-f7S"/>
                         <outlet property="websiteField" destination="Hhp-mU-XoI" id="LFu-XS-ig4"/>
-                        <segue destination="Xdw-uD-rBG" kind="presentation" identifier="account_created" id="lXw-en-P3H"/>
+                        <segue destination="Xdw-uD-rBG" kind="presentation" identifier="user_details" id="lXw-en-P3H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgY-N2-FhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
