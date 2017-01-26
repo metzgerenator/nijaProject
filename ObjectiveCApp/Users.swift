@@ -184,7 +184,6 @@ func appendDevSkils(values: Dictionary<String, AnyObject>) {
         
         let ref = FIRDatabase.database().reference().child("users").child(user.uid).child(DEVELOPERSKILLS)
         
-       //print("ref = \(ref), values = \(values)")
         
         for (key, value) in values {
             
@@ -210,3 +209,46 @@ func appendGenericValues(values: Dictionary<String, AnyObject>) {
     
     
 }
+
+
+//MARK: Authentication State listener 
+
+
+struct CurrentUser {
+   
+    func checkUSerStatus(completion: @escaping (_ userLogged: Bool)->Void)  {
+        
+        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+            
+            if user != nil {
+                
+                completion(true)
+                
+            } else {
+                
+                completion(false)
+                
+            }
+            
+            
+            
+        }
+        
+    }
+    
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

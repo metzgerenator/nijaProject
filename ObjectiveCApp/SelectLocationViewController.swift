@@ -111,6 +111,24 @@ extension SelectLocationViewController: UITableViewDataSource, UITableViewDelega
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
+        let location = locatons[indexPath.row].placemark as CLPlacemark
+        
+        let addressAtributes =  location.addressDictionary
+        
+        
+        
+        if let city = addressAtributes?["City"] {
+            
+            print("city \(city as! String)")
+            
+        }
+        
+        if let state = addressAtributes?["State"] {
+            
+            print("state \(state as! String)")
+            
+        }
+        
         cell.textLabel?.text = locatons[indexPath.row].name
         
         return cell
@@ -121,7 +139,12 @@ extension SelectLocationViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-        self.performSegue(withIdentifier: "dev", sender: self)
+        let location = locatons[indexPath.row]
+        
+        
+        
+        
+        //self.performSegue(withIdentifier: "dev", sender: self)
         
     }
     

@@ -23,58 +23,37 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        //log out user
+        //let firebaseAuth = FIRAuth.auth()
+//        do {
+//            try firebaseAuth?.signOut()
+//        } catch let signOutError as NSError {
+//            print ("Error signing out: %@", signOutError)
+//        }
+//        
+        //check state of user
+        let currentUserStatusCheck = CurrentUser()
+        currentUserStatusCheck.checkUSerStatus { (isLogged) in
+            
+            switch isLogged {
+            case true:
+                print("user logged in!")
+                self.performSegue(withIdentifier: "accountCreated", sender: self)
+            case false:
+                
+                print("user not logged ")
+                //self.performSegue(withIdentifier: "", sender: self)
+                
+            }
+            
+            
+        }
+        
+        
         formatView()
         
-        ref = FIRDatabase.database().reference()
-        
-       // try! FIRAuth.auth()!.signOut()
-        
-//        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
-//            
-//            if user != nil {
-//                
-//                
-//                self.ref.child(users).child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
-//                    
-//                    //determine if email is verified
-//                    let emailVerified = user!.isEmailVerified
-//                    // Get user value
-//                    
-//                    let value = snapshot.value as? NSDictionary
-//                    print("here is the value \(value)")
-//                    
-//                    let userType = value?[userIDType] as! String
-//                    print("here is the user type \(userType)")
-//                    
-//                    
-//                    if userType == "developer" && emailVerified == true {
-//                        
-//                    
-//        
-//                        self.performSegue(withIdentifier: developer, sender: nil)
-//                        
-//                    } else if userType == customers && emailVerified == true {
-//                        
-//                        self.performSegue(withIdentifier: customers, sender: nil)
-//                        
-//                    }
-//                 
-//                
-//                    
-//                    
-//                   
-//                }) { (error) in
-//                    print(error.localizedDescription)
-//                }
-//                
-//                
-//                
-//                
-//                
-//            }
-//            
-//    
-//        }
+
         
        
     }
@@ -152,13 +131,13 @@ class LoginViewController: UIViewController {
             
             FIRAuth.auth()?.signIn(withEmail: userName.text!, password: passWord.text!, completion: { (user, error) in
                 
-                
-                // tell user if they are not verified
-                if user?.isEmailVerified == false {
-                    
-                    self.alertControllerView(title: "Verify Email", message: "Please verify your email before loging in.")
-                    
-                }
+//                
+//                // tell user if they are not verified
+//                if user?.isEmailVerified == false {
+//                    
+//                    self.alertControllerView(title: "Verify Email", message: "Please verify your email before loging in.")
+//                    
+//                }
                 
                 if (error != nil) {
                     
