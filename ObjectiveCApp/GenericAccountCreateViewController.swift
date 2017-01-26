@@ -98,8 +98,26 @@ class GenericAccountCreateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        companyNameField.text = ""
+        let currentUser = CurrentUser()
+        currentUser.userAttributes { (Developer) in
+            
+            self.companyNameField.text = Developer.companyName ?? ""
+            
+            //MARK: finish companysize selection
+            if let companySize = Developer.developerType {
+                
+                print(companySize)
+                
+                
+            }
+            
+            self.cityField.text = Developer.location ?? ""
+            self.websiteField.text = Developer.website ?? ""
+            self.emailField.text = Developer.email ?? ""
+            
+            
+        }
         
         setAttributes()
         // Do any additional setup after loading the view.
@@ -146,10 +164,10 @@ class GenericAccountCreateViewController: UIViewController {
     
     @IBAction func saveButtonAction(_ sender: UIButton) {
         
-        if let location = cityField.text, let website = websiteField.text, let email = emailField.text, let companySize = companySize {
+        if let location = cityField.text, let website = websiteField.text, let email = emailField.text, let companySize = companySize, let companyName = companyNameField.text {
             
             
-            appendValues(values: [USERLOCATION : location as AnyObject, USERSWEBSITE : website as AnyObject, USERSEMAIL : email as AnyObject, COMPANYSIZE : companySize as AnyObject])
+            appendValues(values: [USERLOCATION : location as AnyObject, USERSWEBSITE : website as AnyObject, USERSEMAIL : email as AnyObject, COMPANYSIZE : companySize as AnyObject, COMPANYNAME : companyName as AnyObject])
             
             self.performSegue(withIdentifier: "user_details", sender: self)
         } else {

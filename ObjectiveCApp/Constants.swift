@@ -26,6 +26,7 @@ let USERLOCATION = "Location"
 let USERSWEBSITE = "user_website"
 let USERSNAME = "username"
 let USERSEMAIL = "user_emal"
+let COMPANYNAME = "company_name"
 
 //////
  let dateFormatter = DateFormatter()

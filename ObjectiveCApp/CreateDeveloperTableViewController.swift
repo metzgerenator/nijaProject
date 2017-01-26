@@ -120,10 +120,10 @@ class CreateDeveloperTableViewController: UITableViewController {
                 if let website = developer.website{
                     self.website.text = website
                 }
-                if let address = developer.address{
-                    self.address.text = address
-                }
-                
+//                if let address = developer.address{
+//                    self.address.text = address
+//                }
+//                
                 if let devType = developer.developerType{
                     
                     currentUserDevType = devType

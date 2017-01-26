@@ -79,6 +79,8 @@ struct Developer {
     var phone: String?
     var location: String?
     
+    var companyName: String?
+    
     
     
     var developerType: String?
@@ -137,6 +139,12 @@ struct Developer {
         if let devType = userdata[DEVELOPERTYPE] {
             
             self.developerType = devType as? String
+            
+        }
+        
+        if let companyName = userdata[COMPANYNAME] {
+            
+            self.companyName = companyName as? String
             
         }
         

@@ -11,7 +11,7 @@ import Foundation
 
 let USERNAME = "username"
 let USEREMAIL = "email"
-let COMPANYNAME = "company_name"
+//let COMPANYNAME = "company_name"
 let USERWEBSITE = "user_website"
 let USERCITY = "city"
 
