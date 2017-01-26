@@ -11,10 +11,7 @@ import Firebase
 
 class GenericAccountCreateViewController: UIViewController {
     
-    
-    var userName: String?
-    var userPassword: String?
-    
+
     var companySize: String?
     
     @IBOutlet var companyNameField: UITextField!
@@ -147,8 +144,17 @@ class GenericAccountCreateViewController: UIViewController {
     
     @IBAction func saveButtonAction(_ sender: UIButton) {
         
+        if let location = cityField.text, let website = websiteField.text, let email = emailField.text, let companySize = companySize {
+       
+        } else {
+            
+            userAlerts(title: "Fill in fields", message: "Please fill in all fields")
+            
+        }
         
-        self.performSegue(withIdentifier: "user_details", sender: self)
+        
+        
+        //self.performSegue(withIdentifier: "user_details", sender: self)
         
         
         

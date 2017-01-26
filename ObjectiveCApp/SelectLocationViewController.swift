@@ -147,7 +147,7 @@ extension SelectLocationViewController: UITableViewDataSource, UITableViewDelega
         
         appendValues(values: [USERLOCATION : location as AnyObject] )
         
-        self.performSegue(withIdentifier: "accountDetails", sender: self)
+        self.performSegue(withIdentifier: "dev", sender: self)
    
         
     }
