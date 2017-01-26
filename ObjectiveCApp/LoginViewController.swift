@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
         
         ref = FIRDatabase.database().reference()
         
-        //try! FIRAuth.auth()!.signOut()
+       // try! FIRAuth.auth()!.signOut()
         
 //        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
 //            
@@ -100,6 +100,47 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    
+    @IBAction func CreateAccountAction(_ sender: UIButton) {
+        
+        let username = userName.text!
+        let password = passWord.text!
+        
+        if username.characters.count > 0 && password.characters.count > 0 {
+            
+        
+        FIRAuth.auth()?.createUser(withEmail: username, password: password, completion: { (user, error) in
+            
+            if error == nil {
+                
+                
+                //MARK: segue to next view
+                self.performSegue(withIdentifier: "accountCreated", sender: self)
+                
+                
+            } else {
+          
+                
+                self.alertControllerView(title: "Error", message: (error?.localizedDescription)!)
+                
+                
+            }
+            
+            
+        })
+        
+        } else {
+            self.alertControllerView(title: "Fill in all fields", message: "please fill in all the required fields")
+        }
+        
+        
+    }
+    
+    
+    
     
 
     @IBAction func loginButton(_ sender: AnyObject) {

@@ -733,6 +733,9 @@
                                         <state key="normal" title="Create Account ">
                                             <color key="titleColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="CreateAccountAction:" destination="YcE-6W-UHW" eventType="touchUpInside" id="Ue9-RG-Sur"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -754,7 +757,7 @@
                         <outlet property="loginButton" destination="MVU-sB-l5a" id="ljU-49-WI5"/>
                         <outlet property="passWord" destination="TnD-2p-AJz" id="gnH-d2-6ZN"/>
                         <outlet property="userName" destination="3kn-st-7Az" id="s2h-yS-4r1"/>
-                        <segue destination="RIO-GW-2Bk" kind="presentation" id="pgk-yu-smp"/>
+                        <segue destination="RIO-GW-2Bk" kind="presentation" identifier="accountCreated" id="pgk-yu-smp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPy-sD-o4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
