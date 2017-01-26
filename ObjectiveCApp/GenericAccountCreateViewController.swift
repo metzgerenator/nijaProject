@@ -99,6 +99,8 @@ class GenericAccountCreateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         setAttributes()
         // Do any additional setup after loading the view.
     }
@@ -145,7 +147,11 @@ class GenericAccountCreateViewController: UIViewController {
     @IBAction func saveButtonAction(_ sender: UIButton) {
         
         if let location = cityField.text, let website = websiteField.text, let email = emailField.text, let companySize = companySize {
-       
+            
+            
+            appendValues(values: [USERLOCATION : location as AnyObject, USERSWEBSITE : website as AnyObject, USERSEMAIL : email as AnyObject, COMPANYSIZE : companySize as AnyObject])
+            
+            self.performSegue(withIdentifier: "user_details", sender: self)
         } else {
             
             userAlerts(title: "Fill in fields", message: "Please fill in all fields")
@@ -154,7 +160,7 @@ class GenericAccountCreateViewController: UIViewController {
         
         
         
-        //self.performSegue(withIdentifier: "user_details", sender: self)
+        
         
         
         

@@ -71,8 +71,8 @@ struct User {
 
 struct Developer {
     
-    var email: String
-    var accountType: String
+    var email: String?
+    var accountType: String?
     var userName: String?
     var website: String?
     var github: String?
@@ -81,23 +81,29 @@ struct Developer {
     
     var developerType: String?
     
-    
-    init(email: String, accountType: String) {
+    init() {
         
-        self.email = email
-        self.accountType = accountType
-     
-    
     }
     
     
+    //needs deletion after cleanup
+    
     init(userdata: [String : AnyObject])  {
-        self.email = ""
-        self.accountType = ""
-        guard let email = userdata["email"], let accountType = userdata["user_type"] else {return}
+     
         
-        self.email = email as! String
-        self.accountType = accountType as! String
+        if let email = userdata["email"] {
+            
+            self.email = email as? String
+            
+        }
+        
+        
+        if let accountType = userdata["user_type"] {
+            
+            self.accountType = accountType as? String
+            
+        }
+        
         
         if let userName = userdata["username"] {
             
@@ -215,10 +221,32 @@ func appendGenericValues(values: Dictionary<String, AnyObject>) {
 }
 
 
-//MARK: Authentication State listener 
+//MARK: Authentication State listener and user attributes
 
 
-struct CurrentUser {
+struct CurrentUser  {
+    
+    
+     func userAttributes(completion: @escaping (Developer) -> Void) {
+        
+        guard let userId = FIRAuth.auth()?.currentUser?.uid else {return}
+        
+        let ref = FIRDatabase.database().reference().child("users").child(userId)
+        
+        
+        ref.observe(.value, with: { (snapshot) in
+            
+            guard let skillDic = snapshot.value as? NSDictionary else { return }
+            
+            
+            let developer = Developer(userdata: skillDic as! [String : AnyObject])
+            
+            completion(developer)
+            
+            
+        })
+        
+    }
    
     func checkUSerStatus(completion: @escaping (_ userLogged: Bool)->Void)  {
         
