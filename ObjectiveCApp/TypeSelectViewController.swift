@@ -11,15 +11,14 @@ import UIKit
 class TypeSelectViewController: UIViewController {
     
     
-    @IBOutlet var amOutlet: UIStackView!
+    @IBOutlet var amOutlet: UIButton!
     
     @IBOutlet var selectionView: UIStackView!
     
     @IBOutlet var needOutlet: UIButton!
     
     
-    var notADev = "am not "
-    var amADev = "am"
+    
     
     var currentTitle: String?
 
@@ -27,34 +26,43 @@ class TypeSelectViewController: UIViewController {
     
     @IBOutlet var devSelectOutlet: UIButton!
     
+    @IBAction func amDevButton(_ sender: UIButton){
+        
+        devSelectOutlet.setTitle("am", for: .normal)
+        currentTitle = "Developer"
+        
+    }
+    
+    
+    @IBAction func notDev(_sender: UIButton) {
+        
+        devSelectOutlet.setTitle("need", for: .normal)
+        currentTitle = "Client"
+    }
+    
     
     
     @IBAction func devSelectButton(_ sender: UIButton) {
         
         //show hide labels
+        var hideStack: Bool
         
         switch selectionView.isHidden {
         case true:
             
-            selectionView.isHidden = false
+            hideStack = false
             
         case false:
             
-            selectionView.isHidden = true
+            hideStack = true
         }
         
-    
+        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: .curveEaseOut, animations: {
+            self.selectionView.isHidden = hideStack
+        }, completion: nil)
+
         
-        
-//        switch sender.currentTitle! {
-//        case notADev:
-//            devSelectOutlet.setTitle(amADev, for: .normal)
-//            currentTitle = "I am a developer or dev shop"
-//        default:
-//            devSelectOutlet.setTitle(notADev, for: .normal)
-//            currentTitle = "I am not a developer or dev shop"
-//            
-//        }
+       
     }
     
     
@@ -68,7 +76,12 @@ class TypeSelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        amOutlet.setFullBorder(borderColor: .gray)
+        amOutlet.backgroundColor = .white
+        
+        needOutlet.setFullBorder(borderColor: .gray)
+        needOutlet.backgroundColor = .white
+        
         //Add barbutton
         let barButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(TypeSelectViewController.nextStep))
         self.navigationItem.rightBarButtonItem = barButton

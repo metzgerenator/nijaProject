@@ -125,6 +125,21 @@ extension UIButton {
         self.addSubview(borderLine)
     }
     
+    
+    func setFullBorder(borderColor: UIColor)
+    {
+        
+        self.layer.borderWidth = 0.5
+        self.backgroundColor = UIColor.clear
+        let width = 0.5
+        
+        let borderLine = UIView()
+        borderLine.frame = CGRect(x: 0, y: Double(self.frame.height), width: Double(self.frame.width), height: width)
+        
+        borderLine.backgroundColor = borderColor
+        self.addSubview(borderLine)
+    }
+    
 }
 
 
