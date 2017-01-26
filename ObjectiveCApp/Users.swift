@@ -77,7 +77,9 @@ struct Developer {
     var website: String?
     var github: String?
     var phone: String?
-    var address: String?
+    var location: String?
+    
+    
     
     var developerType: String?
     
@@ -86,54 +88,48 @@ struct Developer {
     }
     
     
-    //needs deletion after cleanup
+    //MARK: finish cross checking with constants
     
     init(userdata: [String : AnyObject])  {
      
         
-        if let email = userdata["email"] {
+        if let email = userdata[USERSEMAIL] {
             
             self.email = email as? String
             
         }
         
         
-        if let accountType = userdata["user_type"] {
+        if let accountType = userdata[USERTYPE] {
             
             self.accountType = accountType as? String
             
         }
         
         
-        if let userName = userdata["username"] {
+        if let userName = userdata[USERSNAME] {
             
             self.userName = userName as? String
             
         }
         
         
-        if let website = userdata["website"] {
+        if let website = userdata[USERSWEBSITE] {
             
             self.website = website as? String
             
         }
         
-        if let phone = userdata["phone"] {
-            
-            self.phone = phone as? String
-            
-        }
-        
-        if let github = userdata["github"] {
-            
-            self.github = github as? String
-            
-        }
+//        if let github = userdata["github"] {
+//            
+//            self.github = github as? String
+//            
+//        }
         
         
-        if let address = userdata["address"] {
+        if let location = userdata[USERLOCATION] {
             
-            self.address = address as? String
+            self.location = location as? String
             
         }
         
