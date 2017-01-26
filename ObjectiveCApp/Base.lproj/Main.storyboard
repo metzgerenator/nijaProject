@@ -908,7 +908,7 @@
                         <outlet property="devSelectOutlet" destination="L49-b6-QgG" id="GqF-a1-OTj"/>
                         <outlet property="needOutlet" destination="S7x-6G-4fN" id="0tf-hO-2Mf"/>
                         <outlet property="selectionView" destination="JdY-zM-zdq" id="Vbb-tt-wi3"/>
-                        <segue destination="xox-Cv-7Zi" kind="presentation" identifier="accountCreate" id="dz4-2E-oOW"/>
+                        <segue destination="xox-Cv-7Zi" kind="presentation" identifier="accountDetails" id="dz4-2E-oOW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFZ-TY-7Iz" userLabel="First Responder" sceneMemberID="firstResponder"/>

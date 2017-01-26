@@ -145,12 +145,10 @@ extension SelectLocationViewController: UITableViewDataSource, UITableViewDelega
         
         let location = locatons[indexPath.row]
         
-        //append location here
+        appendValues(values: [USERLOCATION : location as AnyObject] )
         
-        
-        
-        
-        //self.performSegue(withIdentifier: "dev", sender: self)
+        self.performSegue(withIdentifier: "accountDetails", sender: self)
+   
         
     }
     

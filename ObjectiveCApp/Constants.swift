@@ -16,7 +16,7 @@ let FREELANCERTYPE = "Freelancer"
 let SMALLTEAMTYPE = "Small Team"
 let DEVSHOPTYPE = "Dev Shop"
 let CITY = "city"
-let USERLOCATION = "company_name"
+let USERLOCATION = "Location"
 let USERSWEBSITE = "user_website"
 let USERSNAME = "username"
 
