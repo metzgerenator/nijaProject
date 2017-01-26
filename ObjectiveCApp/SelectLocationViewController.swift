@@ -17,7 +17,7 @@ class SelectLocationViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-   var locatons = [MKMapItem]()
+   var locatons = [String]()
     
     override func viewWillAppear(_ animated: Bool) {
          self.navigationController?.isNavigationBarHidden = true
@@ -82,9 +82,27 @@ extension SelectLocationViewController: UISearchBarDelegate {
         } else {
             
             localSearch.start(completionHandler: { (response, error) in
-                guard let results = response else {return}
+                guard let results = response else { return }
                 
-                self.locatons = results.mapItems
+                var forLocations = [String]()
+                
+                for mapItem in results.mapItems {
+                    
+                    let cpMark = mapItem.placemark as CLPlacemark
+                    let addressAtributes = cpMark.addressDictionary
+                    
+                    if let city = addressAtributes?["City"], let state = addressAtributes?["State"] {
+                        
+                        let locationToAdd = "\(city), \(state)"
+                        
+                        forLocations.append(locationToAdd)
+                    }
+                    
+                    
+                    
+                }
+                
+                self.locatons = forLocations
                 self.tableView.reloadData()
  
             })
@@ -111,25 +129,10 @@ extension SelectLocationViewController: UITableViewDataSource, UITableViewDelega
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        let location = locatons[indexPath.row].placemark as CLPlacemark
+        let location = locatons[indexPath.row]
         
-        let addressAtributes =  location.addressDictionary
-        
-        
-        
-        if let city = addressAtributes?["City"] {
-            
-            print("city \(city as! String)")
-            
-        }
-        
-        if let state = addressAtributes?["State"] {
-            
-            print("state \(state as! String)")
-            
-        }
-        
-        cell.textLabel?.text = locatons[indexPath.row].name
+       
+        cell.textLabel?.text = location
         
         return cell
         
