@@ -16,38 +16,61 @@ class SkilsAndAvailabilityViewController: UIViewController {
     
     var currentUSer: User?
     
+    
+    
+    
+    @IBOutlet var longTermOutlet: UIButton!
+    
+    
+    @IBOutlet var shorTermOutlet: UIButton!
+    
+    
+    @IBOutlet var contractOutlet: UIButton!
+    
+    
 
     @IBAction func photoButton(_ sender: Any) {
         
         
         
     }
+    
+    @IBAction func longTermAction(_ sender: Any) {
+        
+        
+    }
+    
+    
+   
+    
+    
+    @IBAction func shortTermAction(_ sender: Any) {
+    }
+    
+    
+    @IBAction func contractAction(_ sender: Any) {
+        
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        ref = FIRDatabase.database().reference()
-        
-        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+        let currentUser = CurrentUser()
+        currentUser.userAttributes { (Developer) in
             
-            
-            if user != nil {
-                
-                 self.ref.child(users).child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
-                    
-                    let snapshotINput = snapshot.value as! NSDictionary
-                    
-                    let userCheck = User(snapShot: snapshotINput)
-                    
-                    print("here is the user \(userCheck)")
-                    
-                    
-                })
-                
+            if let availability = Developer.USERAVAILABILITY {
                 
             }
             
+            
         }
+        
+
+        
+        setAttributes()
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,3 +90,33 @@ class SkilsAndAvailabilityViewController: UIViewController {
     */
 
 }
+
+extension SkilsAndAvailabilityViewController {
+    
+    func setAttributes() {
+    
+        let border = CGFloat(0.5)
+        let radius = CGFloat(5.0)
+        
+        
+        longTermOutlet.layer.cornerRadius = radius
+        longTermOutlet.clipsToBounds = true
+        longTermOutlet.layer.borderWidth = border
+        
+        shorTermOutlet.layer.cornerRadius = radius
+        shorTermOutlet.clipsToBounds = true
+        shorTermOutlet.layer.borderWidth = border
+        
+        contractOutlet.layer.cornerRadius = radius
+        contractOutlet.clipsToBounds = true
+        contractOutlet.layer.borderWidth = border
+        
+        
+    }
+    
+    
+    
+}
+
+
+

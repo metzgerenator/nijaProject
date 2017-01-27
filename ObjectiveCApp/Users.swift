@@ -82,6 +82,8 @@ struct Developer {
     var companyName: String?
     var companySize: String?
     
+    var userAvailAbility: String?
+    
     
     var developerType: String?
     
@@ -93,6 +95,13 @@ struct Developer {
     //MARK: finish cross checking with constants
     
     init(userdata: [String : AnyObject])  {
+        
+        
+        if let availability = userdata[USERAVAILABILITY] {
+            
+            self.userAvailAbility = availability as? String
+            
+        }
      
         
         if let email = userdata[USERSEMAIL] {
