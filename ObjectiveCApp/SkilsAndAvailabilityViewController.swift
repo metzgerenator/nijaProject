@@ -16,7 +16,7 @@ class SkilsAndAvailabilityViewController: UIViewController {
     
     var currentUSer: User?
     
-    
+    var userAvailability: String?
     
     
     @IBOutlet var longTermOutlet: UIButton!
@@ -29,13 +29,19 @@ class SkilsAndAvailabilityViewController: UIViewController {
     
     
 
-    @IBAction func photoButton(_ sender: Any) {
+    @IBAction func photoButton(_ sender: UIButton) {
         
         
         
     }
     
-    @IBAction func longTermAction(_ sender: Any) {
+    
+    
+    
+    @IBAction func longTermAction(_ sender: UIButton) {
+        
+        userAvailability = LONGTERM
+        setButtonBackgrounds(tagID: sender.tag)
         
         
     }
@@ -44,12 +50,17 @@ class SkilsAndAvailabilityViewController: UIViewController {
    
     
     
-    @IBAction func shortTermAction(_ sender: Any) {
+    @IBAction func shortTermAction(_ sender: UIButton) {
+        userAvailability = SHORTTERM
+        setButtonBackgrounds(tagID: sender.tag)
+        
     }
     
     
-    @IBAction func contractAction(_ sender: Any) {
+    @IBAction func contractAction(_ sender: UIButton) {
         
+        userAvailability = CONTRACT
+        setButtonBackgrounds(tagID: sender.tag)
         
     }
     
@@ -60,7 +71,30 @@ class SkilsAndAvailabilityViewController: UIViewController {
         let currentUser = CurrentUser()
         currentUser.userAttributes { (Developer) in
             
-            if let availability = Developer.USERAVAILABILITY {
+            if let availability = Developer.userAvailAbility {
+                
+                
+                
+                switch availability {
+                    
+                case LONGTERM:
+                    self.setButtonBackgrounds(tagID: 1)
+                    self.userAvailability = LONGTERM
+                    
+                case SHORTTERM:
+                    self.setButtonBackgrounds(tagID: 2)
+                    self.userAvailability = SHORTTERM
+                    
+                case CONTRACT:
+                    self.setButtonBackgrounds(tagID: 3)
+                    self.userAvailability = CONTRACT
+                    
+                default:
+                    break
+                    
+                }
+                
+                
                 
             }
             
@@ -91,7 +125,40 @@ class SkilsAndAvailabilityViewController: UIViewController {
 
 }
 
+
+
 extension SkilsAndAvailabilityViewController {
+    
+    
+    func setButtonBackgrounds(tagID: Int) {
+        
+        
+        
+        self.longTermOutlet.backgroundColor = UIColor.white
+        self.shorTermOutlet.backgroundColor = UIColor.white
+        self.contractOutlet.backgroundColor = UIColor.white
+        
+        switch tagID {
+        case 1:
+            self.longTermOutlet.backgroundColor = UIColor.gray
+            
+        case 2:
+            self.shorTermOutlet.backgroundColor = UIColor.gray
+            
+        case 3:
+            self.contractOutlet.backgroundColor = UIColor.gray
+        default:
+            break
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
+    
     
     func setAttributes() {
     

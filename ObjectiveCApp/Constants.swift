@@ -27,7 +27,14 @@ let USERSWEBSITE = "user_website"
 let USERSNAME = "username"
 let USERSEMAIL = "user_emal"
 let COMPANYNAME = "company_name"
+
 let USERAVAILABILITY = "user_availability"
+//longterm shortterm contract 
+
+let LONGTERM = "long_term"
+let SHORTTERM = "short_term"
+let CONTRACT = "contract"
+
 
 //////
  let dateFormatter = DateFormatter()
