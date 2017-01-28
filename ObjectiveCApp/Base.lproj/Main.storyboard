@@ -1331,6 +1331,9 @@
                                 <state key="normal" title="Save Profile ">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveActionButton:" destination="Xdw-uD-rBG" eventType="touchUpInside" id="Zq9-MK-iAA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

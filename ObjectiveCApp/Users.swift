@@ -87,6 +87,9 @@ struct Developer {
     
     var developerType: String?
     
+    
+    var developerDescription: String?
+    
     init() {
         
     }
@@ -102,7 +105,13 @@ struct Developer {
             self.userAvailAbility = availability as? String
             
         }
-     
+        
+        
+        if let description = userdata[COMPANYDESCRIPTION] {
+            
+            self.developerDescription = description as? String
+            
+        }
         
         if let email = userdata[USERSEMAIL] {
             

@@ -37,6 +37,19 @@ class SkilsAndAvailabilityViewController: UIViewController {
     
     
     
+    @IBAction func saveActionButton(_ sender: Any) {
+        
+        
+        if let userAvailability = userAvailability {
+            
+            appendValues(values: [USERAVAILABILITY : userAvailability as AnyObject])
+        }
+        
+        
+    }
+    
+    
+    
     
     @IBAction func longTermAction(_ sender: UIButton) {
         

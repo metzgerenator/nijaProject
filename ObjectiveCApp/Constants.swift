@@ -27,6 +27,8 @@ let USERSWEBSITE = "user_website"
 let USERSNAME = "username"
 let USERSEMAIL = "user_emal"
 let COMPANYNAME = "company_name"
+let COMPANYDESCRIPTION = "company_description"
+
 
 let USERAVAILABILITY = "user_availability"
 //longterm shortterm contract 
