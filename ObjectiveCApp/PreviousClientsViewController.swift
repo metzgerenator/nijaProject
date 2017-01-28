@@ -20,6 +20,13 @@ class PreviousClientsViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet var clientDetails: UITextField!
     
     
+    @IBAction func cancelButton(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
     @IBAction func addClient(_ sender: Any) {
         
         if (clientDetails.text?.characters.count)! > 0 {
@@ -66,6 +73,7 @@ class PreviousClientsViewController: UIViewController, UITableViewDataSource, UI
             if let clients = Developer.previousClients {
                 
                 self.clientData = clients
+                self.tableView.reloadData()
             }
             
             
