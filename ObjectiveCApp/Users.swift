@@ -90,6 +90,9 @@ struct Developer {
     
     var developerDescription: String?
     
+    
+    var previousClients: [String]?
+    
     init() {
         
     }
@@ -98,6 +101,23 @@ struct Developer {
     //MARK: finish cross checking with constants
     
     init(userdata: [String : AnyObject])  {
+        
+        
+        if let previousClients = userdata[PREVIOUSCLIENTS] {
+            
+            var newArray = [String]()
+            
+            for user in previousClients as! NSArray {
+                
+                if user is String {
+                    
+                    newArray.append(user as! String)
+                    
+                }
+                
+                self.previousClients = newArray
+            }
+        }
         
         
         if let availability = userdata[USERAVAILABILITY] {
@@ -147,12 +167,7 @@ struct Developer {
             
         }
         
-//        if let github = userdata["github"] {
-//            
-//            self.github = github as? String
-//            
-//        }
-        
+
         
         if let location = userdata[USERLOCATION] {
             

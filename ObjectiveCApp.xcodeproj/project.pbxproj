@@ -164,6 +164,7 @@
 		270E631F1E33BA380029D2B8 /* Edit Skills */ = {
 			isa = PBXGroup;
 			children = (
+				2711F6351E3D480100CF3715 /* Previous Clients */,
 				270E63261E36A2330029D2B8 /* Sub Skills */,
 				270E63201E33BA530029D2B8 /* EditSkillsTableViewController.swift */,
 				270E63221E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift */,
@@ -191,6 +192,15 @@
 				27F311961E1D73D100D4A582 /* PayscaleViewController.swift */,
 			);
 			name = CreateDeveloperProfile;
+			sourceTree = "<group>";
+		};
+		2711F6351E3D480100CF3715 /* Previous Clients */ = {
+			isa = PBXGroup;
+			children = (
+				27F3119A1E1DA77600D4A582 /* PreviousClientTableViewCell.swift */,
+				27F311981E1D89E600D4A582 /* PreviousClientsViewController.swift */,
+			);
+			name = "Previous Clients";
 			sourceTree = "<group>";
 		};
 		27280E181DA46E4000D00E2E = {
@@ -276,8 +286,6 @@
 				570FAA0E1DC9782400FB0F48 /* DeveloperAdditionalDetailsViewController.swift */,
 				570FAA0A1DC9748B00FB0F48 /* DeveloperAdditionalCollectionViewCell.swift */,
 				27EE8C141E1C2CED005511C8 /* devAdditionalStruct.swift */,
-				27F3119A1E1DA77600D4A582 /* PreviousClientTableViewCell.swift */,
-				27F311981E1D89E600D4A582 /* PreviousClientsViewController.swift */,
 			);
 			name = devadditionaldetails;
 			sourceTree = "<group>";

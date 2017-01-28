@@ -13,7 +13,7 @@ class PreviousClientsViewController: UIViewController, UITableViewDataSource, UI
 
     var clientData = [String]()
     
-     var ref: FIRDatabaseReference!
+    //var ref: FIRDatabaseReference!
     
     @IBOutlet var tableView: UITableView!
     
@@ -58,34 +58,47 @@ class PreviousClientsViewController: UIViewController, UITableViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref = FIRDatabase.database().reference()
         
-        let user = FIRAuth.auth()?.currentUser
+        let developer = CurrentUser()
         
-        self.ref.child(users).child((user?.uid)!).observe(.value, with: { (snapshot) in
+        developer.userAttributes { (Developer) in
             
-            let value = snapshot.value as? NSDictionary
-            guard let currentUsers = value?["previous_clients"] else {return}
-            
-            var newArray = [String]()
-            
-            for user in currentUsers as! NSArray {
+            if let clients = Developer.previousClients {
                 
-                if user is String {
-                    
-                   newArray.append(user as! String)
-                    
-                }
-                
-               
-                
+                self.clientData = clients
             }
             
-            self.clientData = newArray
-            self.tableView.reloadData()
             
-            
-        })
+        }
+        
+//        ref = FIRDatabase.database().reference()
+//        
+//        let user = FIRAuth.auth()?.currentUser
+//        
+//        self.ref.child(users).child((user?.uid)!).observe(.value, with: { (snapshot) in
+//            
+//            let value = snapshot.value as? NSDictionary
+//            guard let currentUsers = value?[PREVIOUSCLIENTS] else {return}
+//            
+//            var newArray = [String]()
+//            
+//            for user in currentUsers as! NSArray {
+//                
+//                if user is String {
+//                    
+//                   newArray.append(user as! String)
+//                    
+//                }
+//                
+//               
+//                
+//            }
+//            
+//            self.clientData = newArray
+//            self.tableView.reloadData()
+//            
+//            
+//        })
         
     
     }
