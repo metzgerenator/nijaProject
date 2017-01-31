@@ -28,6 +28,7 @@ class SkilsAndAvailabilityViewController: UIViewController {
     @IBOutlet var contractOutlet: UIButton!
     
     
+    @IBOutlet var photoButtonOutlet: UIButton!
 
     @IBAction func photoButton(_ sender: UIButton) {
         
@@ -83,6 +84,28 @@ class SkilsAndAvailabilityViewController: UIViewController {
         
         let currentUser = CurrentUser()
         currentUser.userAttributes { (Developer) in
+            
+            
+            
+            
+            if let userPhoto = Developer.userPhoto {
+                
+                let currentUser = CurrentUser()
+                currentUser.getCurrentPhoto(imageURL: userPhoto, completion: { (userImage, error, errorMessage) in
+                    
+                    if error == false {
+                
+                        self.photoButtonOutlet.setImage(userImage! as UIImage, for: .normal)
+                        self.photoButtonOutlet.contentMode = UIViewContentMode.scaleAspectFit
+                        
+                    } else {
+                        print("here is the error \(errorMessage)")
+                    }
+                    
+                })
+                
+            }
+            
             
             if let availability = Developer.userAvailAbility {
                 

@@ -1101,7 +1101,6 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdJ-wL-Ri1">
                                                 <rect key="frame" x="0.0" y="0.0" width="350" height="201"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="201" id="wTL-LC-zly"/>
                                                 </constraints>
@@ -1354,6 +1353,7 @@
                     <connections>
                         <outlet property="contractOutlet" destination="aox-T8-jjB" id="Bni-DT-Nkh"/>
                         <outlet property="longTermOutlet" destination="d8T-1k-I4L" id="9hX-nl-Pq1"/>
+                        <outlet property="photoButtonOutlet" destination="IdJ-wL-Ri1" id="BYz-qR-5Bb"/>
                         <outlet property="shorTermOutlet" destination="Djg-zN-FiH" id="qkZ-qB-Oxm"/>
                     </connections>
                 </viewController>
