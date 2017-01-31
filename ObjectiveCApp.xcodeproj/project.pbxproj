@@ -164,6 +164,7 @@
 		270E631F1E33BA380029D2B8 /* Edit Skills */ = {
 			isa = PBXGroup;
 			children = (
+				278621171E40EC0E006A9166 /* add photo / video  */,
 				2711F6351E3D480100CF3715 /* Previous Clients */,
 				270E63261E36A2330029D2B8 /* Sub Skills */,
 				270E63201E33BA530029D2B8 /* EditSkillsTableViewController.swift */,
@@ -188,7 +189,6 @@
 				270D5BA71DFCAF4200A78260 /* Freelancers */,
 				27C429DD1DC02A7D00A6E1EA /* CreateDeveloperTableViewController.swift */,
 				270895551E00DFBC006CE509 /* DeveloperFreelancerViewController.swift */,
-				27EE8C161E1C3FF9005511C8 /* UploadPhotoViewController.swift */,
 				27F311961E1D73D100D4A582 /* PayscaleViewController.swift */,
 			);
 			name = CreateDeveloperProfile;
@@ -260,6 +260,14 @@
 				27280E461DA46E4000D00E2E /* Info.plist */,
 			);
 			path = ObjectiveCAppUITests;
+			sourceTree = "<group>";
+		};
+		278621171E40EC0E006A9166 /* add photo / video  */ = {
+			isa = PBXGroup;
+			children = (
+				27EE8C161E1C3FF9005511C8 /* UploadPhotoViewController.swift */,
+			);
+			name = "add photo / video ";
 			sourceTree = "<group>";
 		};
 		27A7D7B11E257C3D0006AA26 /* customer */ = {

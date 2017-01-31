@@ -13,6 +13,16 @@ class UploadPhotoViewController: UIViewController, UIImagePickerControllerDelega
     
     var storage: FIRStorage?
     var storageRef: FIRStorageReference?
+    
+    
+    
+    @IBAction func cancelButton(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
 
     @IBOutlet var userImage: UIImageView!
 
@@ -45,7 +55,7 @@ class UploadPhotoViewController: UIViewController, UIImagePickerControllerDelega
             
             if error == nil {
                 
-                appendValues(values: ["user image" : "\(userImageRef!)" as AnyObject])
+                appendValues(values: [USERIMAGE : "\(userImageRef!)" as AnyObject])
                 
             } else {
                 

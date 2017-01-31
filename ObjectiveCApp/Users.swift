@@ -93,6 +93,8 @@ struct Developer {
     
     var previousClients: [String]?
     
+    var userPhoto: String?
+    
     init() {
         
     }
@@ -117,6 +119,14 @@ struct Developer {
                 
                 self.previousClients = newArray
             }
+        }
+        
+        
+        if let userImageURL = userdata[USERIMAGE] {
+            
+            self.userPhoto = userImageURL as! String
+        
+            
         }
         
         
@@ -269,6 +279,31 @@ func appendGenericValues(values: Dictionary<String, AnyObject>) {
 
 
 struct CurrentUser  {
+    
+    
+    func getCurrentPhoto(imageURL: String, completion: @escaping (UIImage?, _ error: Bool, _ errorMessage: String) -> Void) {
+        
+        let storage = FIRStorage.storage()
+        let storageRef = storage.reference(forURL: imageURL)
+        
+        storageRef.data(withMaxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                // Uh-oh, an error occurred!
+                
+                completion(nil, true, error.localizedDescription)
+            } else {
+                // Data for "images/island.jpg" is returned
+                let image = UIImage(data: data!)
+                
+                completion(image, false, "")
+                
+                
+            }
+        }
+        
+        
+    }
+    
     
     
      func userAttributes(completion: @escaping (Developer) -> Void) {

@@ -29,6 +29,7 @@ let USERSEMAIL = "user_emal"
 let COMPANYNAME = "company_name"
 let COMPANYDESCRIPTION = "company_description"
 let PREVIOUSCLIENTS = "previous_clients"
+let USERIMAGE = "user image"
 
 
 
