@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0EF8EEFC97357C0043289E75 /* Pods_ObjectiveCApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634C315DBD45B55980785A43 /* Pods_ObjectiveCApp.framework */; };
 		2702CAD91DBD37150020D6A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2702CAD81DBD37150020D6A8 /* Constants.swift */; };
+		2705A9BD1E423BD7002980C5 /* AddtoPortFolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2705A9BC1E423BD7002980C5 /* AddtoPortFolioViewController.swift */; };
 		270895561E00DFBC006CE509 /* DeveloperFreelancerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270895551E00DFBC006CE509 /* DeveloperFreelancerViewController.swift */; };
 		270E63211E33BA530029D2B8 /* EditSkillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E63201E33BA530029D2B8 /* EditSkillsTableViewController.swift */; };
 		270E63231E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E63221E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		2702CAD81DBD37150020D6A8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2705A9BC1E423BD7002980C5 /* AddtoPortFolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddtoPortFolioViewController.swift; sourceTree = "<group>"; };
 		270895551E00DFBC006CE509 /* DeveloperFreelancerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperFreelancerViewController.swift; sourceTree = "<group>"; };
 		270E63201E33BA530029D2B8 /* EditSkillsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSkillsTableViewController.swift; sourceTree = "<group>"; };
 		270E63221E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSkillsTableViewCell.swift; sourceTree = "<group>"; };
@@ -151,6 +153,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2705A9BB1E423A91002980C5 /* add to portfolio */ = {
+			isa = PBXGroup;
+			children = (
+				2705A9BC1E423BD7002980C5 /* AddtoPortFolioViewController.swift */,
+			);
+			name = "add to portfolio";
+			sourceTree = "<group>";
+		};
 		270D5BA71DFCAF4200A78260 /* Freelancers */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,8 +174,6 @@
 		270E631F1E33BA380029D2B8 /* Edit Skills */ = {
 			isa = PBXGroup;
 			children = (
-				278621171E40EC0E006A9166 /* add photo / video  */,
-				2711F6351E3D480100CF3715 /* Previous Clients */,
 				270E63261E36A2330029D2B8 /* Sub Skills */,
 				270E63201E33BA530029D2B8 /* EditSkillsTableViewController.swift */,
 				270E63221E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift */,
@@ -339,8 +347,11 @@
 		57F5593F1E2EEF54000A0BC1 /* createAccount */ = {
 			isa = PBXGroup;
 			children = (
-				270E631F1E33BA380029D2B8 /* Edit Skills */,
+				2705A9BB1E423A91002980C5 /* add to portfolio */,
 				27F46A801E3141240015627D /* inital accont creation */,
+				278621171E40EC0E006A9166 /* add photo / video  */,
+				2711F6351E3D480100CF3715 /* Previous Clients */,
+				270E631F1E33BA380029D2B8 /* Edit Skills */,
 				27F46A7F1E3141060015627D /* additional details  */,
 			);
 			name = createAccount;
@@ -675,6 +686,7 @@
 				27EE8C171E1C3FF9005511C8 /* UploadPhotoViewController.swift in Sources */,
 				27A7D7B91E257EF60006AA26 /* customerAdditionalStruct.swift in Sources */,
 				27EE8C151E1C2CED005511C8 /* devAdditionalStruct.swift in Sources */,
+				2705A9BD1E423BD7002980C5 /* AddtoPortFolioViewController.swift in Sources */,
 				270E63281E36A2550029D2B8 /* SubSkillsTableViewController.swift in Sources */,
 				27D956B51E2FD2E400D9882E /* GenericAccountCreateViewController.swift in Sources */,
 				27ED98971E1EADA30033CB43 /* DevSpecialityViewController.swift in Sources */,
