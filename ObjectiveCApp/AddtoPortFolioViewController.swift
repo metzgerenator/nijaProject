@@ -12,6 +12,9 @@ class AddtoPortFolioViewController: UIViewController {
     
     
     
+    var defaultText = "Please give a brief description of the project"
+     var saveDescription: String?
+    
     @IBOutlet var descriptionOutlet: UITextView!
     
     
@@ -37,7 +40,14 @@ class AddtoPortFolioViewController: UIViewController {
         
         descriptionOutlet.isHidden = true
         
-        descriptionOutlet.text = "test text!!!!!!!!!!!!!!!!!!"
+        if let description = saveDescription {
+            
+            descriptionOutlet.text = description
+        } else {
+            
+            descriptionOutlet.text = defaultText
+        }
+        
 
     }
 
@@ -58,3 +68,37 @@ class AddtoPortFolioViewController: UIViewController {
     */
 
 }
+
+extension AddtoPortFolioViewController: UITextViewDelegate {
+    
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        
+        if descriptionOutlet.text == defaultText {
+            descriptionOutlet.text = ""
+        }
+        
+        
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        
+        
+        if descriptionOutlet.text.characters.count == 0 {
+            descriptionOutlet.text = defaultText
+            saveDescription = nil
+        } else {
+            
+            saveDescription = descriptionOutlet.text
+            
+        }
+    }
+    
+    
+    
+}
+
+
+
+
