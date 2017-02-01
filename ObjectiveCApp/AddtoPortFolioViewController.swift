@@ -36,6 +36,8 @@ class AddtoPortFolioViewController: UIViewController {
         super.viewDidLoad()
         
         descriptionOutlet.isHidden = true
+        
+        descriptionOutlet.text = "test text!!!!!!!!!!!!!!!!!!"
 
     }
 

@@ -229,6 +229,13 @@ extension SkilsAndAvailabilityViewController {
 extension SkilsAndAvailabilityViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        self.performSegue(withIdentifier: "portfolio", sender: self)
+        
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }

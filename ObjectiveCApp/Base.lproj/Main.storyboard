@@ -1383,7 +1383,7 @@
                         <outlet property="longTermOutlet" destination="d8T-1k-I4L" id="9hX-nl-Pq1"/>
                         <outlet property="photoButtonOutlet" destination="IdJ-wL-Ri1" id="BYz-qR-5Bb"/>
                         <outlet property="shorTermOutlet" destination="Djg-zN-FiH" id="qkZ-qB-Oxm"/>
-                        <segue destination="p42-FZ-7ap" kind="presentation" identifier="portfolio" id="TUL-j2-g3P"/>
+                        <segue destination="uD6-at-CYi" kind="presentation" identifier="portfolio" id="TUL-j2-g3P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRy-bh-9YM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1457,7 +1457,7 @@
             </objects>
             <point key="canvasLocation" x="6005" y="-1037"/>
         </scene>
-        <!--Addto Port Folio View Controller-->
+        <!--Add Projects -->
         <scene sceneID="dGF-10-FQM">
             <objects>
                 <viewController id="p42-FZ-7ap" customClass="AddtoPortFolioViewController" customModule="ObjectiveCApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1469,20 +1469,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgD-JY-jxG">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Portfolio" id="tdi-nt-Bjf">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="UWa-Il-3aP">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="g9y-at-7U8">
-                                                <rect key="frame" x="20" y="7" width="92" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Cancel"/>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Project Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MNE-1F-gVQ">
                                 <rect key="frame" x="20" y="94" width="374" height="30"/>
                                 <nil key="textColor"/>
@@ -1502,62 +1488,61 @@
                                     <action selector="saveProfileButton:" destination="hu9-CD-2ri" eventType="touchUpInside" id="OmX-Bc-C8J"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Wec-5s-auU" userLabel="showdescription">
-                                <rect key="frame" x="20" y="150" width="374" height="151"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBG-am-95P" userLabel="Edit Description ">
+                                <rect key="frame" x="20" y="147" width="139" height="23"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBG-am-95P" userLabel="Edit Description ">
-                                        <rect key="frame" x="0.0" y="0.0" width="139" height="23"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="4iv-ZN-ia4">
-                                                <rect key="frame" x="0.0" y="0.0" width="31" height="23"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="23" id="BoV-an-TIq"/>
-                                                    <constraint firstAttribute="width" constant="31" id="FQe-z2-IdS"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYf-Cg-4qK">
-                                                <rect key="frame" x="31" y="0.0" width="108" height="23"/>
-                                                <state key="normal" title="Edit description"/>
-                                                <connections>
-                                                    <action selector="editDescriptionAction:" destination="p42-FZ-7ap" eventType="touchUpInside" id="1qr-0p-09h"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aMG-9K-PzH">
-                                        <rect key="frame" x="0.0" y="23" width="374" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="4iv-ZN-ia4">
+                                        <rect key="frame" x="0.0" y="0.0" width="31" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="BoV-an-TIq"/>
+                                            <constraint firstAttribute="width" constant="31" id="FQe-z2-IdS"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYf-Cg-4qK">
+                                        <rect key="frame" x="31" y="0.0" width="108" height="23"/>
+                                        <state key="normal" title="Edit description"/>
+                                        <connections>
+                                            <action selector="editDescriptionAction:" destination="p42-FZ-7ap" eventType="touchUpInside" id="1qr-0p-09h"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aMG-9K-PzH">
+                                <rect key="frame" x="20" y="178" width="374" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="UXx-9w-xo9"/>
+                                </constraints>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Wec-5s-auU" secondAttribute="bottom" constant="435" id="31C-0S-irl"/>
+                            <constraint firstItem="aMG-9K-PzH" firstAttribute="top" secondItem="DBG-am-95P" secondAttribute="bottom" constant="8" id="3dB-sl-7q3"/>
                             <constraint firstAttribute="trailing" secondItem="pEs-xH-XBP" secondAttribute="trailing" id="7BF-3c-x8b"/>
+                            <constraint firstItem="DBG-am-95P" firstAttribute="top" secondItem="MNE-1F-gVQ" secondAttribute="bottom" constant="23" id="CfI-NZ-rYL"/>
                             <constraint firstItem="MNE-1F-gVQ" firstAttribute="trailing" secondItem="Pio-Cx-jjm" secondAttribute="trailingMargin" id="DdS-3d-oQp"/>
-                            <constraint firstItem="MNE-1F-gVQ" firstAttribute="top" secondItem="lgD-JY-jxG" secondAttribute="bottom" constant="50" id="Hqg-AB-sxi"/>
-                            <constraint firstItem="Wec-5s-auU" firstAttribute="top" secondItem="MNE-1F-gVQ" secondAttribute="bottom" constant="26" id="I2t-dL-use"/>
-                            <constraint firstItem="lgD-JY-jxG" firstAttribute="leading" secondItem="Pio-Cx-jjm" secondAttribute="leading" id="NmV-uw-X7u"/>
                             <constraint firstItem="umh-vv-Fz1" firstAttribute="top" secondItem="pEs-xH-XBP" secondAttribute="bottom" id="WpD-OR-aIZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Wec-5s-auU" secondAttribute="trailing" id="aiJ-Rx-fau"/>
-                            <constraint firstItem="Wec-5s-auU" firstAttribute="leading" secondItem="Pio-Cx-jjm" secondAttribute="leadingMargin" id="cDi-Jv-M5R"/>
-                            <constraint firstItem="lgD-JY-jxG" firstAttribute="top" secondItem="Pio-Cx-jjm" secondAttribute="top" id="eWO-nt-yaI"/>
-                            <constraint firstAttribute="trailing" secondItem="lgD-JY-jxG" secondAttribute="trailing" id="jm9-Gx-UCV"/>
+                            <constraint firstItem="MNE-1F-gVQ" firstAttribute="top" secondItem="twZ-zQ-Cap" secondAttribute="bottom" constant="30" id="iZi-Sf-Ofn"/>
+                            <constraint firstItem="aMG-9K-PzH" firstAttribute="leading" secondItem="Pio-Cx-jjm" secondAttribute="leadingMargin" id="o6I-ZY-gaB"/>
                             <constraint firstItem="MNE-1F-gVQ" firstAttribute="leading" secondItem="Pio-Cx-jjm" secondAttribute="leadingMargin" id="x4p-gC-yG7"/>
                             <constraint firstItem="pEs-xH-XBP" firstAttribute="leading" secondItem="Pio-Cx-jjm" secondAttribute="leading" id="xpf-Or-O7d"/>
+                            <constraint firstItem="aMG-9K-PzH" firstAttribute="trailing" secondItem="Pio-Cx-jjm" secondAttribute="trailingMargin" id="yQ8-d9-QqQ"/>
+                            <constraint firstItem="DBG-am-95P" firstAttribute="leading" secondItem="Pio-Cx-jjm" secondAttribute="leadingMargin" id="yuQ-Xo-WBn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Projects " id="d7Y-bx-3XF">
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="KNk-0c-Xgl"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="descriptionOutlet" destination="aMG-9K-PzH" id="BdP-q8-4Up"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WMH-E6-LRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6773.913043478261" y="-1184.5108695652175"/>
+            <point key="canvasLocation" x="7681.1594202898559" y="-1184.5108695652175"/>
         </scene>
         <!--Edit Skills-->
         <scene sceneID="uvL-rU-wmr">
@@ -2039,6 +2024,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="keW-WW-qZ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6806" y="307"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="12P-LQ-jM0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uD6-at-CYi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C7o-MU-EB5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="p42-FZ-7ap" kind="relationship" relationship="rootViewController" id="O2y-7B-BZR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="33r-du-3bR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6773.913043478261" y="-1184.5108695652175"/>
         </scene>
     </scenes>
     <resources>
