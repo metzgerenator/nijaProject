@@ -1278,16 +1278,16 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GkR-ZA-hx3" userLabel="Work Photos ">
-                                        <rect key="frame" x="37" y="762" width="300" height="145"/>
+                                        <rect key="frame" x="0.0" y="600" width="375" height="300"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vh-nq-4pQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g6f-Sm-jF1">
-                                                <rect key="frame" x="0.0" y="17" width="300" height="128"/>
+                                                <rect key="frame" x="0.0" y="17" width="375" height="283"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jrg-jo-heF">
                                                     <size key="itemSize" width="50" height="50"/>
@@ -1308,19 +1308,19 @@
                                             </collectionView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="145" id="Mkq-qN-Qqa"/>
+                                            <constraint firstAttribute="height" constant="300" id="Mkq-qN-Qqa"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="GkR-ZA-hx3" firstAttribute="top" secondItem="XVJ-X1-e6m" secondAttribute="top" constant="762" id="LID-DA-MDh"/>
-                                    <constraint firstItem="GkR-ZA-hx3" firstAttribute="leading" secondItem="XVJ-X1-e6m" secondAttribute="leading" constant="37" id="MoD-q5-W8Z"/>
+                                    <constraint firstItem="GkR-ZA-hx3" firstAttribute="leading" secondItem="XVJ-X1-e6m" secondAttribute="leading" id="8Da-bt-LBX"/>
+                                    <constraint firstAttribute="bottom" secondItem="GkR-ZA-hx3" secondAttribute="bottom" constant="80" id="EGS-u9-8Ja"/>
+                                    <constraint firstItem="GkR-ZA-hx3" firstAttribute="top" secondItem="XVJ-X1-e6m" secondAttribute="top" constant="600" id="LID-DA-MDh"/>
+                                    <constraint firstAttribute="trailing" secondItem="GkR-ZA-hx3" secondAttribute="trailing" id="V8x-q0-u2B"/>
                                     <constraint firstItem="rkI-GP-eVt" firstAttribute="leading" secondItem="XVJ-X1-e6m" secondAttribute="leading" constant="12" id="aeG-9R-79z"/>
                                     <constraint firstItem="rkI-GP-eVt" firstAttribute="centerX" secondItem="XVJ-X1-e6m" secondAttribute="centerX" id="ajR-xh-uAz"/>
                                     <constraint firstAttribute="trailing" secondItem="rkI-GP-eVt" secondAttribute="trailing" constant="13" id="u7M-wX-v3C"/>
-                                    <constraint firstAttribute="bottom" secondItem="GkR-ZA-hx3" secondAttribute="bottom" constant="73" id="wEx-u2-5Je"/>
                                     <constraint firstItem="rkI-GP-eVt" firstAttribute="top" secondItem="XVJ-X1-e6m" secondAttribute="top" constant="36" id="weK-35-99R"/>
-                                    <constraint firstItem="rkI-GP-eVt" firstAttribute="centerX" secondItem="GkR-ZA-hx3" secondAttribute="centerX" id="wnZ-3b-DNZ"/>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIZ-TQ-jKj">
@@ -1523,6 +1523,9 @@
                             <constraint firstItem="pEs-xH-XBP" firstAttribute="leading" secondItem="Pio-Cx-jjm" secondAttribute="leading" id="xpf-Or-O7d"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionOutlet" destination="aMG-9K-PzH" id="BdP-q8-4Up"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WMH-E6-LRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

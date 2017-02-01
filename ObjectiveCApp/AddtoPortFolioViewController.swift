@@ -12,14 +12,30 @@ class AddtoPortFolioViewController: UIViewController {
     
     
     
+    @IBOutlet var descriptionOutlet: UITextView!
+    
+    
     
     @IBAction func editDescriptionAction(_ sender: Any) {
+        
+        let hidden = descriptionOutlet.isHidden
+        
+        switch hidden {
+        case true:
+            descriptionOutlet.isHidden = false
+        case false:
+            descriptionOutlet.isHidden = true
+   
+        }
+        
         
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        descriptionOutlet.isHidden = true
 
     }
 
