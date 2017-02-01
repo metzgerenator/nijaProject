@@ -165,6 +165,7 @@ extension AddtoPortFolioViewController: UICollectionViewDataSource, UICollection
             
             guard let image = image as? UIImage else {return}
             currentImages.insert(image, at: 1)
+            self.collectionView.reloadData()
             dismiss(animated: true, completion: nil)
             
         }
