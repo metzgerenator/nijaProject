@@ -124,7 +124,7 @@ extension AddtoPortFolioViewController: UITextViewDelegate {
 
 //MARK: collection view methods
 
-extension AddtoPortFolioViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension AddtoPortFolioViewController: UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     
@@ -133,6 +133,42 @@ extension AddtoPortFolioViewController: UICollectionViewDataSource, UICollection
     }
    
     
+    
+    //Mark: launch image picker
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let indexCheck = indexPath.row
+        
+        if indexCheck == 0 {
+            
+            //launch image picker
+            let picker  = UIImagePickerController()
+            picker.delegate = self
+            picker.allowsEditing = false
+            
+            picker.sourceType = .photoLibrary
+            picker.modalPresentationStyle = .fullScreen
+            
+            
+            present(picker, animated: true, completion: nil)
+            
+        }
+        
+        
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] {
+            
+            guard let image = image as? UIImage else {return}
+            currentImages.insert(image, at: 1)
+            dismiss(animated: true, completion: nil)
+            
+        }
+    }
     
     
     
@@ -145,6 +181,12 @@ extension AddtoPortFolioViewController: UICollectionViewDataSource, UICollection
         
         return cell
     }
+    
+    
+    
+    
+    
+    
     
     
     
