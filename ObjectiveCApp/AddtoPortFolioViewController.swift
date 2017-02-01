@@ -11,6 +11,7 @@ import UIKit
 class AddtoPortFolioViewController: UIViewController {
     
     
+    @IBOutlet var collectionView: UICollectionView!
     
     var defaultText = "Please give a brief description of the project"
      var saveDescription: String?
@@ -34,6 +35,17 @@ class AddtoPortFolioViewController: UIViewController {
         
         
     }
+    
+    
+    
+    @IBAction func saveProject(_ sender: Any) {
+        
+        
+        
+    }
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,6 +110,34 @@ extension AddtoPortFolioViewController: UITextViewDelegate {
     
     
 }
+
+
+//MARK: collection view methods
+
+extension AddtoPortFolioViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+   
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        
+        return cell
+    }
+    
+    
+    
+}
+
+
+
+
+
 
 
 

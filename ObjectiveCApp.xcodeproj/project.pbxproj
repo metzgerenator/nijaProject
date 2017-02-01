@@ -11,6 +11,7 @@
 		2702CAD91DBD37150020D6A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2702CAD81DBD37150020D6A8 /* Constants.swift */; };
 		2705A9BD1E423BD7002980C5 /* AddtoPortFolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2705A9BC1E423BD7002980C5 /* AddtoPortFolioViewController.swift */; };
 		2705A9BF1E42448F002980C5 /* SkillsAndAvailabilityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2705A9BE1E42448F002980C5 /* SkillsAndAvailabilityCollectionViewCell.swift */; };
+		2705A9C11E4261B9002980C5 /* AddToPortfolioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2705A9C01E4261B9002980C5 /* AddToPortfolioCollectionViewCell.swift */; };
 		270895561E00DFBC006CE509 /* DeveloperFreelancerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270895551E00DFBC006CE509 /* DeveloperFreelancerViewController.swift */; };
 		270E63211E33BA530029D2B8 /* EditSkillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E63201E33BA530029D2B8 /* EditSkillsTableViewController.swift */; };
 		270E63231E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E63221E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift */; };
@@ -72,6 +73,7 @@
 		2702CAD81DBD37150020D6A8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2705A9BC1E423BD7002980C5 /* AddtoPortFolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddtoPortFolioViewController.swift; sourceTree = "<group>"; };
 		2705A9BE1E42448F002980C5 /* SkillsAndAvailabilityCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsAndAvailabilityCollectionViewCell.swift; sourceTree = "<group>"; };
+		2705A9C01E4261B9002980C5 /* AddToPortfolioCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToPortfolioCollectionViewCell.swift; sourceTree = "<group>"; };
 		270895551E00DFBC006CE509 /* DeveloperFreelancerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperFreelancerViewController.swift; sourceTree = "<group>"; };
 		270E63201E33BA530029D2B8 /* EditSkillsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSkillsTableViewController.swift; sourceTree = "<group>"; };
 		270E63221E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSkillsTableViewCell.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				2705A9BC1E423BD7002980C5 /* AddtoPortFolioViewController.swift */,
+				2705A9C01E4261B9002980C5 /* AddToPortfolioCollectionViewCell.swift */,
 			);
 			name = "add to portfolio";
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 				27F311991E1D89E600D4A582 /* PreviousClientsViewController.swift in Sources */,
 				27F46A7E1E3129F00015627D /* schemaConstants.swift in Sources */,
 				27F3119B1E1DA77600D4A582 /* PreviousClientTableViewCell.swift in Sources */,
+				2705A9C11E4261B9002980C5 /* AddToPortfolioCollectionViewCell.swift in Sources */,
 				57607DC71DAFA5E2008FD070 /* LoginViewController.swift in Sources */,
 				270E63231E33BBAE0029D2B8 /* EditSkillsTableViewCell.swift in Sources */,
 				270895561E00DFBC006CE509 /* DeveloperFreelancerViewController.swift in Sources */,
