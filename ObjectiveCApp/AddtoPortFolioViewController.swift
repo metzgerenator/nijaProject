@@ -43,7 +43,15 @@ class AddtoPortFolioViewController: UIViewController {
     
     @IBAction func saveProject(_ sender: Any) {
         
+        //need to add mainheader from text field
         
+        let user = CurrentUser()
+        var photos = currentImages
+        photos.remove(at: 0)
+        
+        user.uploadPhotos(images: photos, mainHeader: "Awesome Project")
+        
+        self.dismiss(animated: true, completion: nil)
         
         
         
