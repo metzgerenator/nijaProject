@@ -30,6 +30,7 @@ let COMPANYNAME = "company_name"
 let COMPANYDESCRIPTION = "company_description"
 let PREVIOUSCLIENTS = "previous_clients"
 let USERIMAGE = "user image"
+let USERPROJECTS = "project_portfolio"
 
 
 

@@ -280,6 +280,54 @@ func appendGenericValues(values: Dictionary<String, AnyObject>) {
 
 struct CurrentUser  {
     
+    // need function for retriving photos
+    
+    
+    
+    func uploadPhotos(images: [UIImage], mainHeader: String?) {
+        
+        
+        let storage = FIRStorage.storage()
+        let storageRef = storage.reference(forURL: "gs://objective-c-7392d.appspot.com").child("userimages")
+        
+        
+        for image in images {
+           
+            
+            guard let imageToLoad = UIImageJPEGRepresentation(image, 0.2) else { return }
+            let randomNumber = Int(arc4random_uniform(20000) + 1)
+            let userImageRef = storageRef.child("\(randomNumber).jpg")
+            
+            
+            userImageRef.put(imageToLoad, metadata: nil) { (metadata, error) in
+                
+                if error == nil {
+                    
+                    if let header = mainHeader {
+                        
+                        let imageReference = "\(userImageRef)"
+                        let imageDicToAdd: Dictionary<String, AnyObject> = [header : imageReference as AnyObject]
+                        let values: Dictionary<String, Dictionary<String, Any>> = [USERPROJECTS : [header : imageDicToAdd] ]
+                        //
+                        appendValues(values: values as Dictionary<String, AnyObject>)
+                        
+                    }
+ 
+                    
+                } else {
+                    
+                    print("error occured \(error)")
+                    
+                }
+                
+            }
+            
+        }
+        
+  
+        
+    }
+    
     
     func getCurrentPhoto(imageURL: String, completion: @escaping (UIImage?, _ error: Bool, _ errorMessage: String) -> Void) {
         
