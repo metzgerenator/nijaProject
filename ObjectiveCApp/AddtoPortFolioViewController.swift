@@ -11,6 +11,9 @@ import UIKit
 class AddtoPortFolioViewController: UIViewController {
     
     
+    var currentImages = [UIImage]()
+    
+    
     @IBOutlet var collectionView: UICollectionView!
     
     var defaultText = "Please give a brief description of the project"
@@ -49,6 +52,13 @@ class AddtoPortFolioViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //add addition image to imageview 
+        let addIcon = UIImage(named: "camera")
+        currentImages.insert(addIcon!, at: 0)
+        self.collectionView.reloadData()
+        
         
         descriptionOutlet.isHidden = true
         
@@ -119,13 +129,19 @@ extension AddtoPortFolioViewController: UICollectionViewDataSource, UICollection
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return currentImages.count
     }
    
     
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! AddToPortfolioCollectionViewCell
+        
+        let image = currentImages[indexPath.row]
+        
+        cell.configureCell(image: image)
         
         return cell
     }
