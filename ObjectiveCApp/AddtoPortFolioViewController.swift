@@ -188,6 +188,11 @@ extension AddtoPortFolioViewController: UICollectionViewDataSource, UICollection
         
         let image = currentImages[indexPath.row]
         
+        //MARK: single photo upload 
+        
+        let user = CurrentUser()
+       // user.uploadSinglePhoto(image: image, mainHeader: "testerPhoto")
+        
         cell.configureCell(image: image)
         
         return cell

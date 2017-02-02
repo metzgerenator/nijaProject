@@ -254,7 +254,6 @@ func appendDevSkils(values: Dictionary<String, AnyObject>) {
             print("key \(key) value \(value)")
             
         }
-        
         ref.updateChildValues(values)
         
         
@@ -336,42 +335,58 @@ struct CurrentUser  {
         let storage = FIRStorage.storage()
         let storageRef = storage.reference(forURL: "gs://objective-c-7392d.appspot.com").child("userimages")
         
-        
+        var imageURLS = [String]()
         for image in images {
-           
-            
+
             guard let imageToLoad = UIImageJPEGRepresentation(image, 0.2) else { return }
             let randomNumber = Int(arc4random_uniform(20000) + 1)
             let userImageRef = storageRef.child("\(randomNumber).jpg")
             
             
-            userImageRef.put(imageToLoad, metadata: nil) { (metadata, error) in
+                if let header = mainHeader {
+                    //let randomNumber = "\(Int(arc4random_uniform(20000) + 1))"
+                    let imageReference = "\(userImageRef)"
+                    
+                    imageURLS.append(imageReference)
+                    
+                    //imageURLS.updateValue(imageReference as AnyObject, forKey: randomNumber)
+                    
+                    //let imageDicToAdd: Dictionary<String, AnyObject> = [randomNumber : imageReference as AnyObject]
+                    //let values: Dictionary<String, Dictionary<String, Any>> = [USERPROJECTS : [header : imageDicToAdd] ]
+                    //
+                   // appendValues(values: values as Dictionary<String, AnyObject>)
+                    
                 
-                if error == nil {
-                    
-                    if let header = mainHeader {
-                        let randomNumber = "\(Int(arc4random_uniform(20000) + 1))"
-                        let imageReference = "\(userImageRef)"
-                        let imageDicToAdd: Dictionary<String, AnyObject> = [randomNumber : imageReference as AnyObject]
-                        let values: Dictionary<String, Dictionary<String, Any>> = [USERPROJECTS : [header : imageDicToAdd] ]
-                        //
-                        appendValues(values: values as Dictionary<String, AnyObject>)
-                        
-                    }
- 
-                    
-                } else {
-                    
-                    print("error occured \(error)")
-                    
-                }
-                
-            }
+            
+            
+//            userImageRef.put(imageToLoad, metadata: nil) { (metadata, error) in
+//                
+//                if error == nil {
+//                    
+//                    if let header = mainHeader {
+//                        let randomNumber = "\(Int(arc4random_uniform(20000) + 1))"
+//                        let imageReference = "\(userImageRef)"
+//                        let imageDicToAdd: Dictionary<String, AnyObject> = [randomNumber : imageReference as AnyObject]
+//                        let values: Dictionary<String, Dictionary<String, Any>> = [USERPROJECTS : [header : imageDicToAdd] ]
+//                        //
+//                        appendValues(values: values as Dictionary<String, AnyObject>)
+//                        
+//                    }
+// 
+//                    
+//                } else {
+//                    
+//                    print("error occured \(error)")
+//                    
+//                }
+//                
+//            }
             
         }
         
-  
-        
+        }
+        //update values here 
+        appendValues(values: [mainHeader! : imageURLS as AnyObject])
     }
     
     
