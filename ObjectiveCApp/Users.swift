@@ -343,46 +343,27 @@ struct CurrentUser  {
             let userImageRef = storageRef.child("\(randomNumber).jpg")
             
             
-                if let header = mainHeader {
-                    //let randomNumber = "\(Int(arc4random_uniform(20000) + 1))"
                     let imageReference = "\(userImageRef)"
                     
                     imageURLS.append(imageReference)
-                    
-                    //imageURLS.updateValue(imageReference as AnyObject, forKey: randomNumber)
-                    
-                    //let imageDicToAdd: Dictionary<String, AnyObject> = [randomNumber : imageReference as AnyObject]
-                    //let values: Dictionary<String, Dictionary<String, Any>> = [USERPROJECTS : [header : imageDicToAdd] ]
-                    //
-                   // appendValues(values: values as Dictionary<String, AnyObject>)
-                    
+
+            
+            userImageRef.put(imageToLoad, metadata: nil) { (metadata, error) in
                 
+                if error == nil {
+                    
+                    
+ 
+                    
+                } else {
+                    
+                    print("error occured \(error)")
+                    
+                }
+                
+            }
             
-            
-//            userImageRef.put(imageToLoad, metadata: nil) { (metadata, error) in
-//                
-//                if error == nil {
-//                    
-//                    if let header = mainHeader {
-//                        let randomNumber = "\(Int(arc4random_uniform(20000) + 1))"
-//                        let imageReference = "\(userImageRef)"
-//                        let imageDicToAdd: Dictionary<String, AnyObject> = [randomNumber : imageReference as AnyObject]
-//                        let values: Dictionary<String, Dictionary<String, Any>> = [USERPROJECTS : [header : imageDicToAdd] ]
-//                        //
-//                        appendValues(values: values as Dictionary<String, AnyObject>)
-//                        
-//                    }
-// 
-//                    
-//                } else {
-//                    
-//                    print("error occured \(error)")
-//                    
-//                }
-//                
-//            }
-            
-        }
+        
         
         }
         //update values here 
