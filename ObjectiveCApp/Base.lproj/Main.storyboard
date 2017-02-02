@@ -1593,6 +1593,7 @@
                     <connections>
                         <outlet property="collectionView" destination="IcY-Nb-BXi" id="FwH-27-osj"/>
                         <outlet property="descriptionOutlet" destination="aMG-9K-PzH" id="BdP-q8-4Up"/>
+                        <outlet property="projectName" destination="MNE-1F-gVQ" id="O1c-Wb-RS4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WMH-E6-LRd" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -249,11 +249,7 @@ func appendDevSkils(values: Dictionary<String, AnyObject>) {
         let ref = FIRDatabase.database().reference().child("users").child(user.uid).child(DEVELOPERSKILLS)
         
         
-        for (key, value) in values {
-            
-            print("key \(key) value \(value)")
-            
-        }
+      
         ref.updateChildValues(values)
         
         
@@ -263,13 +259,15 @@ func appendDevSkils(values: Dictionary<String, AnyObject>) {
 }
 
 
-func appendGenericValues(values: Dictionary<String, AnyObject>) {
+func appendCustomHeader(child: String, values: Dictionary<String, AnyObject>) {
     
-    
-    let ref = FIRDatabase.database().reference().child("developer_skills")
-    ref.updateChildValues(values)
-    
-    
+    if let user = FIRAuth.auth()?.currentUser {
+        
+        
+        let ref = FIRDatabase.database().reference().child("users").child(user.uid).child(child)
+        ref.updateChildValues(values)
+        
+    }
     
 }
 
@@ -329,7 +327,7 @@ struct CurrentUser  {
     
     
     
-    func uploadPhotos(images: [UIImage], mainHeader: String?) {
+    func uploadPhotos(images: [UIImage], mainHeader: String?, child: String) {
         
         
         let storage = FIRStorage.storage()
@@ -352,9 +350,8 @@ struct CurrentUser  {
                 
                 if error == nil {
                     
-                    
- 
-                    
+                    //MARK: deal with error handeling !!
+        
                 } else {
                     
                     print("error occured \(error)")
@@ -366,8 +363,8 @@ struct CurrentUser  {
         
         
         }
-        //update values here 
-        appendValues(values: [mainHeader! : imageURLS as AnyObject])
+        //update values here
+        appendCustomHeader(child: child, values: [mainHeader! : imageURLS as AnyObject])
     }
     
     

@@ -14,6 +14,10 @@ class AddtoPortFolioViewController: UIViewController {
     var currentImages = [UIImage]()
     
     
+    @IBOutlet var projectName: UITextField!
+    
+    
+    
     @IBOutlet var collectionView: UICollectionView!
     
     var defaultText = "Please give a brief description of the project"
@@ -45,13 +49,22 @@ class AddtoPortFolioViewController: UIViewController {
         
         //need to add mainheader from text field
         
-        let user = CurrentUser()
-        var photos = currentImages
-        photos.remove(at: 0)
+        if (projectName.text?.characters.count)! > 0 {
+            
+            let user = CurrentUser()
+            var photos = currentImages
+            photos.remove(at: 0)
+            user.uploadPhotos(images: photos, mainHeader: projectName.text, child: USERPROJECTS)
+            
+            self.dismiss(animated: true, completion: nil)
+            
+        } else {
+            
+            
+            alertControllerView(title: "Fill Field", message: "Please give this project a name")
+        }
         
-        user.uploadPhotos(images: photos, mainHeader: "Awesome Project")
-        
-        self.dismiss(animated: true, completion: nil)
+       
         
         
         
@@ -202,8 +215,23 @@ extension AddtoPortFolioViewController: UICollectionViewDataSource, UICollection
     
     
     
+}
+
+//MARK: convienence methods
+extension AddtoPortFolioViewController {
     
-    
+    func alertControllerView(title: String, message: String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        
+        alertController.addAction(okAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
     
     
 }
