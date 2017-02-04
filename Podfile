@@ -9,7 +9,7 @@ target 'ObjectiveCApp' do
     pod 'Firebase/Storage'
     pod 'IQKeyboardManagerSwift'
 
-
+    pod 'FirebaseUI/Storage'
 
 
 

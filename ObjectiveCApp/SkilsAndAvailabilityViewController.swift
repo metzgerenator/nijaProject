@@ -90,6 +90,13 @@ class SkilsAndAvailabilityViewController: UIViewController {
         currentUser.userAttributes { (Developer) in
             
             
+            if let userProjects = Developer.projects {
+                
+                
+                
+            }
+            
+            
             
             
             if let userPhoto = Developer.userPhoto {

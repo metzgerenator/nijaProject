@@ -95,6 +95,8 @@ struct Developer {
     
     var userPhoto: String?
     
+    var projects: DeveloperProjects?
+    
     init() {
         
     }
@@ -122,9 +124,34 @@ struct Developer {
         }
         
         
+        
+        if let userProjects = userdata[USERPROJECTS] {
+            
+            
+            
+            for (key, value) in userProjects as! Dictionary<String, Any> {
+                
+                for url in value as! Array<String> {
+                    
+                    print("url  \(url)")
+                    
+                }
+                
+                print("key \(key), value \(value)")
+                
+                
+            }
+            
+
+            
+            
+        }
+        
+        
+        
         if let userImageURL = userdata[USERIMAGE] {
             
-            self.userPhoto = userImageURL as! String
+            self.userPhoto = userImageURL as? String
         
             
         }
@@ -450,7 +477,7 @@ struct CurrentUser  {
 
 struct DeveloperProjects {
     var projectName: String
-    var pictures: [UIImage]
+    var pictures: [String]
     var descritpion: String?
 }
 
