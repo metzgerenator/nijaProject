@@ -66,7 +66,7 @@ struct User {
 
 
 
-
+//MARK: Developer attributes
 
 
 struct Developer {
@@ -210,6 +210,11 @@ struct Developer {
 }
 
 
+
+
+//MARK: account creation
+
+
 func createAccount(user: FIRUser) {
     
     let ref = FIRDatabase.database().reference()
@@ -224,6 +229,8 @@ func createAccount(user: FIRUser) {
 }
 
 
+
+//MARK: append values
 
 func appendValues(values: Dictionary<String, AnyObject>) {
     
@@ -438,6 +445,14 @@ struct CurrentUser  {
     
 }
 
+
+//MARK: DeveloperProjects Struct
+
+struct DeveloperProjects {
+    var projectName: String
+    var pictures: [UIImage]
+    var descritpion: String?
+}
 
 
 
