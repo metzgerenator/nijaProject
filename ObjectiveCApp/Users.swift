@@ -95,7 +95,7 @@ struct Developer {
     
     var userPhoto: String?
     
-    var projects: DeveloperProjects?
+    var projects: [DeveloperProjects]?
     
     init() {
         
@@ -127,27 +127,46 @@ struct Developer {
         
         if let userProjects = userdata[USERPROJECTS] {
             
-           // var projectTypeArray = [DeveloperProjects]()
+            var projectTypeArray = [DeveloperProjects]()
             
-//            for (key, value) in userProjects as! Dictionary<String, Any> {
-//                
-//                var arrayOfUrls = [String]()
-//                
-//                for url in value as! Array<String> {
-//                    
-//                    arrayOfUrls.append(url)
-//                    
-//                }
-            
-               // let projectToInsert = DeveloperProjects(
+            for (project, subDictionary) in userProjects as! Dictionary<String, AnyObject> {
                 
+                let projectName = project
+                var photoURLS = [String]()
+                var description: String!
                 
+                for item in subDictionary as! NSMutableArray {
+                    
+                    
+                    for (key, value) in item as! NSDictionary {
+                        
+                        switch key as! String {
+                        case PROJECTDESCRIPTION:
+                            description = value as! String
+                            
+                        case PROJECTURLS:
+                            photoURLS = value as! Array
+                            
+                        default:
+                            continue
+                        }
+                        
+                    }
+                    
+                  
+                }
+                let project = DeveloperProjects(projectName: projectName, pictures: photoURLS, descritpion: description)
+                projectTypeArray.append(project)
                 
             }
             
+            self.projects = projectTypeArray
+            
+        }
+        
 
-            
-            
+        
+        
         
         
         
@@ -317,52 +336,6 @@ struct CurrentUser  {
     // need function for retriving photos
     
     
-    //single photo function 
-    
-    func uploadSinglePhoto(image: UIImage, mainHeader: String?) {
-        
-        
-        let storage = FIRStorage.storage()
-        let storageRef = storage.reference(forURL: "gs://objective-c-7392d.appspot.com").child("userimages")
-        
-        
-        
-        
-        guard let imageToLoad = UIImageJPEGRepresentation(image, 0.2) else { return }
-        let randomNumber = Int(arc4random_uniform(20000) + 1)
-        let userImageRef = storageRef.child("\(randomNumber).jpg")
-        
-        
-        userImageRef.put(imageToLoad, metadata: nil) { (metadata, error) in
-            
-            if error == nil {
-                
-                if let header = mainHeader {
-                    let randomNumber = "\(Int(arc4random_uniform(20000) + 1))"
-                    let imageReference = "\(userImageRef)"
-                    let imageDicToAdd: Dictionary<String, AnyObject> = [randomNumber : imageReference as AnyObject]
-                    let values: Dictionary<String, Dictionary<String, Any>> = [USERPROJECTS : [header : imageDicToAdd] ]
-                    //
-                    appendValues(values: values as Dictionary<String, AnyObject>)
-                    
-                }
-                
-                
-            } else {
-                
-                print("error occured \(error)")
-                
-            }
-            
-        }
-        
-        
-        
-        
-        
-    }
-    
-    
     
     func uploadPhotos(images: [UIImage], mainHeader: String?, description: String, child: String) {
         
@@ -400,11 +373,10 @@ struct CurrentUser  {
         
         
         }
-        //update values here
         
         var dictionaryArray = [AnyObject]()
-        let dictionary1 =  ["Description" : description]
-        let dictionary2 = ["URLS" : imageURLS]
+        let dictionary1 =  [PROJECTDESCRIPTION : description]
+        let dictionary2 = [PROJECTURLS : imageURLS]
         
         dictionaryArray.append(dictionary1 as AnyObject)
         dictionaryArray.append(dictionary2 as AnyObject)
@@ -494,6 +466,10 @@ struct DeveloperProjects {
     var projectName: String
     var pictures: [String]
     var descritpion: String?
+    
+    
+    
+    
 }
 
 
