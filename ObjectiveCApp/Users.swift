@@ -127,17 +127,20 @@ struct Developer {
         
         if let userProjects = userdata[USERPROJECTS] {
             
+           // var projectTypeArray = [DeveloperProjects]()
             
+//            for (key, value) in userProjects as! Dictionary<String, Any> {
+//                
+//                var arrayOfUrls = [String]()
+//                
+//                for url in value as! Array<String> {
+//                    
+//                    arrayOfUrls.append(url)
+//                    
+//                }
             
-            for (key, value) in userProjects as! Dictionary<String, Any> {
+               // let projectToInsert = DeveloperProjects(
                 
-                for url in value as! Array<String> {
-                    
-                    print("url  \(url)")
-                    
-                }
-                
-                print("key \(key), value \(value)")
                 
                 
             }
@@ -145,7 +148,7 @@ struct Developer {
 
             
             
-        }
+        
         
         
         
@@ -361,7 +364,7 @@ struct CurrentUser  {
     
     
     
-    func uploadPhotos(images: [UIImage], mainHeader: String?, child: String) {
+    func uploadPhotos(images: [UIImage], mainHeader: String?, description: String, child: String) {
         
         
         let storage = FIRStorage.storage()
@@ -398,7 +401,19 @@ struct CurrentUser  {
         
         }
         //update values here
-        appendCustomHeader(child: child, values: [mainHeader! : imageURLS as AnyObject])
+        
+        var dictionaryArray = [AnyObject]()
+        let dictionary1 =  ["Description" : description]
+        let dictionary2 = ["URLS" : imageURLS]
+        
+        dictionaryArray.append(dictionary1 as AnyObject)
+        dictionaryArray.append(dictionary2 as AnyObject)
+        
+        
+        
+        let values = [mainHeader! : dictionaryArray]
+    
+        appendCustomHeader(child: child, values: values as Dictionary<String, AnyObject>)
     }
     
     

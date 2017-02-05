@@ -54,7 +54,10 @@ class AddtoPortFolioViewController: UIViewController {
             let user = CurrentUser()
             var photos = currentImages
             photos.remove(at: 0)
-            user.uploadPhotos(images: photos, mainHeader: projectName.text, child: USERPROJECTS)
+            let decscription = saveDescription ?? ""
+            user.uploadPhotos(images: photos, mainHeader: projectName.text, description: decscription, child: USERPROJECTS)
+            
+            //user.uploadPhotos(images: photos, mainHeader: projectName.text, child: USERPROJECTS)
             
             self.dismiss(animated: true, completion: nil)
             
