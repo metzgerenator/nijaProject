@@ -7,16 +7,16 @@
 //
 
 import UIKit
-import Firebase
 
 class SkilsAndAvailabilityViewController: UIViewController {
     
     
-    var ref: FIRDatabaseReference!
     
     var currentUSer: User?
     
     var userAvailability: String?
+    
+    var userProjects = [DeveloperProjects]()
     
     
     @IBOutlet var collectionView: UICollectionView!
@@ -92,8 +92,9 @@ class SkilsAndAvailabilityViewController: UIViewController {
             
             if let userProjects = Developer.projects {
                 
+                self.userProjects = userProjects
                 
-                
+                //MARK: reload collection view here
             }
             
             

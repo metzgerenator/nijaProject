@@ -335,7 +335,7 @@ struct CurrentUser  {
     
     // need function for retriving photos
     
-    
+    //MARK: upload photos for projects
     
     func uploadPhotos(images: [UIImage], mainHeader: String?, description: String, child: String) {
         

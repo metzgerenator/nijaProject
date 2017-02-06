@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorageUI
 
 class SkillsAndAvailabilityCollectionViewCell: UICollectionViewCell {
     @IBOutlet var projectLabel: UILabel!
@@ -14,17 +16,33 @@ class SkillsAndAvailabilityCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var projectPhoto: UIImageView!
     
+    let storage = FIRStorage.storage()
     
     
     
-    func configureCell(label: String, Photo: UIImage) {
+    func configureCell(project: DeveloperProjects) {
+        let storageRef = storage.reference(forURL: "gs://objective-c-7392d.appspot.com").child("userimages")
         
-        projectLabel.text = label
-        projectPhoto.image = Photo
+        let projectURL = project.pictures[0]
         
+        let reference = storageRef.child(projectURL)
+        
+        let placeholderImage = UIImage(named: "camera.jpg")
+    
+        let imageView: UIImageView = projectPhoto
+    
+        
+        imageView.sd_setImage(with: reference, placeholderImage: placeholderImage)
+        
+        projectLabel.text = project.projectName
         
     }
     
     
+//    
+//    override func awakeFromNib() {
+//        
+//        
+//    }
     
 }
