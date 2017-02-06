@@ -95,6 +95,7 @@ class SkilsAndAvailabilityViewController: UIViewController {
                 self.userProjects = userProjects
                 
                 //MARK: reload collection view here
+                self.collectionView.reloadData()
             }
             
             
@@ -245,13 +246,17 @@ extension SkilsAndAvailabilityViewController: UICollectionViewDelegate, UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return userProjects.count
     }
     
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SkillsAndAvailabilityCollectionViewCell
+        
+        let project = userProjects[indexPath.row]
+        
+        cell.configureCell(project: project)
         
         return cell
     }

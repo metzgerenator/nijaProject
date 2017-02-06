@@ -21,28 +21,28 @@ class SkillsAndAvailabilityCollectionViewCell: UICollectionViewCell {
     
     
     func configureCell(project: DeveloperProjects) {
-        let storageRef = storage.reference(forURL: "gs://objective-c-7392d.appspot.com").child("userimages")
+        
         
         let projectURL = project.pictures[0]
-        
-        let reference = storageRef.child(projectURL)
-        
+        let storageRef = storage.reference(forURL: projectURL)
+                
         let placeholderImage = UIImage(named: "camera.jpg")
     
         let imageView: UIImageView = projectPhoto
     
         
-        imageView.sd_setImage(with: reference, placeholderImage: placeholderImage)
+        let downloadTask = imageView.sd_setImage(with: storageRef, placeholderImage: placeholderImage)
+        
+        downloadTask?.observe(.failure) { snapshot in
+            
+            print("here is status \(snapshot.error)")
+        }
         
         projectLabel.text = project.projectName
         
     }
     
     
-//    
-//    override func awakeFromNib() {
-//        
-//        
-//    }
+
     
 }
