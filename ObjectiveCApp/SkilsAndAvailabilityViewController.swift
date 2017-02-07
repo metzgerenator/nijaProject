@@ -165,15 +165,7 @@ class SkilsAndAvailabilityViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -243,7 +235,14 @@ extension SkilsAndAvailabilityViewController: UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        self.performSegue(withIdentifier: "portfolio", sender: self)
+        let indexCheck = indexPath.row
+        
+        if indexCheck == 0 {
+            
+            self.performSegue(withIdentifier: "portfolio", sender: self)
+        }
+        
+        
         
     }
     
@@ -279,9 +278,17 @@ extension SkilsAndAvailabilityViewController: UICollectionViewDelegate, UICollec
 }
 
 
+//MARK: navigation 
 
 
 
+extension SkilsAndAvailabilityViewController {
+//    
+//    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+//        
+//    }
+    
+}
 
 
 

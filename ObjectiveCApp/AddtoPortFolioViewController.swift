@@ -45,6 +45,14 @@ class AddtoPortFolioViewController: UIViewController {
     
     
     
+    @IBAction func cancelButton(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
+    
     @IBAction func saveProject(_ sender: Any) {
         
         //need to add mainheader from text field

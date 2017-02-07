@@ -1588,7 +1588,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Projects " id="d7Y-bx-3XF">
-                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="KNk-0c-Xgl"/>
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="KNk-0c-Xgl">
+                            <connections>
+                                <action selector="cancelButton:" destination="p42-FZ-7ap" id="dI1-Uw-3Qz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="IcY-Nb-BXi" id="FwH-27-osj"/>
