@@ -90,10 +90,13 @@ class SkilsAndAvailabilityViewController: UIViewController {
         currentUser.userAttributes { (Developer) in
             
             
+            let cellOne = DeveloperProjects(projectName: "Click to Add", pictures: [""], descritpion: "")
+            
             if let userProjects = Developer.projects {
                 
                 self.userProjects = userProjects
                 
+                self.userProjects.insert(cellOne, at: 0)
                 //MARK: reload collection view here
                 self.collectionView.reloadData()
             }
@@ -254,9 +257,21 @@ extension SkilsAndAvailabilityViewController: UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SkillsAndAvailabilityCollectionViewCell
         
-        let project = userProjects[indexPath.row]
+        let indexCheck = indexPath.row
         
-        cell.configureCell(project: project)
+        if indexCheck == 0 {
+            
+            cell.projectLabel.text = "Click to Add"
+            cell.projectPhoto.image = UIImage(named: "camera")
+            
+        } else {
+            
+            let project = userProjects[indexPath.row]
+            cell.configureCell(project: project)
+            
+        }
+        
+       
         
         return cell
     }
