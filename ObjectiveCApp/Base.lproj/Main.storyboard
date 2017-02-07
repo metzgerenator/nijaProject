@@ -1384,6 +1384,7 @@
                         <outlet property="photoButtonOutlet" destination="IdJ-wL-Ri1" id="BYz-qR-5Bb"/>
                         <outlet property="shorTermOutlet" destination="Djg-zN-FiH" id="qkZ-qB-Oxm"/>
                         <segue destination="uD6-at-CYi" kind="presentation" identifier="portfolio" id="TUL-j2-g3P"/>
+                        <segue destination="uD6-at-CYi" kind="presentation" identifier="notNew" id="ucP-Ap-GPW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRy-bh-9YM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2107,4 +2108,7 @@
     <resources>
         <image name="camera" width="234" height="216"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ucP-Ap-GPW"/>
+    </inferredMetricsTieBreakers>
 </document>

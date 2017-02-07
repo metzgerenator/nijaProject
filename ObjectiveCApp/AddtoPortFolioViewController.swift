@@ -13,6 +13,7 @@ class AddtoPortFolioViewController: UIViewController {
     
     var currentImages = [UIImage]()
     
+    var selectedProject: DeveloperProjects?
     
     @IBOutlet var projectName: UITextField!
     
@@ -86,6 +87,10 @@ class AddtoPortFolioViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let selectedProject = selectedProject{
+            
+        }
         
         
         //add addition image to imageview 
@@ -211,11 +216,6 @@ extension AddtoPortFolioViewController: UICollectionViewDataSource, UICollection
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! AddToPortfolioCollectionViewCell
         
         let image = currentImages[indexPath.row]
-        
-        //MARK: single photo upload 
-        
-        let user = CurrentUser()
-       // user.uploadSinglePhoto(image: image, mainHeader: "testerPhoto")
         
         cell.configureCell(image: image)
         

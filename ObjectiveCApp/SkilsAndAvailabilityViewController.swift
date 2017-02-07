@@ -236,10 +236,16 @@ extension SkilsAndAvailabilityViewController: UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let indexCheck = indexPath.row
+        let project = userProjects[indexPath.row]
         
         if indexCheck == 0 {
             
             self.performSegue(withIdentifier: "portfolio", sender: self)
+            
+        } else {
+            
+            self.performSegue(withIdentifier: "notNew", sender: project)
+            
         }
         
         
@@ -283,10 +289,21 @@ extension SkilsAndAvailabilityViewController: UICollectionViewDelegate, UICollec
 
 
 extension SkilsAndAvailabilityViewController {
-//    
-//    override func performSegue(withIdentifier identifier: String, sender: Any?) {
-//        
-//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "notNew" {
+            
+            let navControler = segue.destination as! UINavigationController
+            let vc = navControler.topViewController as! AddtoPortFolioViewController
+            
+            
+             guard let itemToSend = sender as? DeveloperProjects else {return}
+            vc.selectedProject = itemToSend
+            
+            
+        }
+    }
+    
     
 }
 
