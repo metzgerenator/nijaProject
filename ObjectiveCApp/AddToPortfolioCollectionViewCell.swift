@@ -25,6 +25,13 @@ class AddToPortfolioCollectionViewCell: UICollectionViewCell {
     
     
     
+    func configureLoadCell(url: String) {
+        
+        
+    }
+    
+    
+    
     
     
 }

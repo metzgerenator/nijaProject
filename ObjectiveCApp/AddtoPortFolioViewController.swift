@@ -12,6 +12,7 @@ class AddtoPortFolioViewController: UIViewController {
     
     
     var currentImages = [UIImage]()
+    var imagesToLoad = [String]()
     
     var selectedProject: DeveloperProjects?
     
@@ -89,6 +90,8 @@ class AddtoPortFolioViewController: UIViewController {
         super.viewDidLoad()
         
         if let selectedProject = selectedProject{
+            
+          imagesToLoad = selectedProject.pictures
             
         }
         
@@ -215,7 +218,18 @@ extension AddtoPortFolioViewController: UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! AddToPortfolioCollectionViewCell
         
+        
         let image = currentImages[indexPath.row]
+        
+        let imageASset = image.imageAsset
+        let imageAssetCompare = UIImage(named: "camera")?.imageAsset
+        
+        if imageASset == imageAssetCompare {
+            
+            print("equal assest \(imageASset)")
+            
+        }
+        
         
         cell.configureCell(image: image)
         
