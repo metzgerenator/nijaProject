@@ -92,7 +92,7 @@ class AddtoPortFolioViewController: UIViewController {
         if let selectedProject = selectedProject{
             
           imagesToLoad = selectedProject.pictures
-            
+          self.collectionView.reloadData()
         }
         
         
@@ -171,7 +171,15 @@ extension AddtoPortFolioViewController: UICollectionViewDataSource, UICollection
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return currentImages.count
+        
+        if section == 0 {
+            return currentImages.count
+        } else {
+            return imagesToLoad.count
+            
+        }
+        
+        
     }
    
     
@@ -183,7 +191,7 @@ extension AddtoPortFolioViewController: UICollectionViewDataSource, UICollection
         
         let indexCheck = indexPath.row
         
-        if indexCheck == 0 {
+        if indexCheck == 0 && indexPath.section == 0 {
             
             //launch image picker
             let picker  = UIImagePickerController()
@@ -219,19 +227,17 @@ extension AddtoPortFolioViewController: UICollectionViewDataSource, UICollection
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! AddToPortfolioCollectionViewCell
         
         
-        let image = currentImages[indexPath.row]
-        
-        let imageASset = image.imageAsset
-        let imageAssetCompare = UIImage(named: "camera")?.imageAsset
-        
-        if imageASset == imageAssetCompare {
+        if indexPath.section == 0 {
+            let image = currentImages[indexPath.row]
+            cell.configureCell(image: image)
             
-            print("equal assest \(imageASset)")
+        } else {
             
+            let url = imagesToLoad[indexPath.row]
+            cell.configureLoadCell(url: url)
         }
         
-        
-        cell.configureCell(image: image)
+       
         
         return cell
     }

@@ -46,6 +46,7 @@
 		4C865D9D281F3929BB754DE9 /* Pods_ObjectiveCAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A46BAAB172D2E77BCFB649 /* Pods_ObjectiveCAppUITests.framework */; };
 		570FAA0B1DC9748B00FB0F48 /* DeveloperAdditionalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FAA0A1DC9748B00FB0F48 /* DeveloperAdditionalCollectionViewCell.swift */; };
 		570FAA0F1DC9782400FB0F48 /* DeveloperAdditionalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FAA0E1DC9782400FB0F48 /* DeveloperAdditionalDetailsViewController.swift */; };
+		5722C7E11E4D4C3B00A6EBFC /* AddPortfoliotCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722C7E01E4D4C3B00A6EBFC /* AddPortfoliotCollectionReusableView.swift */; };
 		5755BE391DBEE8DB006F26C8 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755BE381DBEE8DB006F26C8 /* Users.swift */; };
 		57607DC71DAFA5E2008FD070 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57607DC61DAFA5E2008FD070 /* LoginViewController.swift */; };
 		57D3C02E1E32C521000AF102 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D3C02D1E32C521000AF102 /* DescriptionViewController.swift */; };
@@ -114,6 +115,7 @@
 		360D3187661738CD6309599F /* Pods-ObjectiveCAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectiveCAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectiveCAppTests/Pods-ObjectiveCAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		570FAA0A1DC9748B00FB0F48 /* DeveloperAdditionalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperAdditionalCollectionViewCell.swift; sourceTree = "<group>"; };
 		570FAA0E1DC9782400FB0F48 /* DeveloperAdditionalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperAdditionalDetailsViewController.swift; sourceTree = "<group>"; };
+		5722C7E01E4D4C3B00A6EBFC /* AddPortfoliotCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPortfoliotCollectionReusableView.swift; sourceTree = "<group>"; };
 		5755BE381DBEE8DB006F26C8 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		57607DC61DAFA5E2008FD070 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		57D3C02D1E32C521000AF102 /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				2705A9BC1E423BD7002980C5 /* AddtoPortFolioViewController.swift */,
 				2705A9C01E4261B9002980C5 /* AddToPortfolioCollectionViewCell.swift */,
+				5722C7E01E4D4C3B00A6EBFC /* AddPortfoliotCollectionReusableView.swift */,
 			);
 			name = "add to portfolio";
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 				270E63211E33BA530029D2B8 /* EditSkillsTableViewController.swift in Sources */,
 				275E2DC71E1FE6BA00B0F8B9 /* StartAndEndTableViewController.swift in Sources */,
 				27C429DE1DC02A7D00A6E1EA /* CreateDeveloperTableViewController.swift in Sources */,
+				5722C7E11E4D4C3B00A6EBFC /* AddPortfoliotCollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
