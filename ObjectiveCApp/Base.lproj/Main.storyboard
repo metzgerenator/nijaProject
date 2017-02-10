@@ -1555,7 +1555,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="s37-nB-aMD">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionHeader" id="s37-nB-aMD" customClass="AddPortfoliotCollectionReusableView" customModule="ObjectiveCApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -1572,6 +1572,9 @@
                                         <constraint firstAttribute="bottom" secondItem="uvo-37-rLe" secondAttribute="bottom" constant="14" id="bZt-GL-ylx"/>
                                         <constraint firstItem="uvo-37-rLe" firstAttribute="leading" secondItem="s37-nB-aMD" secondAttribute="leading" constant="16" id="l5T-Ke-OPw"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="titleLable" destination="uvo-37-rLe" id="fMo-cM-DgP"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="p42-FZ-7ap" id="sB9-TV-Ts5"/>

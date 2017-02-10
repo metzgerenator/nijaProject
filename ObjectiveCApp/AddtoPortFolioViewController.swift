@@ -170,6 +170,10 @@ extension AddtoPortFolioViewController: UICollectionViewDataSource, UICollection
     
     
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if section == 0 {
@@ -221,6 +225,20 @@ extension AddtoPortFolioViewController: UICollectionViewDataSource, UICollection
         }
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeader", for: indexPath) as! AddPortfoliotCollectionReusableView
+        
+        if indexPath.section == 0 {
+            
+            sectionHeader.title = "Photos to save"
+            
+        } else {
+            sectionHeader.title = "Current saved photos"
+        }
+        
+        return sectionHeader
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
