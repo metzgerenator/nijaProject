@@ -93,6 +93,11 @@ class AddtoPortFolioViewController: UIViewController {
             
           imagesToLoad = selectedProject.pictures
           self.collectionView.reloadData()
+            
+            self.projectName.text = selectedProject.projectName
+            saveDescription = selectedProject.descritpion
+            descriptionOutlet.text = selectedProject.descritpion
+            
         }
         
         
